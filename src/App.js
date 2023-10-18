@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/header";
+import bgImage from "./assets/videoHero.mp4";
+import { Container } from "@mui/material";
+import Footer from "./components/footer";
+import { ThemeProvider} from '@mui/material/styles';
+import theme from "./theme/theme";
+import MainPage from "./components/main";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+    <Container maxWidth='false' disableGutters sx={{position:'relative',overflow:'auto',width:'100vw', height:'100vh', backgroundColor:'primary.light'}}>
+        <video style={{position:'abosulte', width:'100%', height:'100%', objectFit:'cover'}} autoPlay loop muted  src={bgImage}/>
+        
+          <Header/> 
+          <MainPage/>
+          <Footer/>   
+       
+    </Container>
+    </ThemeProvider>
   );
 }
 
