@@ -8,6 +8,7 @@ import MainPage from "./components/main";
 
 function App() {
   return (
+
     <ThemeProvider theme={theme}>
     <Container maxWidth='false' disableGutters sx={{position:'relative',overflow:'auto',width:'100vw', height:'100vh', backgroundColor:'primary.light'}}>
         <video style={{position:'abosulte', width:'100%', height:'100%', objectFit:'cover'}} autoPlay loop muted  src={bgImage}/>

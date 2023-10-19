@@ -9,6 +9,7 @@ const scrollToExperience = () => {
   };
 const Header = ()=>{
     return (
+      
         <Box sx={{position:'absolute', top:0, width:'100%', textAlign:{xs:'initial', lg:'initial'}}}>
             <NavBar/>
             <Container maxWidth='lg' sx={{marginTop:'100px',display:'flex', flexDirection:'column', gap:3}}>
