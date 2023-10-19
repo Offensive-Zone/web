@@ -8,19 +8,18 @@ const Footer = ()=>{
                 <Box>
                     <Typography color='white' variant="h5">Redes Sociales</Typography>
                     <List sx={{color:'white', listStyleType:'none'}}>
-                        <ListItem>facebook</ListItem>
-                        <ListItem>gmail</ListItem>
-                        <ListItem>instagram</ListItem>
+                        <ListItem>https://www.linkedin.com/company/offensive-security-services</ListItem>
+                        <ListItem>https://www.instagram.com/offensivesecurityservices/</ListItem>
                     </List>
                 </Box>
                 <Box>
-                <Typography color='white' component="h3" variant="h5">Acerca de</Typography>
+                <Typography color='white' component="h3" variant="h5">Contacto</Typography>
                     <List sx={{color:'white', listStyleType:'none'}}>
-                    <ListItem>nfo@misitio.com</ListItem>
-                    <ListItem>44100 Guad., Jal., México</ListItem>
-                    <ListItem>Av. Fray Antonio Alcalde 10</ListItem>
-                    <ListItem>Tel: +52-1-33-12345678</ListItem>
-                    <ListItem>info@misitio.com</ListItem>
+                    <ListItem>info@offensivesecurityservices.com</ListItem>
+                    <ListItem>Santander,Colombia</ListItem>
+                    <ListItem>Calle 143, Bucaramanga</ListItem>
+                    <ListItem>Tel: +573046777135</ListItem>
+                   
                               
                     </List>
                 </Box>
