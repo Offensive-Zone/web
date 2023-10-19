@@ -10,7 +10,7 @@ export const NavBar = () => {
         <AppBar position="static" sx={{zIndex:10, height:'80px', backgroundColor:theme.palette.primary.main}}>
           <Toolbar variant="dense">
             <Typography variant="h6" color="inherit" component="div">
-              Photos
+              
             </Typography>
           </Toolbar>
         </AppBar>

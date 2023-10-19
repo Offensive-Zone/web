@@ -8,14 +8,14 @@ const Footer = ()=>{
                 <Box>
                     <Typography color='white' variant="h5">Redes Sociales</Typography>
                     <List sx={{color:'white', listStyleType:'none'}}>
-                        <ListItem>https://www.linkedin.com/company/offensive-security-services</ListItem>
-                        <ListItem>https://www.instagram.com/offensivesecurityservices/</ListItem>
+                        <ListItem><a href="ttps://www.linkedin.com/company/offensive-security-services">Linkedin</a></ListItem>
+                        <ListItem><a href="https://www.instagram.com/offensivesecurityservices/">Instagram</a></ListItem>
                     </List>
                 </Box>
                 <Box>
                 <Typography color='white' component="h3" variant="h5">Contacto</Typography>
                     <List sx={{color:'white', listStyleType:'none'}}>
-                    <ListItem>info@offensivesecurityservices.com</ListItem>
+                    <ListItem><a href="mailto:info@offensivesecurityservices.com">info@offensivesecurityservices.com</a></ListItem>
                     <ListItem>Santander,Colombia</ListItem>
                     <ListItem>Calle 143, Bucaramanga</ListItem>
                     <ListItem>Tel: +573046777135</ListItem>
