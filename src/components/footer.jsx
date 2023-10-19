@@ -8,7 +8,7 @@ const Footer = ()=>{
                 <Box>
                     <Typography color='white' variant="h5">Redes Sociales</Typography>
                     <List sx={{color:'white', listStyleType:'none'}}>
-                        <ListItem><a href="ttps://www.linkedin.com/company/offensive-security-services">Linkedin</a></ListItem>
+                        <ListItem><a href="https://www.linkedin.com/company/offensive-security-services">Linkedin</a></ListItem>
                         <ListItem><a href="https://www.instagram.com/offensivesecurityservices/">Instagram</a></ListItem>
                     </List>
                 </Box>
