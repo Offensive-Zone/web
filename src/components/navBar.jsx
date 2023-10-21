@@ -1,18 +1,50 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+import { Container, Box, AppBar,Toolbar, IconButton } from '@mui/material';
 import theme from '../theme/theme';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 
 export const NavBar = () => {
+
+  const navigateTo = (i) => {
+    switch(i){
+      case 1:
+        window.open("https://www.linkedin.com/company/offensive-security-services", "_blank")
+        break
+      case 2:
+        window.open("https://www.instagram.com/offensivesecurityservices/", "_blank")
+        break
+      case 3:
+        window.open("mailto:info@offensivesecurityservices.com", "_blank")
+        break
+    }
+  }
+
     return (
-        <AppBar position="static" sx={{zIndex:10, height:'80px', backgroundColor:theme.palette.primary.main}}>
-          <Toolbar variant="dense">
-            <Typography variant="h6" color="inherit" component="div">
-              
-            </Typography>
-          </Toolbar>
+        <AppBar position="static" sx={{zIndex:10, 
+                                       height:'auto', 
+                                       backgroundColor:theme.palette.primary.main, 
+                                       p:'10px 0'}}>
+          <Container maxWidth='lg'>
+            <Toolbar variant="dense" sx={{display:'flex', 
+                                          justifyContent:'space-between' }}>
+             <img style={{backgroundColor:'white'}} width='80px' height='80px' alt='logo triangulo negro' src='https://upload.wikimedia.org/wikipedia/commons/3/3c/Black_triangle.svg'></img>
+              <Box sx={{display:'flex', 
+                        gap:1}}>
+                <IconButton onClick={()=>navigateTo(1)} size='small' color='inherit'>
+                  <LinkedInIcon fontSize='large' sx={{'&:hover':{transform:'scale(1.2)'}}}/>
+                </IconButton>
+                <IconButton onClick={()=>navigateTo(2)} size='small' color='inherit'>
+                  <InstagramIcon fontSize='large' sx={{'&:hover':{transform:'scale(1.2)'}}}/>
+                </IconButton>
+                <IconButton onClick={()=>navigateTo(3)} size='small' color='inherit'>
+                  <EmailOutlinedIcon fontSize='large' sx={{'&:hover':{transform:'scale(1.2)'}}}/>
+                </IconButton>
+              </Box>
+            </Toolbar>
+          </Container>
         </AppBar>
     )
 }

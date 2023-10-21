@@ -55,6 +55,8 @@ Every business is unique, and so are its security requirements. Our security con
               </Box>
             </Box>
         </Box>
+
+
         <Box sx={{ 
                   margin:'120px 0px',
                   backgroundColor:'primary.light', 
@@ -86,6 +88,9 @@ Every business is unique, and so are its security requirements. Our security con
                       backgroundSize: 'cover', 
                       backgroundAttachment: 'fixed'}}>
                   <Subtittle id='expertise'>Why Choose Offensive Security Services?</Subtittle>
+                  <Box sx={{}}>
+
+                  </Box>
               </Box>
               <Box sx={{display:'flex', 
                         p:'20px 0',

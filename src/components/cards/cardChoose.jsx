@@ -13,7 +13,6 @@ const CardChoose = ({title,url ,description}) => {
           maxWidth:'300px',
           height:'400px',
         }}>
-
               <Box sx={{
                 backgroundImage: `url(${url})`,
                 backgroundPosition: 'center',
