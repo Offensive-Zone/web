@@ -1,5 +1,4 @@
 import { Box, Container, List, ListItem, Typography } from "@mui/material"
-import TypeFormEmbed from './TypeFormEmbed'; // Ajusta la ruta según tu estructura
 
 
 const Footer = ()=>{
@@ -9,17 +8,9 @@ const Footer = ()=>{
        
 
         <Box  sx={{backgroundColor:'primary.main', width:'100%', height:{xs:'25vh', lg:'25vh'}, position:'relative', bottom:0, p:'20px 0 20px 0'}}>
+            <Container maxWidth='lg'> 
 
 
-
-
-            <Container maxWidth='lg'>
-
-                
-
-           
-            
-            
             <Box sx={{display:'flex', flexDirection:'row', justifyContent:'space-around'}}>
           
                 <Box>
@@ -37,14 +28,13 @@ const Footer = ()=>{
                     <ListItem>Calle 143, Bucaramanga</ListItem>
                     <ListItem>Tel: +573046777135</ListItem>
                    
-                              
+                
                     </List>
                 </Box>
             </Box>
 
           
             </Container>
-            <TypeFormEmbed /> 
         </Box>
     )
 }

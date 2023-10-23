@@ -14,7 +14,7 @@ const CardExpertise = ({children}) => {
             height:{lg:'500px', xs:'570px'},
             transition:"transform 0.2s",
             '&:hover':{
-                transform: 'translateY(-5px)',
+                transform: 'translateY(-10px)',
                 }}}>   
             {children}
         </Box>
