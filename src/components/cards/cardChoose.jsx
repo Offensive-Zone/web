@@ -1,8 +1,11 @@
 
 import { Box, Typography } from "@mui/material"
 import SubtittleCard from "../subtittle/subtitleCards"
+import { motion } from "framer-motion"
+import { fadeTransition } from "../transitions"
 const CardChoose = ({title,url ,description}) => {
     return (
+      <motion.div variants={fadeTransition} initial='hidden' whileInView='visible' viewport={{once:true}}>
         <Box sx={{
           border: '1px solid rgba(255, 255, 255, 0.125)',  
           padding: '35px',  
@@ -12,6 +15,10 @@ const CardChoose = ({title,url ,description}) => {
           width:{xl:'300px',lg:'300px' ,md:'200px'},
           maxWidth:'300px',
           height:'400px',
+          transition:'scale, 0.2s',
+          '&:hover':{
+            transform:'scale(1.03)'
+          }
         }}>
               <Box sx={{
                 backgroundImage: `url(${url})`,
@@ -25,6 +32,7 @@ const CardChoose = ({title,url ,description}) => {
               <SubtittleCard>{title}</SubtittleCard>
               <Typography color={'text.main'} component='p'>{description}</Typography>
              </Box>
+      </motion.div>
       
     )}
     

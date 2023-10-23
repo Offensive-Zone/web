@@ -13,7 +13,8 @@ const Section1 = () =>{
             width:'100%', 
             minHeight:'900px',
             height:'auto', 
-            p:'50px 0'
+            p:'50px 0',
+            overflowY:'hidden'
             }}>
       <Box sx={{height:'100%', textAlign:'center'}} >
       <Subtittle id='expertise'>Our Expertise</Subtittle>

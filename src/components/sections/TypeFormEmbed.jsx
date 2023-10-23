@@ -16,6 +16,7 @@ const TypeFormEmbed = () => {
   }, []);
 
   return (
+    <>
     <div
       data-tf-widget="QKJIj7jc"
       data-tf-opacity="100"
@@ -24,7 +25,8 @@ const TypeFormEmbed = () => {
       data-tf-medium="snippet"
       style={{ width: "100%", height: "900px" }}
       dangerouslySetInnerHTML={{ __html: '' }}
-    />
+      />
+    </>
   );
 }
 

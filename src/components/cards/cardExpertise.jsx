@@ -1,7 +1,10 @@
 import { Box } from "@mui/material"
+import { motion } from "framer-motion"
+import { slideInTransition } from "../transitions"
 
 const CardExpertise = ({children}) => {
     return (
+        <motion.div variants={slideInTransition} whileInView='visible' initial='hidden' viewport={{ once: true }}>
         <Box sx={{
             display:'flex',
             alignItems:'center',
@@ -15,9 +18,11 @@ const CardExpertise = ({children}) => {
             transition:"transform 0.2s",
             '&:hover':{
                 transform: 'translateY(-10px)',
-                }}}>   
+            }}}>   
+
             {children}
         </Box>
+        </motion.div>
     )
 }
 

@@ -3,14 +3,8 @@ import { Box, Container, List, ListItem, Typography } from "@mui/material"
 
 const Footer = ()=>{
     return (
-
-
-       
-
-        <Box  sx={{backgroundColor:'primary.main', width:'100%', height:{xs:'25vh', lg:'25vh'}, position:'relative', bottom:0, p:'20px 0 20px 0'}}>
+        <Box  sx={{backgroundColor:'primary.main', width:'100%', height:{xs:'25vh', lg:'25vh'}, position:'relative', bottom:0, p:'20px 0 20px 0', overflowY:'hidden'}}>
             <Container maxWidth='lg'> 
-
-
             <Box sx={{display:'flex', flexDirection:'row', justifyContent:'space-around'}}>
           
                 <Box>

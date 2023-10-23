@@ -13,6 +13,7 @@ const Section3 = () => {
             height:'auto', 
             display:'flex',
             justifyContent:'center',
+            overflowY:'hidden'
             }}>
       <Box sx={{           
                 height:'100%', 
@@ -35,11 +36,11 @@ const Section3 = () => {
                 backgroundImage:`url(${backGround1})`, 
                 backgroundPosition: 'center', 
                 backgroundSize: 'cover', 
-                backgroundAttachment: 'fixed'}}>
+                backgroundAttachment: 'fixed',
+                display:'flex',
+                alignItems:'center'
+                }}>
             <Subtittle id='expertise'>Why Choose Offensive Security Services?</Subtittle>
-            <Box sx={{}}>
-
-            </Box>
         </Box>
         <Box sx={{display:'flex', 
                   p:'20px 0',
