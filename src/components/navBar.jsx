@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Container, Box, AppBar,Toolbar, IconButton } from '@mui/material';
+import { Container, Box, AppBar, Toolbar, IconButton } from '@mui/material';
 import theme from '../theme/theme';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
@@ -9,7 +9,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 export const NavBar = () => {
 
   const navigateTo = (i) => {
-    switch(i){
+    switch (i) {
       case 1:
         window.open("https://www.linkedin.com/company/offensive-security-services", "_blank")
         break
@@ -22,29 +22,35 @@ export const NavBar = () => {
     }
   }
 
-    return (
-        <AppBar position="static" sx={{zIndex:10, 
-                                       height:'auto', 
-                                       backgroundColor:theme.palette.primary.main, 
-                                       p:'10px 0'}}>
-          <Container maxWidth='lg'>
-            <Toolbar variant="dense" sx={{display:'flex', 
-                                          justifyContent:'space-between' }}>
-             <img style={{backgroundColor:'white'}} width='80px' height='80px' alt='logo triangulo negro' src='https://upload.wikimedia.org/wikipedia/commons/3/3c/Black_triangle.svg'></img>
-              <Box sx={{display:'flex', 
-                        gap:1}}>
-                <IconButton onClick={()=>navigateTo(1)} size='small' color='inherit'>
-                  <LinkedInIcon fontSize='large' sx={{'&:hover':{transform:'scale(1.2)'}}}/>
-                </IconButton>
-                <IconButton onClick={()=>navigateTo(2)} size='small' color='inherit'>
-                  <InstagramIcon fontSize='large' sx={{'&:hover':{transform:'scale(1.2)'}}}/>
-                </IconButton>
-                <IconButton onClick={()=>navigateTo(3)} size='small' color='inherit'>
-                  <EmailOutlinedIcon fontSize='large' sx={{'&:hover':{transform:'scale(1.2)'}}}/>
-                </IconButton>
-              </Box>
-            </Toolbar>
-          </Container>
-        </AppBar>
-    )
+  return (
+    <AppBar position="static" sx={{
+      zIndex: 10,
+      height: 'auto',
+      backgroundColor: theme.palette.primary.main,
+      p: '10px 0'
+    }}>
+      <Container maxWidth='lg'>
+        <Toolbar variant="dense" sx={{
+          display: 'flex',
+          justifyContent: 'space-between'
+        }}>
+          <img style={{ backgroundColor: 'white' }} width='80px' height='80px' alt='hacker logo' src='public/hacker.png'></img>
+          <Box sx={{
+            display: 'flex',
+            gap: 1
+          }}>
+            <IconButton onClick={() => navigateTo(1)} size='small' color='inherit'>
+              <LinkedInIcon fontSize='large' sx={{ '&:hover': { transform: 'scale(1.2)' } }} />
+            </IconButton>
+            <IconButton onClick={() => navigateTo(2)} size='small' color='inherit'>
+              <InstagramIcon fontSize='large' sx={{ '&:hover': { transform: 'scale(1.2)' } }} />
+            </IconButton>
+            <IconButton onClick={() => navigateTo(3)} size='small' color='inherit'>
+              <EmailOutlinedIcon fontSize='large' sx={{ '&:hover': { transform: 'scale(1.2)' } }} />
+            </IconButton>
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
+  )
 }
