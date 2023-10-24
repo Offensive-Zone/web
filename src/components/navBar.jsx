@@ -34,7 +34,7 @@ export const NavBar = () => {
           display: 'flex',
           justifyContent: 'space-between'
         }}>
-          <img style={{ backgroundColor: 'white' }} width='80px' height='80px' alt='hacker logo' src='public/hacker.png'></img>
+          <img style={{ backgroundColor: 'white' }} width='80px' height='80px' alt='hacker logo' src='hacker.png'></img>
           <Box sx={{
             display: 'flex',
             gap: 1
