@@ -8,12 +8,12 @@ import Section3 from "./sections/whyChooseUs";
 
 const MainPage = () =>{
     return (
-      <>
+      <main>
         <Section1/>
         <Section2/>
         <Section3/>
         <TypeFormEmbed/>
-      </>
+      </main>
 
     )
 }

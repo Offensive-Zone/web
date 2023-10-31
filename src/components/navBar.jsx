@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Container, Box, AppBar, Toolbar, IconButton } from '@mui/material';
 import theme from '../theme/theme';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
 
