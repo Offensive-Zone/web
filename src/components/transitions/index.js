@@ -5,7 +5,7 @@ export const slideInTransition = {
       opacity:1,
       x:'0',
       transition:{
-        duration: 0.6,
+        duration: 2,
       }
   },
   hidden:{ x: '30vw', opacity:0},

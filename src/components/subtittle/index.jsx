@@ -1,6 +1,8 @@
 import { Typography } from "@mui/material"
 import { motion } from "framer-motion"
 import { fadeTransition } from "../transitions"
+import theme from "../../theme/theme"
+
 
 const Subtittle = ({children, id}) => {
     return (
@@ -14,7 +16,9 @@ const Subtittle = ({children, id}) => {
                            xs:'40px'}} 
                 sx={{fontWeight:900, 
                      color:'text.main',
-                     margin:'80px 0',
+                     position:'relative',
+                     borderBottom:`10px solid ${theme.palette.tertiary.main}`,
+                     display:'inline-block'
                      }}>{children}</Typography>
         </motion.div>
     )
