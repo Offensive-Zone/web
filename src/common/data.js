@@ -19,3 +19,11 @@ export const seccion2 = [
     url:premium,
     description:'We do not just offer security services; we deliver a premium experience. Our commitment to excellence is reflected in everything we do.'},
 ]
+
+export const menu = [
+    {page:'expertise', to:'expertise'},
+    {page:'about us', to:'about'},
+    {page:'threats', to:'threats'},
+    {page:'why us?', to:'whyus'},
+    {page:'contact', to:'contact'},
+]
