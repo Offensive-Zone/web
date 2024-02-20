@@ -16,4 +16,5 @@ body {
 .down {
   background-color: #000 !important;
   position: fixed !important;
+  height: 80px !important;
 }

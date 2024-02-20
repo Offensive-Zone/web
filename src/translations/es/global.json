@@ -1,0 +1,54 @@
+{
+    "header": {
+        "expertise": "EXPERIENCIA",
+        "about-us": "NOSOTROS",
+        "threats": "AMENAZAS",
+        "why-us": "NOSOTROS?",
+        "contact": "CONTACTO"
+    },
+    "hero": {
+        "subtitle": "Tu Excelencia Premium en Ciberseguridad"
+    },
+    "our-expertice": {
+        "title":"Nuestra Experiencia",
+        "penetration-testing": {
+            "title": "Pruebas de Penetración",
+            "description": "Descubra Vulnerabilidades Antes de que lo Hagan los Atacantes Nuestro equipo de éticos hackers altamente calificados realiza pruebas exhaustivas de penetración para identificar debilidades en sus sistemas y redes. Al simular ciberataques del mundo real, le ayudamos a abordar proactivamente las vulnerabilidades antes de que los actores maliciosos puedan explotarlas."
+        },
+        "web-penetration-testing": {
+            "title": "Pruebas de Penetración Web",
+            "description": "Asegurando tu Presencia en Línea En la era digital, tus aplicaciones web y activos en línea son objetivos principales para los ciberdelincuentes. Nuestros servicios de pruebas de penetración web aseguran que tus aplicaciones web estén fortificadas contra una amplia gama de amenazas, incluyendo inyección SQL, scripting entre sitios (XSS) y más."
+        },
+        "security-consultation": {
+            "title": "Consultoría de Seguridad",
+            "description": "Soluciones Personalizadas para tus Necesidades Únicas Cada negocio es único, al igual que sus requisitos de seguridad. Nuestros servicios de consultoría de seguridad te proporcionan estrategias y soluciones personalizadas para abordar tus desafíos específicos de ciberseguridad. Trabajamos estrechamente con tu equipo para desarrollar una postura de seguridad robusta y resistente."
+        }
+    },
+    "cyber-threats": {
+        "title": "Elevando la Lucha Contra Amenazas Cibernéticas",
+        "description1": "En Offensive Security Services, llevamos la batalla contra las amenazas cibernéticas al siguiente nivel. En una era donde las violaciones de datos y los ciberataques se vuelven cada vez más sofisticados, nuestra misión es clara: salvaguardar tus activos digitales y proteger tu negocio del siempre cambiante panorama de amenazas cibernéticas.",
+        "description2": "Asóciate con Offensive Security Services y fortalece tus defensas contra las amenazas cibernéticas. En una época en la que la ciberseguridad es innegociable, elige a los expertos que están dedicados a tu protección y tranquilidad."
+    },
+    "our-clients": "Nuestros Clientes",
+    "about-us": "",
+    "why-us": {
+        "title": "¿Por Qué Elegir Offensive Security Services?",
+        "expertise": {
+            "title": "Experiencia",
+            "description": "Nuestro equipo está compuesto por profesionales certificados y experimentados que se mantienen a la vanguardia de las tendencias y mejores prácticas de ciberseguridad."
+        },
+        "proactive": {
+            "title": "Enfoque Proactivo",
+            "description": "Creemos en estar un paso adelante de las amenazas cibernéticas. Nuestros servicios proactivos de pruebas y consultoría te ayudan a mantenerte al tanto de posibles vulnerabilidades."
+        },
+        "confidentiality": {
+            "title": "Confidencialidad",
+            "description": "Priorizamos la confidencialidad de tus datos e información, asegurando que los detalles sensibles permanezcan protegidos en todo momento."
+        },
+        "premium": {
+            "title": "Servicio Premium",
+            "description": "No ofrecemos simplemente servicios de seguridad; brindamos una experiencia premium. Nuestro compromiso con la excelencia se refleja en todo lo que hacemos."
+        }
+        
+    }
+}

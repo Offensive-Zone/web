@@ -9,13 +9,16 @@ import 'swiper/css/scrollbar';
 // Import Swiper styles
 import 'swiper/css';
 import { Container } from '@mui/material';
+import { useTranslation } from "react-i18next";
+
 
 const Slider = () => {
   const slides = [1,2,3,4,5,6]
+  const {t} = useTranslation()
 
       return (
         <Container sx={{padding:'200px 0'}}>
-          <h1>Our Clients</h1>
+          <h2>{t("our-clients")}</h2>
           <Swiper
             modules={[Navigation, Pagination, A11y]}
             spaceBetween={50}

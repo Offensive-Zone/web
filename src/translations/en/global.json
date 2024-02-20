@@ -1,0 +1,54 @@
+{
+    "header":{
+        "expertise":"EXPERTISE",
+        "about-us":"ABOUT US",
+        "threats":"threats",
+        "why-us":"WHY US?",
+        "contact":"CONTACT"
+    },
+    "hero":{
+        "subtitle":"Your Premium in Cybersecurity Excellence"
+    },
+    "our-expertice":{
+        "title":"Our Expertice",
+        "penetration-testing":{
+            "title":"Penetration Testing",
+            "description":"Uncover Vulnerabilities Before the Attackers Do Our team of highly skilled ethical hackers conducts comprehensive penetration tests to identify weaknesses in your systems and networks. By simulating real-world cyberattacks, we help you proactively address vulnerabilities before malicious actors can exploit them."
+        },
+        "web-penetration-testing":{
+            "title":"Web Penetration Testing",
+            "description":"Securing Your Online Presence In the digital age, your web applications and online assets are prime targets for cybercriminals. Our web penetration testing services ensure that your web applications are fortified against a wide range of threats, including SQL injection, cross-site scripting (XSS), and more."
+        },
+        "security-consultation":{
+            "title":"Security Consultation",
+            "description":"Tailored Solutions for Your Unique Needs Every business is unique, and so are its security requirements. Our security consultation services provide you with personalized strategies and solutions to address your specific cybersecurity challenges. We work closely with your team to develop a robust and resilient security posture."
+        }
+    },
+    "cyber-threats":{
+        "title":"Elevating the Fight Against Cyber Threats",
+        "description1":"At Offensive Security Services, we take the battle against cyber threats to the next level. In an era where data breaches and cyberattacks are becoming increasingly sophisticated, our mission is clear: to safeguard your digital assets and protect your business from the ever-evolving landscape of cyber threats.",
+        "description2":"Partner with Offensive Security Services and fortify your defenses against cyber threats. In an age where cybersecurity is non-negotiable, choose the experts who are dedicated to your protection and peace of mind."
+    },
+    "our-clients":"Our Clients",
+    "about-us":"",
+    "why-us":{
+        "title":"Why Choose Offensive Security Services?",
+        "expertise":{
+            "title":"Expertise",
+            "description":"Our team consists of certified and experienced professionals who stay at the forefront of cybersecurity trends and best practices."
+        },
+        "proactive":{
+            "title":"Proactive Approach",
+            "description":"We believe in being one step ahead of cyber threats. Our proactive testing and consultation services help you stay ahead of potential vulnerabilities."
+        },
+        "confidentiality":{
+            "title":"Confidentiality",
+            "description":"We prioritize the confidentiality of your data and information, ensuring that sensitive details remain protected at all times."
+        },
+        "premium":{
+            "title":"Premium Service",
+            "description":"We do not just offer security services; we deliver a premium experience. Our commitment to excellence is reflected in everything we do."
+        }
+        
+    }
+}

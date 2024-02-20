@@ -1,14 +1,17 @@
 import { Box, Container, Typography, IconButton, Fade, Slide } from "@mui/material";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosOutlined';
 import theme from "../../theme/theme";
+import { useTranslation } from "react-i18next";
 
-const scrollToExperience = () => {
-    const experienceSection = document.getElementById('expertise');
-    if (experienceSection) {
-      experienceSection.scrollIntoView({behavior:'smooth'});
-    }
-  };
+ const scrollToExperience = () => {
+
+     const experienceSection = document.getElementById('expertise');
+     if (experienceSection) {
+       experienceSection.scrollIntoView({behavior:'smooth'});
+     }
+   };
 const Hero = ()=>{
+  const {t} = useTranslation()
     return (
         <Box sx={{width:'100%',
                   height:'100vh', 
@@ -32,7 +35,7 @@ const Hero = ()=>{
                               sx={{fontWeight:900, 
                                    color:'text.main', 
                                    lineHeight:1}}>
-                      Offensive Security Services
+                      Offensice Security
                   </Typography>
                 </Fade>    
                 <Slide in={true} direction="right" timeout={800}>
@@ -40,7 +43,7 @@ const Hero = ()=>{
                               component='p' 
                               fontSize={{xs:20, 
                                          lg:'30px'}}>
-                    Your Premium Partner in Cybersecurity Excellence
+                    {t("hero.subtitle")}
                   </Typography>
                 </Slide>                        
                 <IconButton onClick={scrollToExperience} sx={{color:'white', 

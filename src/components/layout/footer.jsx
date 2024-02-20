@@ -1,5 +1,4 @@
 import { Box, Container, List, ListItem, Typography } from "@mui/material"
-import { menu } from '../../common/data';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
@@ -33,27 +32,6 @@ const Footer = ()=>{
                     <List sx={{color:'white', listStyleType:'none'}}>
                         <ListItem><a style={{color:'white'}} href="https://www.linkedin.com/company/offensive-security-services"><InstagramIcon fontSize="large"/></a></ListItem>
                         <ListItem><a style={{color:'white'}} href="https://www.instagram.com/offensivesecurityservices/"><LinkedInIcon fontSize="large"/></a></ListItem>
-                    </List>
-                </Box>
-                <Box>
-                    <Typography 
-                        sx={{
-                            borderTop:`6px solid ${theme.palette.tertiary.main}`,
-                            lineHeight:'2'
-
-                        }}
-                        color='white' 
-                        variant="h5">Sections</Typography>
-                    <List sx={{color:'white', listStyleType:'none'}}>
-                        {
-                            menu.map((section)=>{
-                                return(
-                                    <ListItem key={section.page}>
-                                        <a style={{color:'white'}} href={section.to}>{section.page}</a>
-                                    </ListItem>
-                                )
-                            })
-                        }
                     </List>
                 </Box>
                 <Box>

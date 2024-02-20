@@ -1,9 +1,17 @@
 import { Box} from "@mui/material";
 import Subtittle from "../../components/subtittle";
 import CardChoose from "../../components/cards/cardChoose.jsx";
-import { seccion2 } from "../../common/data.js"
+import { useTranslation } from "react-i18next";
 
 const Section3 = () => {
+  const {t} = useTranslation()
+  
+  const seccion2 = [
+    { title: t('why-us.expertise.title'), url: '../assets/img/expertise.jpg', description: t('why-us.expertise.description') },
+    { title: t('why-us.proactive.title'), url: '../assets/img/proactive.jpg', description: t('why-us.proactive.description') },
+    { title: t('why-us.confidentiality.title'), url: '../assets/img/confidentiality.jpg', description: t('why-us.confidentiality.description') },
+    { title: t('why-us.premium.title'), url: '../assets/img/premium.png', description: t('why-us.premium.description') }
+  ];
     return (
         <Box 
         id='whyus'
@@ -46,11 +54,9 @@ const Section3 = () => {
                 alignItems:'center',
                 padding:'0px 1vw'
                 }}>
-            {/* <video style={{position:'absolute', height:'100%', width:'100%', objectFit:'cover'}} src={videoCode} autoPlay loop></video> */}
-            <Subtittle>Why Choose Offensive Security Services?</Subtittle>
+            <Subtittle>{t("why-us.title")}</Subtittle>
         </Box>
         <Box sx={{display:'flex', 
-                  // p:'20px 0',
                   gap:1,
                   flexDirection:{xs:'column',md:'row', xl:'row', lg:'row'},
                   justifyContent:{xl:'space-evenly',lg:'center',md:'center'},

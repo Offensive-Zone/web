@@ -1,8 +1,11 @@
 import Subtittle from "../../components/subtittle";
 import backGround2 from "../../assets/img/whoWeAre.jpg"
 import { Box, Typography, Container } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const Section2 = () => {
+  const {t} = useTranslation();
+
     return (
         <Box 
         id='threats'
@@ -27,9 +30,13 @@ const Section2 = () => {
                 padding:'5%',
                 border:'3px solid black',
               }}>
-                <Subtittle>Elevating the Fight Against Cyber Threats</Subtittle>
-                <Typography color='white' style={{marginTop:'20px'}}>At Offensive Security Services, we take the battle against cyber threats to the next level. In an era where data breaches and cyberattacks are becoming increasingly sophisticated, our mission is clear: to safeguard your digital assets and protect your business from the ever-evolving landscape of cyber threats.</Typography><br />
-                <Typography color='white'>Partner with Offensive Security Services and fortify your defenses against cyber threats. In an age where cybersecurity is non-negotiable, choose the experts who are dedicated to your protection and peace of mind.</Typography>
+                <Subtittle>{t("cyber-threats.title")}</Subtittle>
+                <Typography color='white' style={{marginTop:'20px'}}>
+                {t("cyber-threats.description1")} <br/> <br/>
+                </Typography>
+                <Typography color='white'>
+                {t("cyber-threats.description2")}
+                </Typography>
               </Box>
             </Container>
           </Box>

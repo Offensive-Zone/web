@@ -1,11 +1,8 @@
-
+import React from 'react';
 import theme from '../../theme/theme';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import { menu } from '../../common/data';
-
-import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,12 +10,27 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import { Link } from '@mui/material';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { useTranslation } from 'react-i18next';
 
 const NavBar = () => {
+  const [t, i18n] = useTranslation()
+  const [lng, setLng] = React.useState(i18n.language);
+
+  const menu = [
+     {page:t("header.expertise"), to:'expertise'},
+     {page:t("header.about-us"), to:'about'},
+     {page:t("header.threats"), to:'threats'},
+     {page:t("header.why-us"), to:'whyus'},
+     {page:t("header.contact"), to:'contact'},
+  ]
+
+  const handleChange = (event) => {
+    setLng(event.target.value);
+  };
 
   const [anchorElNav, setAnchorElNav] = React.useState();
 
@@ -33,7 +45,7 @@ const NavBar = () => {
   window.addEventListener('scroll', () => {
     const header = document.querySelector("header");
     header.classList.toggle('down', window.scrollY > 200)
-    console.log(header)
+    console.log(navigator.language)
   })
 
   const navigateTo = (i) => {
@@ -57,9 +69,9 @@ const NavBar = () => {
       backgroundColor: 'rgba(0,0,0,0.3)',
       p: '10px 0',
       position:'absolute',
-      transition:'all 0.4s linear'
+      transition:'all 0.4s linear',
     }}>
-      <Container maxWidth='lg'>
+
         <Toolbar variant="dense" sx={{
           display: 'flex',
           justifyContent: 'space-between'
@@ -163,8 +175,23 @@ const NavBar = () => {
               </IconButton>
             </Box>
           </Box>
+
+          <FormControl sx={{ m: 1, minWidth:'150px'}}>
+            <Select
+              id="demo-simple-select-standard"
+              value={lng}
+              onChange={handleChange}
+              sx={{
+                color:'#fff',
+                border:'1px solid #fff',
+              }}
+            >
+              <MenuItem value='es' onClick={()=>i18n.changeLanguage('es')}> <img width='25px' src="../assets/img/es.png" alt="flag"style={{marginRight:'4px'}} />   spanish</MenuItem>
+              <MenuItem value='en' onClick={()=>i18n.changeLanguage('en')}> <img width='25px' src="../assets/img/en.png" alt="flag"style={{marginRight:'4px'}} />   english</MenuItem>
+            </Select>
+          </FormControl>
         </Toolbar>
-      </Container>
+
     </AppBar>
   )
 }
