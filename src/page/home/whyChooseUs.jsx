@@ -13,7 +13,7 @@ const Section3 = () => {
     { title: t('why-us.premium.title'), url: '../assets/img/premium.png', description: t('why-us.premium.description') }
   ];
     return (
-        <Box 
+      <Box 
         id='whyus'
         sx={{ 
             padding:'120px 0px',
@@ -23,9 +23,6 @@ const Section3 = () => {
             display:'flex',
             justifyContent:'center',
             overflowY:'hidden',
-            // backgroundImage:'url("../../../public/assets/img/elementBottom.png")', 
-            // backgroundSize:'contain',
-            // backgroundRepeat:'no-repeat',
             backgroundPosition:'bottom',
             }}>
       <Box sx={{           
@@ -52,17 +49,18 @@ const Section3 = () => {
                 borderRight:'2px solid grey',
                 display:'flex',
                 alignItems:'center',
-                padding:'0px 1vw'
+                padding:{lg:'0', xl:'0px 1vw'}
                 }}>
             <Subtittle>{t("why-us.title")}</Subtittle>
         </Box>
         <Box sx={{display:'flex', 
-                  gap:1,
+                  gap:3,
                   flexDirection:{xs:'column',md:'row', xl:'row', lg:'row'},
                   justifyContent:{xl:'space-evenly',lg:'center',md:'center'},
                   flexWrap:'wrap',
                   width:'80%',
                   alignItems:{md:'center',xl:'inherit',xs:'center'},
+                  padding:'20px'
                   }}>
             {
              seccion2.map((data, index) => {

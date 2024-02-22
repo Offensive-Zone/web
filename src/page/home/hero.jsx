@@ -22,7 +22,7 @@ const Hero = ()=>{
                        sx={{
                        zIndex:'20',
                        display:'flex', 
-                       padding:'200px 50px',
+                       padding:'350px 50px',
                        flexDirection:'column', 
                        gap:3}}>
                 <Fade in={true} 
@@ -35,7 +35,7 @@ const Hero = ()=>{
                               sx={{fontWeight:900, 
                                    color:'text.main', 
                                    lineHeight:1}}>
-                      Offensice Security
+                      Offensive Security
                   </Typography>
                 </Fade>    
                 <Slide in={true} direction="right" timeout={800}>

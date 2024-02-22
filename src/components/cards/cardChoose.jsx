@@ -12,13 +12,10 @@ const CardChoose = ({title,url ,description}) => {
           display: 'flex',
           flexDirection: 'column',
           justifyContent:'center',
-          width:{xl:'300px',lg:'300px' ,md:'200px'},
+          gap:2,
           maxWidth:'300px',
           height:'400px',
-          transition:'scale, 0.2s',
-          '&:hover':{
-            transform:'scale(1.03)'
-          }
+          flex:1
         }}>
               <Box sx={{
                 backgroundImage: `url(${url})`,
@@ -26,7 +23,6 @@ const CardChoose = ({title,url ,description}) => {
                 backgroundSize: 'cover',
                 height: '90%',
                 width: '100%',
-                borderRadius: '12px',
                 border: '1px solid rgba(255,255,255, 0.255)'
               }}> </Box>
               <SubtittleCard>{title}</SubtittleCard>

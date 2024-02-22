@@ -1,11 +1,14 @@
 import { Box } from "@mui/material"
 import { motion } from "framer-motion"
 import { slideInTransition } from "../transitions"
+import { grey } from "@mui/material/colors";
+
 
 const CardExpertise = ({children}) => {
     return (
         <motion.div variants={slideInTransition} whileInView='visible' initial='hidden' viewport={{ once: true }}>
         <Box sx={{
+            backgroundColor: grey[900],
             display:'flex',
             alignItems:'center',
             flexDirection:'column',

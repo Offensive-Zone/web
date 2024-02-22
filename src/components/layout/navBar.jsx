@@ -76,8 +76,8 @@ const NavBar = () => {
           display: 'flex',
           justifyContent: 'space-between'
         }}>
-          <img style={{ backgroundColor: 'white' }} width='80px' height='80px' alt='hacker logo' src='hacker.png'></img>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <img style={{ background: 'linear-gradient(to bottom,rgba(255,255,255,.5), rgba(255,255,255,.1))' }} width='80px' height='80px' alt='hacker logo' src='hacker.png' />
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', lg: 'none' } }}>
             <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -88,10 +88,10 @@ const NavBar = () => {
                 sx={{
                   position:'absolute',
                   right:'0',
-                  alignSelf:'center'
+                  alignSelf:'center',
                 }}
               >
-              <MenuIcon />
+              <MenuIcon fontSize='large' />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -108,7 +108,7 @@ const NavBar = () => {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { md: 'block', lg: 'none' },
               }}
             >
               {menu.map((menu) => (
@@ -131,12 +131,26 @@ const NavBar = () => {
                   <EmailOutlinedIcon fontSize='large' sx={{ '&:hover': { transform: 'scale(1.2)' } }} />
                 </IconButton>
               </Box>
+              <FormControl sx={{ m: 1, minWidth:'150px'}}>
+              <Select
+                id="demo-simple-select-standard"
+                value={lng}
+                onChange={handleChange}
+                sx={{
+                  color:{md:'#000', lg:'#fff'},
+                  border:'1px solid #fff',
+                }}
+              >
+                <MenuItem value='es' onClick={()=>i18n.changeLanguage('es')}> <img width='25px' src="../assets/img/es.png" alt="flag"style={{marginRight:'4px'}} />   spanish</MenuItem>
+                <MenuItem value='en' onClick={()=>i18n.changeLanguage('en')}> <img width='25px' src="../assets/img/en.png" alt="flag"style={{marginRight:'4px'}} />   english</MenuItem>
+              </Select>
+            </FormControl>
             </Menu>
           </Box>
 
           <Box sx={{ 
             flexGrow: 1, 
-            display: { xs: 'none', md: 'flex' }, 
+            display: {xs:'none' ,md: 'none', lg: 'flex' }, 
             gap:{ md:'20px', lg:'30px' }, 
             justifyContent:'center' 
             }}>
@@ -174,9 +188,7 @@ const NavBar = () => {
                 <EmailOutlinedIcon fontSize='large' sx={{ '&:hover': { transform: 'scale(1.2)' } }} />
               </IconButton>
             </Box>
-          </Box>
-
-          <FormControl sx={{ m: 1, minWidth:'150px'}}>
+            <FormControl sx={{ m: 1, minWidth:'150px'}}>
             <Select
               id="demo-simple-select-standard"
               value={lng}
@@ -189,7 +201,8 @@ const NavBar = () => {
               <MenuItem value='es' onClick={()=>i18n.changeLanguage('es')}> <img width='25px' src="../assets/img/es.png" alt="flag"style={{marginRight:'4px'}} />   spanish</MenuItem>
               <MenuItem value='en' onClick={()=>i18n.changeLanguage('en')}> <img width='25px' src="../assets/img/en.png" alt="flag"style={{marginRight:'4px'}} />   english</MenuItem>
             </Select>
-          </FormControl>
+            </FormControl>
+          </Box>
         </Toolbar>
 
     </AppBar>
