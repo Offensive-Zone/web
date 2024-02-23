@@ -8,7 +8,6 @@ const AboutUs = () =>{
         <>
             <Box id='about' sx={{
                 margin:0,
-                padding:0,
                 backgroundImage: `url('../../assets/img/bkg-about.jpg')`,
                 backgroundSize:'cover',
                 backgroundAttachment:'fixed',
