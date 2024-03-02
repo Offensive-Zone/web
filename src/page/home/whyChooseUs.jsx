@@ -1,9 +1,9 @@
 import { Box} from "@mui/material";
-import Subtittle from "../../components/subtittle";
+import Subtittle from "../../components/subtittle/index.jsx";
 import CardChoose from "../../components/cards/cardChoose.jsx";
 import { useTranslation } from "react-i18next";
 
-const Section3 = () => {
+const WhyChooseUs = () => {
   const {t} = useTranslation()
   
   const seccion2 = [
@@ -73,4 +73,4 @@ const Section3 = () => {
     )
 }
 
-export default Section3
+export default WhyChooseUs
