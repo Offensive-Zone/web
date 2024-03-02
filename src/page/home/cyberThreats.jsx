@@ -3,7 +3,7 @@ import backGround2 from "../../assets/img/whoWeAre.jpg"
 import { Box, Typography, Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
-const Section2 = () => {
+const CyberThreats = () => {
   const {t} = useTranslation();
 
     return (
@@ -43,4 +43,4 @@ const Section2 = () => {
     )
 }
 
-export default Section2
+export default CyberThreats

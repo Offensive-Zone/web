@@ -1,7 +1,7 @@
 import TypeFormEmbed from "./TypeFormEmbed";
 
-import Expertise from "./expertise";
-import Section2 from "./cyberThreats";
+import Expertise from "./Expertise";
+import CyberThreats from "./CyberThreats";
 import Section3 from "./whyChooseUs";
 import Hero from "./hero";
 import AboutUs from "./aboutus";
@@ -14,7 +14,7 @@ const Home = () =>{
       <main>
         <Hero />
         <Expertise/>
-        <Section2/>
+        <CyberThreats/>
         {/* <Slider /> */}
         <AboutUs />
         <Section3/>
