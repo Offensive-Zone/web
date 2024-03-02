@@ -6,7 +6,7 @@ import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined';
 import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { useTranslation } from "react-i18next";
-const Section1 = () =>{
+const expertise = () =>{
   const {t} = useTranslation();
     return (
         <Box 
@@ -58,4 +58,4 @@ const Section1 = () =>{
     )
 }
 
-export default Section1
+export default expertise
