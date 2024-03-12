@@ -2,6 +2,8 @@ import Subtittle from "../../components/subtittle";
 import backGround2 from "../../assets/img/whoWeAre.jpg"
 import { Box, Typography, Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import Team from "./team";
+
 
 const CyberThreats = () => {
   const {t} = useTranslation();
@@ -37,7 +39,10 @@ const CyberThreats = () => {
                 <Typography color='white'>
                 {t("cyber-threats.description2")}
                 </Typography>
+
+
               </Box>
+                <Team />
             </Container>
           </Box>
     )

@@ -18,7 +18,7 @@ const Footer = ()=>{
              }}>
             <Container maxWidth='lg'> 
             <Box sx={{display:'flex', flexDirection:{md:'row', xs:'column'}, justifyContent:'space-around'}}>
-            <img style={{ backgroundColor: 'white' }} width='80px' height='80px' alt='hacker logo' src='hacker.png'></img>
+            <img width='80px' height='80px' alt='logo-company' src='../assets/img/logo-white.png'></img>
           
                 <Box>
                     <Typography 

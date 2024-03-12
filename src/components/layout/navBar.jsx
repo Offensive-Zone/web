@@ -66,6 +66,7 @@ const NavBar = () => {
     <AppBar position="static" sx={{
       zIndex: 10,
       height: 'auto',
+      maxHeight:'80px',
       backgroundColor: 'rgba(0,0,0,0.3)',
       p: '10px 0',
       position:'absolute',
@@ -76,7 +77,7 @@ const NavBar = () => {
           display: 'flex',
           justifyContent: 'space-between'
         }}>
-          <img style={{ background: 'linear-gradient(to bottom,rgba(255,255,255,.5), rgba(255,255,255,.1))' }} width='80px' height='80px' alt='hacker logo' src='hacker.png' />
+          <img width='80px' height='80px' alt='hacker logo' src='../assets/img/logo-white.png' />
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', lg: 'none' } }}>
             <IconButton
                 size="large"
@@ -162,10 +163,12 @@ const NavBar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ 
                   color: 'white', 
+                  maxHeight:'50px',
+                  alignSelf:'center',
                   '&:hover': {
                     background:theme.palette.secondary.light,
                     color:'#000',
-                    borderRadius:'0px'
+                    borderRadius:'0px',
                   }
                  }}
                  className='link'
@@ -196,6 +199,7 @@ const NavBar = () => {
               sx={{
                 color:'#fff',
                 border:'1px solid #fff',
+                maxHeight:'50px'
               }}
             >
               <MenuItem value='es' onClick={()=>i18n.changeLanguage('es')}> <img width='25px' src="../assets/img/es.png" alt="flag"style={{marginRight:'4px'}} />   spanish</MenuItem>
