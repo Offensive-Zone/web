@@ -19,7 +19,7 @@ const Home = () =>{
         {/* <Slider /> */}
         <AboutUs />
         <WhyChooseUs/>
-        <TypeFormEmbed/>
+        {/* <TypeFormEmbed/> */}
       </main>
 
     )

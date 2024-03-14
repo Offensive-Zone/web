@@ -7,7 +7,7 @@ import theme from "../../theme/theme"
 
 const Footer = ()=>{
     return (
-        <Box  
+        <Box   
         component='footer'
         sx={{backgroundColor:'primary.main', 
              width:'100%', 
@@ -30,8 +30,8 @@ const Footer = ()=>{
                         color='white' 
                         variant="h5">Social Media</Typography>
                     <List sx={{color:'white', listStyleType:'none'}}>
-                        <ListItem><a style={{color:'white'}} href="https://www.linkedin.com/company/offensive-security-services"><InstagramIcon fontSize="large"/></a></ListItem>
-                        <ListItem><a style={{color:'white'}} href="https://www.instagram.com/offensivesecurityservices/"><LinkedInIcon fontSize="large"/></a></ListItem>
+                        <ListItem><a style={{color:'white'}} href="https://www.linkedin.com/company/theoffensivezone"><LinkedInIcon fontSize="large"/></a></ListItem>
+                        <ListItem><a style={{color:'white'}} href="https://www.instagram.com/theoffebsivezone/"><InstagramIcon fontSize="large"/></a></ListItem>
                     </List>
                 </Box>
                 <Box>

@@ -3,14 +3,14 @@
         "expertise": "EXPERIENCIA",
         "about-us": "NOSOTROS",
         "threats": "AMENAZAS",
-        "why-us": "NOSOTROS?",
+        "why-us": "¿POR QUÉ NOSOTROS?",
         "contact": "CONTACTO"
     },
     "hero": {
         "subtitle": "Tu Excelencia Premium en Ciberseguridad"
     },
     "our-expertice": {
-        "title":"Nuestra Experiencia",
+        "title": "Nuestra Experiencia",
         "penetration-testing": {
             "title": "Pruebas de Penetración",
             "description": "Descubra Vulnerabilidades Antes de que lo Hagan los Atacantes Nuestro equipo de éticos hackers altamente calificados realiza pruebas exhaustivas de penetración para identificar debilidades en sus sistemas y redes. Al simular ciberataques del mundo real, le ayudamos a abordar proactivamente las vulnerabilidades antes de que los actores maliciosos puedan explotarlas."
@@ -26,13 +26,13 @@
     },
     "cyber-threats": {
         "title": "Elevando la Lucha Contra Amenazas Cibernéticas",
-        "description1": "En Offensive Security Services, llevamos la batalla contra las amenazas cibernéticas al siguiente nivel. En una era donde las violaciones de datos y los ciberataques se vuelven cada vez más sofisticados, nuestra misión es clara: salvaguardar tus activos digitales y proteger tu negocio del siempre cambiante panorama de amenazas cibernéticas.",
-        "description2": "Asóciate con Offensive Security Services y fortalece tus defensas contra las amenazas cibernéticas. En una época en la que la ciberseguridad es innegociable, elige a los expertos que están dedicados a tu protección y tranquilidad."
+        "description1": "En The Offensive Zone, llevamos la batalla contra las amenazas cibernéticas al siguiente nivel. En una era donde las violaciones de datos y los ciberataques se vuelven cada vez más sofisticados, nuestra misión es clara: salvaguardar tus activos digitales y proteger tu negocio del siempre cambiante panorama de amenazas cibernéticas.",
+        "description2": "Asóciate con The Offensive Zone y fortalece tus defensas contra las amenazas cibernéticas. En una época en la que la ciberseguridad es innegociable, elige a los expertos que están dedicados a tu protección y tranquilidad."
     },
     "our-clients": "Nuestros Clientes",
     "about-us": "",
     "why-us": {
-        "title": "¿Por Qué Elegir Offensive Security Services?",
+        "title": "¿Por Qué Elegir The Offensive Zone?",
         "expertise": {
             "title": "Experiencia",
             "description": "Nuestro equipo está compuesto por profesionales certificados y experimentados que se mantienen a la vanguardia de las tendencias y mejores prácticas de ciberseguridad."
@@ -49,6 +49,5 @@
             "title": "Servicio Premium",
             "description": "No ofrecemos simplemente servicios de seguridad; brindamos una experiencia premium. Nuestro compromiso con la excelencia se refleja en todo lo que hacemos."
         }
-        
     }
 }

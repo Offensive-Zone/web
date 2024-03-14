@@ -25,7 +25,7 @@ const NavBar = () => {
      {page:t("header.about-us"), to:'about'},
      {page:t("header.threats"), to:'threats'},
      {page:t("header.why-us"), to:'whyus'},
-     {page:t("header.contact"), to:'contact'},
+    //  {page:t("header.contact"), to:'contact'},
   ]
 
   const handleChange = (event) => {
@@ -51,13 +51,13 @@ const NavBar = () => {
   const navigateTo = (i) => {
     switch (i) {
       case 1:
-        window.open("https://www.linkedin.com/company/offensive-security-services", "_blank")
+        window.open("https://www.linkedin.com/company/theoffensivezone", "_blank")
         break
       case 2:
-        window.open("https://www.instagram.com/offensivesecurityservices/", "_blank")
+        window.open("https://www.instagram.com/theoffebsivezone/", "_blank")
         break
       case 3:
-        window.open("mailto:info@offensivesecurityservices.com", "_blank")
+        window.open("mailto:info@theoffensivezone.com", "_blank")
         break
     }
   }

@@ -35,7 +35,7 @@ const Hero = ()=>{
                               sx={{fontWeight:900, 
                                    color:'text.main', 
                                    lineHeight:1}}>
-                      Offensive Security
+                      The Offensive Zone
                   </Typography>
                 </Fade>    
                 <Slide in={true} direction="right" timeout={800}>
