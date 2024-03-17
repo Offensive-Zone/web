@@ -3,9 +3,9 @@ import theme from "../../theme/theme";
 import Subtittle from "../../components/subtittle";
 
 const team = [
-    {img:'../assets/img/ed.jpg',name:'Edgardo Krause', rol:'CyberSecurity', experience:'7+', profile:"https://linkedin.com/in/edgardokrause/"},
-    {img:'../assets/img/ma.jpg',name:'Mateo', rol:'Senior Privacy Counsel', experience:'14+', profile:'https://www.linkedin.com/in/mateo-david-g%C3%B3mez-32039a112/'},
-    {img:'../assets/img/ce.jpg',name:'Cesar Arreaza', rol:'CyberSecurity', experience:'2+', profile:"https://www.linkedin.com/in/cesar-arreaza/"},
+    {img:'../assets/img/ed.jpg',name:'Edgardo Krause', rol:'Cybersecurity Ops', experience:'7+', profile:"https://linkedin.com/in/edgardokrause/"},
+    {img:'../assets/img/ma.jpg',name:'Mateo', rol:'⁠Cybersecurity & Privacy Compliance', experience:'14+', profile:'https://www.linkedin.com/in/mateo-david-g%C3%B3mez-32039a112/'},
+    {img:'../assets/img/ce.jpg',name:'Cesar Arreaza', rol:'Cybersecurity Ops', experience:'2+', profile:"https://www.linkedin.com/in/cesar-arreaza/"},
 ];
 
 const Team = () =>{
@@ -50,7 +50,7 @@ const Team = () =>{
                         />
                         <div style={{textAlign:'initial'}}>
                             <p><b>{e.name}</b></p>
-                            <p>Rol: {e.rol}</p>
+                            <p>{e.rol}</p>
                             <p><a href={e.profile} target="_blank">Profile</a></p>
                             <p>Experience: {e.experience}</p>
                         </div>
