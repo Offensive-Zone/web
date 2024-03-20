@@ -30,7 +30,14 @@
         "description2": "Asóciate con The Offensive Zone y fortalece tus defensas contra las amenazas cibernéticas. En una época en la que la ciberseguridad es innegociable, elige a los expertos que están dedicados a tu protección y tranquilidad."
     },
     "our-clients": "Nuestros Clientes",
-    "about-us": "",
+    "about-us": {
+        "title":"Acerca de Nosotros",
+        "first":"En The Offensive Zone, nos especializamos en llevar la seguridad de tu mundo digital al siguiente nivel. Con un enfoque audaz y proactivo, estamos aquí para defender tus activos digitales contra las amenazas cibernéticas más sofisticadas.",
+        "second":"Nuestra Visión En The Offensive Zone, nuestra visión es liderar el cambio en la industria de la ciberseguridad, ofreciendo soluciones innovadoras y efectivas que superen las expectativas de nuestros clientes y establezcan nuevos estándares de excelencia.",
+        "third":"Nuestra Misión Nos comprometemos a proteger activamente tus sistemas y datos mediante la identificación y mitigación proactiva de riesgos de seguridad cibernética. Nuestra misión es brindarte la tranquilidad y la confianza para que puedas concentrarte en lo que más importa: hacer crecer tu negocio.",
+        "fourth":"Nuestros Valores En The Offensive Zone, nos guiamos por valores sólidos que reflejan nuestra dedicación a la excelencia, la integridad y la innovación. Nos comprometemos a trabajar con honestidad, transparencia y respeto en todo lo que hacemos.",
+        "fifth":"Nuestros Valores En The Offensive Zone, nos guiamos por valores sólidos que reflejan nuestra dedicación a la excelencia, la integridad y la innovación. Nos comprometemos a trabajar con honestidad, transparencia y respeto en todo lo que hacemos."
+    },
     "why-us": {
         "title": "¿Por Qué Elegir The Offensive Zone?",
         "expertise": {

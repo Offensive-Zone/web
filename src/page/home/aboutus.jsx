@@ -1,7 +1,9 @@
 import { Box, Container, Typography, Avatar } from "@mui/material"
 import expertise from '../../assets/img/expertise.png';
+import { useTranslation } from "react-i18next";
 
 const AboutUs = () => {
+    const {t} = useTranslation();
     return (
         <>
             <Box id='about' sx={{
@@ -22,25 +24,21 @@ const AboutUs = () => {
                             flex:1,
                             alignSelf:'center'
                         }}>
-                            <h2>Acerca de Nosotros</h2>
+                            <h2>{t("about-us.title")}</h2>
                             <Typography sx={{ textAlign: 'justify', marginBottom: '10px' }}>
-                                En The Offensive Zone, nos especializamos en llevar la seguridad de tu mundo digital al siguiente nivel. Con un enfoque audaz y proactivo, estamos aquí para defender tus activos digitales contra las amenazas cibernéticas más sofisticadas.
+                                {t("about-us.first")}   
                             </Typography>
                             <Typography sx={{ textAlign: 'justify', marginBottom: '10px' }}>
-                                Nuestra Visión
-                                En The Offensive Zone, nuestra visión es liderar el cambio en la industria de la ciberseguridad, ofreciendo soluciones innovadoras y efectivas que superen las expectativas de nuestros clientes y establezcan nuevos estándares de excelencia.
+                                {t("about-us.second")} 
                             </Typography>
                             <Typography sx={{ textAlign: 'justify', marginBottom: '10px' }}>
-                                Nuestra Misión
-                                Nos comprometemos a proteger activamente tus sistemas y datos mediante la identificación y mitigación proactiva de riesgos de seguridad cibernética. Nuestra misión es brindarte la tranquilidad y la confianza para que puedas concentrarte en lo que más importa: hacer crecer tu negocio.
+                                {t("about-us.third")} 
                             </Typography>
                             <Typography sx={{ textAlign: 'justify', marginBottom: '10px' }}>
-                                Nuestros Valores
-                                En The Offensive Zone, nos guiamos por valores sólidos que reflejan nuestra dedicación a la excelencia, la integridad y la innovación. Nos comprometemos a trabajar con honestidad, transparencia y respeto en todo lo que hacemos.
+                                {t("about-us.fourth")} 
                             </Typography>
                             <Typography sx={{ textAlign: 'justify', marginBottom: '10px' }}>
-                                ¿Quiénes Somos?
-                                Somos un equipo apasionado de expertos en seguridad cibernética, con una vasta experiencia en la protección de organizaciones de todos los tamaños y sectores. Estamos aquí para ser tu socio de confianza en la defensa de tus activos digitales contra las amenazas más avanzadas.
+                                {t("about-us.fifth")} 
                             </Typography>
                         </Box>
                         <img
