@@ -53,7 +53,8 @@ const WhyChooseUs = () => {
                 }}>
             <Subtittle>{t("why-us.title")}</Subtittle>
         </Box>
-        <Box sx={{display:'flex', 
+        <Box sx={{display:'flex',
+                  textAlign:'justify', 
                   gap:3,
                   flexDirection:{xs:'column',md:'row', xl:'row', lg:'row'},
                   justifyContent:{xl:'space-evenly',lg:'center',md:'center'},

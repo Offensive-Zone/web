@@ -33,16 +33,16 @@ const CyberThreats = () => {
                 border:'3px solid black',
               }}>
                 <Subtittle>{t("cyber-threats.title")}</Subtittle>
-                <Typography color='white' style={{marginTop:'20px'}}>
+                <Typography textAlign={'justify'} color='white' style={{marginTop:'20px'}}>
                 {t("cyber-threats.description1")} <br/> <br/>
                 </Typography>
-                <Typography color='white'>
+                <Typography textAlign={'justify'} color='white'>
                 {t("cyber-threats.description2")}
                 </Typography>
 
 
               </Box>
-                <Team />
+                
             </Container>
           </Box>
     )

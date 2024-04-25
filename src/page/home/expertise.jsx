@@ -36,20 +36,20 @@ const Expertise = () =>{
             <CardExpertise>
               <SecurityOutlinedIcon color="secondary" sx={{fontSize:'200px'}}/>
               <SubtittleCard>{t("our-expertice.penetration-testing.title")}</SubtittleCard>
-              <Typography color={'text.main'} component='p'>{t("our-expertice.penetration-testing.description")}</Typography>
+              <Typography textAlign={'justify'} color={'text.main'} component='p'>{t("our-expertice.penetration-testing.description")}</Typography>
             </CardExpertise>
 
 
             <CardExpertise>
               <LanguageOutlinedIcon color="secondary" sx={{fontSize:'200px'}}/>
               <SubtittleCard>{t("our-expertice.web-penetration-testing.title")}</SubtittleCard>
-              <Typography color={'text.main'} component='p'>{t("our-expertice.web-penetration-testing.description")}</Typography>
+              <Typography textAlign={'justify'} color={'text.main'} component='p'>{t("our-expertice.web-penetration-testing.description")}</Typography>
             </CardExpertise>
 
             <CardExpertise>
               <LockOutlinedIcon color="secondary" sx={{fontSize:'200px'}}/>
               <SubtittleCard>{t("our-expertice.security-consultation.title")}</SubtittleCard>
-              <Typography color={'text.main'} component='p'>{t("our-expertice.security-consultation.description")}</Typography>
+              <Typography textAlign={'justify'} color={'text.main'} component='p'>{t("our-expertice.security-consultation.description")}</Typography>
             </CardExpertise>
 
         </Box>

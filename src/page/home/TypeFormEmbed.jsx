@@ -17,18 +17,20 @@ const TypeFormEmbed = () => {
 
   return (
     <>
-    <div
-      id='contact'
-      data-tf-widget="QKJIj7jc"
-      data-tf-opacity="100"
-      data-tf-iframe-props="title=Contacto"
-      data-tf-transitive-search-params
-      data-tf-medium="snippet"
-      style={{ 
-      width: "100%", 
-      height: "900px",
-     }}
-      dangerouslySetInnerHTML={{ __html: '' }}
+      <div
+        id='contact'
+        data-tf-widget="QKJIj7jc"
+        data-tf-opacity="100"
+        data-tf-iframe-props="title=Contacto"
+        data-tf-transitive-search-params
+        data-tf-medium="snippet"
+        style={{ 
+          width: "100%", 
+          height: "900px",
+          backgroundColor: "#000", // Fondo negro
+          color: "#fff", // Letras blancas
+        }}
+        dangerouslySetInnerHTML={{ __html: '' }}
       />
     </>
   );
