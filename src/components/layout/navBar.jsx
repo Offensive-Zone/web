@@ -54,7 +54,7 @@ const NavBar = () => {
         window.open("https://www.linkedin.com/company/theoffensivezone", "_blank")
         break
       case 2:
-        window.open("https://www.instagram.com/theoffebsivezone/", "_blank")
+        window.open("https://www.instagram.com/theoffensivezoneofficial/", "_blank")
         break
       case 3:
         window.open("mailto:info@theoffensivezone.com", "_blank")
