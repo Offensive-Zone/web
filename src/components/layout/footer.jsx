@@ -35,7 +35,7 @@ const Footer = () => {
                         </Typography>
                         <List sx={{ color: 'white', listStyleType: 'none' }}>
                             <ListItem><a style={{ color: 'white' }} href="https://www.linkedin.com/company/theoffensivezone"><LinkedInIcon fontSize="large"/></a></ListItem>
-                            <ListItem><a style={{ color: 'white' }} href="https://www.instagram.com/theoffebsivezone/"><InstagramIcon fontSize="large"/></a></ListItem>
+                            <ListItem><a style={{ color: 'white' }} href="https://www.instagram.com/offensivezone/"><InstagramIcon fontSize="large"/></a></ListItem>
                         </List>
                     </Box>
                     <Box>

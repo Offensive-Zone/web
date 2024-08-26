@@ -54,7 +54,7 @@ const NavBar = () => {
         window.open("https://www.linkedin.com/company/theoffensivezone", "_blank")
         break
       case 2:
-        window.open("https://www.instagram.com/theoffensivezoneofficial/", "_blank")
+        window.open("https://www.instagram.com/offensivezone/", "_blank")
         break
       case 3:
         window.open("mailto:info@theoffensivezone.com", "_blank")
@@ -142,8 +142,8 @@ const NavBar = () => {
                   border:'1px solid #fff',
                 }}
               >
-                <MenuItem value='es' onClick={()=>i18n.changeLanguage('es')}> <img width='25px' src="../assets/img/es.png" alt="flag"style={{marginRight:'4px'}} />   spanish</MenuItem>
-                <MenuItem value='en' onClick={()=>i18n.changeLanguage('en')}> <img width='25px' src="../assets/img/en.png" alt="flag"style={{marginRight:'4px'}} />   english</MenuItem>
+                <MenuItem value='es' onClick={()=>i18n.changeLanguage('es')}> <img width='20px' src="../assets/img/es.png" alt="flag"style={{marginRight:'4px'}} />   Spanish</MenuItem>
+                <MenuItem value='en' onClick={()=>i18n.changeLanguage('en')}> <img width='20px' src="../assets/img/en.png" alt="flag"style={{marginRight:'4px'}} />   English</MenuItem>
               </Select>
             </FormControl>
             </Menu>
