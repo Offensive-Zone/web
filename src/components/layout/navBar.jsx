@@ -21,10 +21,10 @@ const NavBar = () => {
   const [lng, setLng] = React.useState(i18n.language);
 
   const menu = [
-     {page:t("header.expertise"), to:'expertise'},
-     {page:t("header.about-us"), to:'about'},
-     {page:t("header.threats"), to:'threats'},
-     {page:t("header.why-us"), to:'whyus'},
+    { page: t("header.expertise"), to: 'expertise' },
+    { page: t("header.about-us"), to: 'about' },
+    { page: t("header.threats"), to: 'threats' },
+    { page: t("header.why-us"), to: 'whyus' },
     //  {page:t("header.contact"), to:'contact'},
   ]
 
@@ -66,120 +66,63 @@ const NavBar = () => {
     <AppBar position="static" sx={{
       zIndex: 10,
       height: 'auto',
-      maxHeight:'80px',
+      maxHeight: '80px',
       backgroundColor: 'rgba(0,0,0,0.3)',
       p: '10px 0',
-      position:'absolute',
-      transition:'all 0.4s linear',
+      position: 'absolute',
+      transition: 'all 0.4s linear',
     }}>
 
-        <Toolbar variant="dense" sx={{
-          display: 'flex',
-          justifyContent: 'space-between'
-        }}>
+      <Toolbar variant="dense" sx={{
+        display: 'flex',
+        justifyContent: 'space-between'
+      }}>
+        <a href="https://theoffensivezone.com">
           <img width='80px' height='80px' alt='hacker logo' src='../assets/img/logo-white.png' />
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', lg: 'none' } }}>
-            <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-                sx={{
-                  position:'absolute',
-                  right:'0',
-                  alignSelf:'center',
-                }}
-              >
-              <MenuIcon fontSize='large' />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { md: 'block', lg: 'none' },
-              }}
-            >
-              {menu.map((menu) => (
-                <MenuItem key={menu.page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{menu.page}</Typography>
-                </MenuItem>
-              ))}
-
-              <Box sx={{
-                display: 'flex',
-                gap: 1
-              }}>
-                <IconButton onClick={() => navigateTo(1)} size='small' color='inherit'>
-                  <LinkedInIcon fontSize='large' sx={{ '&:hover': { transform: 'scale(1.2)' } }} />
-                </IconButton>
-                <IconButton onClick={() => navigateTo(2)} size='small' color='inherit'>
-                  <InstagramIcon fontSize='large' sx={{ '&:hover': { transform: 'scale(1.2)' } }} />
-                </IconButton>
-                <IconButton onClick={() => navigateTo(3)} size='small' color='inherit'>
-                  <EmailOutlinedIcon fontSize='large' sx={{ '&:hover': { transform: 'scale(1.2)' } }} />
-                </IconButton>
-              </Box>
-              <FormControl sx={{ m: 1, minWidth:'150px'}}>
-              <Select
-                id="demo-simple-select-standard"
-                value={lng}
-                onChange={handleChange}
-                sx={{
-                  color:{md:'#000', lg:'#fff'},
-                  border:'1px solid #fff',
-                }}
-              >
-                <MenuItem value='es' onClick={()=>i18n.changeLanguage('es')}> <img width='20px' src="../assets/img/es.png" alt="flag"style={{marginRight:'4px'}} />   Spanish</MenuItem>
-                <MenuItem value='en' onClick={()=>i18n.changeLanguage('en')}> <img width='20px' src="../assets/img/en.png" alt="flag"style={{marginRight:'4px'}} />   English</MenuItem>
-              </Select>
-            </FormControl>
-            </Menu>
-          </Box>
-
-          <Box sx={{ 
-            flexGrow: 1, 
-            display: {xs:'none' ,md: 'none', lg: 'flex' }, 
-            gap:{ md:'20px', lg:'30px' }, 
-            justifyContent:'center' 
-            }}>
+        </a>
+        <Box sx={{ flexGrow: 1, display: { xs: 'flex', lg: 'none' } }}>
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleOpenNavMenu}
+            color="inherit"
+            sx={{
+              position: 'absolute',
+              right: '0',
+              alignSelf: 'center',
+            }}
+          >
+            <MenuIcon fontSize='large' />
+          </IconButton>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorElNav}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'left',
+            }}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
+            sx={{
+              display: { md: 'block', lg: 'none' },
+            }}
+          >
             {menu.map((menu) => (
-              <Button
-                
-                href={`#${menu.to}`}
-                key={menu.page}
-                onClick={handleCloseNavMenu}
-                sx={{ 
-                  color: 'white', 
-                  maxHeight:'50px',
-                  alignSelf:'center',
-                  '&:hover': {
-                    background:theme.palette.secondary.light,
-                    color:'#000',
-                    borderRadius:'0px',
-                  }
-                 }}
-                 className='link'
-              >
-                {menu.page}
-              </Button>
+              <MenuItem key={menu.page} onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">{menu.page}</Typography>
+              </MenuItem>
             ))}
 
             <Box sx={{
               display: 'flex',
-              gap: 1,
+              gap: 1
             }}>
               <IconButton onClick={() => navigateTo(1)} size='small' color='inherit'>
                 <LinkedInIcon fontSize='large' sx={{ '&:hover': { transform: 'scale(1.2)' } }} />
@@ -191,23 +134,82 @@ const NavBar = () => {
                 <EmailOutlinedIcon fontSize='large' sx={{ '&:hover': { transform: 'scale(1.2)' } }} />
               </IconButton>
             </Box>
-            <FormControl sx={{ m: 1, minWidth:'150px'}}>
+            <FormControl sx={{ m: 1, minWidth: '150px' }}>
+              <Select
+                id="demo-simple-select-standard"
+                value={lng}
+                onChange={handleChange}
+                sx={{
+                  color: { md: '#000', lg: '#fff' },
+                  border: '1px solid #fff',
+                }}
+              >
+                <MenuItem value='es' onClick={() => i18n.changeLanguage('es')}> <img width='20px' src="../assets/img/es.png" alt="flag" style={{ marginRight: '4px' }} />   Spanish</MenuItem>
+                <MenuItem value='en' onClick={() => i18n.changeLanguage('en')}> <img width='20px' src="../assets/img/en.png" alt="flag" style={{ marginRight: '4px' }} />   English</MenuItem>
+              </Select>
+            </FormControl>
+          </Menu>
+        </Box>
+
+        <Box sx={{
+          flexGrow: 1,
+          display: { xs: 'none', md: 'none', lg: 'flex' },
+          gap: { md: '20px', lg: '30px' },
+          justifyContent: 'center'
+        }}>
+          {menu.map((menu) => (
+            <Button
+
+              href={`#${menu.to}`}
+              key={menu.page}
+              onClick={handleCloseNavMenu}
+              sx={{
+                color: 'white',
+                maxHeight: '50px',
+                alignSelf: 'center',
+                '&:hover': {
+                  background: theme.palette.secondary.light,
+                  color: '#000',
+                  borderRadius: '0px',
+                }
+              }}
+              className='link'
+            >
+              {menu.page}
+            </Button>
+          ))}
+
+          <Box sx={{
+            display: 'flex',
+            gap: 1,
+          }}>
+            <IconButton onClick={() => navigateTo(1)} size='small' color='inherit'>
+              <LinkedInIcon fontSize='large' sx={{ '&:hover': { transform: 'scale(1.2)' } }} />
+            </IconButton>
+            <IconButton onClick={() => navigateTo(2)} size='small' color='inherit'>
+              <InstagramIcon fontSize='large' sx={{ '&:hover': { transform: 'scale(1.2)' } }} />
+            </IconButton>
+            <IconButton onClick={() => navigateTo(3)} size='small' color='inherit'>
+              <EmailOutlinedIcon fontSize='large' sx={{ '&:hover': { transform: 'scale(1.2)' } }} />
+            </IconButton>
+          </Box>
+          <FormControl sx={{ m: 1, minWidth: '150px' }}>
             <Select
               id="demo-simple-select-standard"
               value={lng}
               onChange={handleChange}
               sx={{
-                color:'#fff',
-                border:'1px solid #fff',
-                maxHeight:'50px'
+                color: '#fff',
+                border: '1px solid #fff',
+                maxHeight: '50px'
               }}
             >
-              <MenuItem value='es' onClick={()=>i18n.changeLanguage('es')}> <img width='25px' src="../assets/img/es.png" alt="flag"style={{marginRight:'4px'}} />   spanish</MenuItem>
-              <MenuItem value='en' onClick={()=>i18n.changeLanguage('en')}> <img width='25px' src="../assets/img/en.png" alt="flag"style={{marginRight:'4px'}} />   english</MenuItem>
+              <MenuItem value='es' onClick={() => i18n.changeLanguage('es')}> <img width='25px' src="../assets/img/es.png" alt="flag" style={{ marginRight: '4px' }} />   spanish</MenuItem>
+              <MenuItem value='en' onClick={() => i18n.changeLanguage('en')}> <img width='25px' src="../assets/img/en.png" alt="flag" style={{ marginRight: '4px' }} />   english</MenuItem>
             </Select>
-            </FormControl>
-          </Box>
-        </Toolbar>
+          </FormControl>
+        </Box>
+      </Toolbar>
 
     </AppBar>
   )
