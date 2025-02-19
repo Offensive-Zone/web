@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import theme from '../../theme/theme';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -16,9 +16,15 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useTranslation } from 'react-i18next';
 
+
 const NavBar = () => {
-  const [t, i18n] = useTranslation()
-  const [lng, setLng] = React.useState(i18n.language);
+  const { t, i18n } = useTranslation();
+  const [lng, setLng] = useState(i18n.language || 'en'); // Idioma por defecto: inglés
+
+  useEffect(() => {
+    // Asegurar que el idioma seleccionado se refleje correctamente en el estado
+    setLng(i18n.language || 'en');
+  }, [i18n.language]);
 
   const menu = [
     { page: t("header.expertise"), to: 'expertise' },
@@ -29,7 +35,9 @@ const NavBar = () => {
   ]
 
   const handleChange = (event) => {
-    setLng(event.target.value);
+    const newLang = event.target.value;
+    setLng(newLang);
+    i18n.changeLanguage(newLang);
   };
 
   const [anchorElNav, setAnchorElNav] = React.useState();
@@ -144,8 +152,8 @@ const NavBar = () => {
                   border: '1px solid #fff',
                 }}
               >
-                <MenuItem value='es' onClick={() => i18n.changeLanguage('es')}> <img width='20px' src="../assets/img/es.png" alt="flag" style={{ marginRight: '4px' }} />   Spanish</MenuItem>
-                <MenuItem value='en' onClick={() => i18n.changeLanguage('en')}> <img width='20px' src="../assets/img/en.png" alt="flag" style={{ marginRight: '4px' }} />   English</MenuItem>
+                <MenuItem value='en'> <img width='20px' src="../assets/img/en.png" alt="flag" style={{ marginRight: '4px' }} /> English</MenuItem>
+                <MenuItem value='es'> <img width='20px' src="../assets/img/es.png" alt="flag" style={{ marginRight: '4px' }} /> Spanish</MenuItem>
               </Select>
             </FormControl>
           </Menu>
