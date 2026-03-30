@@ -70,7 +70,7 @@ const NavBar = () => {
         window.open("https://www.instagram.com/offensivezone/", "_blank");
         break;
       case 3:
-        window.open("mailto:info@theoffensivezone.com", "_blank");
+        window.open("mailto:info@offensive-zone.com", "_blank");
         break;
       default:
         break;
