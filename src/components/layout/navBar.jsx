@@ -91,7 +91,7 @@ const NavBar = () => {
         display: 'flex',
         justifyContent: 'space-between'
       }}>
-        <a href="https://theoffensivezone.com">
+        <a href="https://offensive-zone.com">
           <img width='80px' height='80px' alt='hacker logo' src='../assets/img/logo-white.png' />
         </a>
 
