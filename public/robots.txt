@@ -1,3 +1,184 @@
-# https://www.robotstxt.org/robotstxt.html
+# ============================================
+# ROBOTS.TXT - Guía para offensive-zone.com
+# ============================================
+# 
+# ¿QUÉ ES ROBOTS.TXT?
+# --------------------
+# Es un archivo que indica a los bots/web crawlers qué partes de tu sitio
+# pueden o no pueden escanear. Es como un "letrero de bienvenida" para
+# los robots de búsqueda.
+#
+# ¿CUÁNDO USARLO?
+# -----------------
+# ✓ SIEMPRE en producción para controlar el indexing
+# ✓ Cuando tienes áreas privadas (/admin, /panel, etc.)
+# ✓ Para evitar que se indexen recursos duplicados
+# ✓ Para optimizar el crawl budget en sitios grandes
+# ✓ Para excluir archivos temporales o de desarrollo
+#
+# ¿CUÁNDO NO DEPENDER SÓLO DE ÉL?
+# ---------------------------------
+# ✗ Para contenido sensible (usar autenticación real)
+# ✗ Para prevenir ataques (es solo una sugerencia, no una barrera)
+# ✗ Para información realmente confidencial
+#
+# ============================================
+# REGLAS GENERALES
+# ============================================
+
 User-agent: *
-Disallow:
+# Permite a todos los bots acceder por defecto
+Allow: /
+
+# ============================================
+# ÁREAS RESTRINGIDAS PARA SEGURIDAD
+# ============================================
+
+# Directorios administrativos y sensibles
+Disallow: /admin/
+Disallow: /administrator/
+Disallow: /wp-admin/
+Disallow: /cgi-bin/
+Disallow: /backup/
+Disallow: /backups/
+Disallow: /temp/
+Disallow: /tmp/
+Disallow: /logs/
+Disallow: /debug/
+Disallow: /dev/
+Disallow: /test/
+Disallow: /testing/
+Disallow: /old/
+Disallow: /legacy/
+
+# Archivos de configuración y datos sensibles
+Disallow: /config/
+Disallow: /configuration/
+Disallow: /.env
+Disallow: /.git/
+Disallow: /.svn/
+Disallow: /.htaccess
+Disallow: /robots.txt.bak
+
+# Archivos de código fuente
+Disallow: /src/
+Disallow: /vendor/
+Disallow: /node_modules/
+
+# ============================================
+# RECURSOS DUPLICADOS O INNECESARIOS
+# ============================================
+
+# Parámetros de query que generan contenido duplicado
+Disallow: /*?*
+Disallow: /*?utm_source=
+Disallow: /*?utm_medium=
+Disallow: /*?utm_campaign=
+Disallow: /*?ref=
+Disallow: /*?session_id=
+
+# Archivos de assets que no necesitan indexación
+Disallow: /assets/temp/
+Disallow: /cache/
+Disallow: /uploads/temp/
+
+# ============================================
+# BOTS ESPECÍFICOS
+# ============================================
+
+# Googlebot (Google Search)
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Bots maliciosos o innecesarios (bloqueados)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: rogerbot
+Disallow: /
+
+User-agent: Exabot
+Disallow: /
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+# ============================================
+# SITEMAPS
+# ============================================
+# Indica dónde están los sitemaps XML para mejor indexación
+
+Sitemap: https://offensive-zone.com/sitemap.xml
+Sitemap: https://offensive-zone.com/sitemap-index.xml
+
+# ============================================
+# NOTAS IMPORTANTES PARA DESARROLLADORES
+# ============================================
+#
+# 1. robots.txt es una SUGERENCIA, no una imposición
+#    - Bots maliciosos lo ignoran completamente
+#    - No usar para proteger información sensible
+#
+# 2. Para bloquear contenido SENSIBLE usar:
+#    - Autenticación HTTP básica
+#    - Firewall/rate limiting
+#    - Meta tags <meta name="robots" content="noindex">
+#    - Headers HTTP: X-Robots-Tag: noindex
+#
+# 3. Para páginas específicas que no quieres indexar:
+#    <meta name="robots" content="noindex, nofollow">
+#
+# 4. Verificar sintaxis:
+#    - Google Search Console: Prueba de robots.txt
+#    - https://support.google.com/webmasters/answer/6062598
+#
+# 5. Tiempo de propagación:
+#    - Cambios pueden tomar horas/días en aplicarse
+#    - Usar "URL Inspection Tool" en Google Search Console
+#
+# ============================================
+# EJEMPLOS PRÁCTICOS DE USO
+# ============================================
+#
+# Escenario 1: Sitio en desarrollo
+# --------------------------------
+# User-agent: *
+# Disallow: /
+#
+# Escenario 2: Permitir todo (por defecto)
+# --------------------------------
+# User-agent: *
+# Allow: /
+#
+# Escenario 3: Solo permitir Google
+# --------------------------------
+# User-agent: Googlebot
+# Allow: /
+# User-agent: *
+# Disallow: /
+#
+# Escenario 4: Excluir sección de usuarios
+# --------------------------------
+# User-agent: *
+# Disallow: /user/
+# Disallow: /profile/
+#
+# ============================================
+# FIN DEL ARCHIVO
+# ============================================
