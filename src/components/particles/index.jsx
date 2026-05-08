@@ -1,27 +1,26 @@
-import Particles, { initParticlesEngine }  from "@tsparticles/react";
+import { useState, useEffect } from "react";
+import { Box } from "@mui/material";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import { loadFull } from "tsparticles";
-
 
 function ParticleBg() {
-    // async function loadParticles(main){
-    //     await loadFull(main)
-    // }
+    const [init, setInit] = useState(false);
 
-    initParticlesEngine(async (engine) => {
-        // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-        // starting from v2 you can add only the features you need reducing the bundle size
-        //await loadAll(engine);
-        //await loadFull(engine);
-        await loadSlim(engine);
-        //await loadBasic(engine);
-    })
+    useEffect(() => {
+        initParticlesEngine(async (engine) => {
+            await loadSlim(engine);
+        }).then(() => {
+            setInit(true);
+        });
+    }, []);
+
+    if (!init) {
+        return <Box sx={{ position: "absolute", width: "100%", height: "100vh", bgcolor: "#0d47a1", zIndex: -1 }} />;
+    }
 
     return (
-        <Particles 
+        <Particles
         id="tsparticles"
-        init={initParticlesEngine}
         options={{
             fullScreen: {
                 enable: false,

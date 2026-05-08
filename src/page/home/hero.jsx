@@ -2,7 +2,9 @@ import { Box, Container, Typography, IconButton, Fade, Slide } from "@mui/materi
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosOutlined';
 import theme from "../../theme/theme";
 import { useTranslation } from "react-i18next";
-import ParticleBg from "../../components/particles";
+import { lazy, Suspense } from "react";
+
+const ParticleBg = lazy(() => import("../../components/particles"));
 
  const scrollToExperience = () => {
 
@@ -20,7 +22,9 @@ const Hero = ()=>{
                              lg:'initial'}}}>
             {/* <video style={{zIndex:'-1',position:'absolute',width:'100%', height:'100vh', objectFit:'cover'}} autoPlay loop muted  src='../../assets/videoHero2.mp4'/> */}
 
-              <ParticleBg />
+              <Suspense fallback={<Box sx={{ position: "absolute", width: "100%", height: "100vh", bgcolor: "#0d47a1", zIndex: -1 }} />}>
+                <ParticleBg />
+              </Suspense>
 
             <Container maxWidth='lg' 
                        sx={{
