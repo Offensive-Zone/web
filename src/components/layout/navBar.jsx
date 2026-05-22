@@ -31,7 +31,7 @@ const NavBar = () => {
   }, [i18n.language]);
 
   const menu = [
-    { page: t("header.expertise"), to: 'expertise' },
+    { page: t("header.services"), to: 'expertise' },
     { page: t("header.about-us"), to: 'about' },
     { page: t("header.threats"), to: 'threats' },
     { page: t("header.why-us"), to: 'whyus' },

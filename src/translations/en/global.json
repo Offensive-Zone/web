@@ -1,27 +1,40 @@
 {
     "header": {
-        "expertise": "EXPERTISE",
+        "services": "SERVICES",
         "about-us": "ABOUT US",
         "threats": "THREATS",
         "why-us": "WHY US?",
         "contact": "CONTACT"
     },
     "hero": {
-        "subtitle": "Your Premium Partner in Cybersecurity Excellence"
+        "subtitle": "At Offensive Zone, we bridge the gap between bleeding-edge Artificial Intelligence and bulletproof security infrastructure. From secure software development to global compliance readiness, we protect your digital assets before threats emerge."
     },
     "our-expertice": {
-        "title": "Our Expertice",
-        "penetration-testing": {
-            "title": "Penetration Testing",
-            "description": "Uncover Vulnerabilities Before the Attackers Do Our team of highly skilled ethical hackers conducts comprehensive penetration tests to identify weaknesses in your systems and networks. By simulating real-world cyberattacks, we help you proactively address vulnerabilities before malicious actors can exploit them."
+        "title": "What We Do",
+        "security-awareness": {
+            "title": "Security Awareness",
+            "description": "Human error remains the leading vector for corporate breaches. We design and deploy comprehensive Security Awareness programs that transform your workforce into your strongest line of defense. Through realistic phishing simulations, interactive training, and behavioral metrics, we build a proactive culture of security.",
+            "tagline": "From vulnerability to vanguard."
         },
-        "web-penetration-testing": {
-            "title": "Web Penetration Testing",
-            "description": "Securing Your Online Presence In the digital age, your web applications and online assets are prime targets for cybercriminals. Our web penetration testing services ensure that your web applications are fortified against a wide range of threats, including SQL injection, cross-site scripting (XSS), and more."
+        "ai-implementation": {
+            "title": "AI Implementation",
+            "description": "Accelerate your business evolution by seamlessly integrating Artificial Intelligence into your operational workflows. We develop, deploy, and optimize custom AI models and LLM infrastructures designed to maximize efficiency while strictly maintaining data privacy, model governance, and computational integrity.",
+            "tagline": "Future-proof operations, intelligently automated."
         },
-        "security-consultation": {
-            "title": "Security Consultation",
-            "description": "Tailored Solutions for Your Unique Needs Every business is unique, and so are its security requirements. Our security consultation services provide you with personalized strategies and solutions to address your specific cybersecurity challenges. We work closely with your team to develop a robust and resilient security posture."
+        "secure-software-development": {
+            "title": "Secure Software Development",
+            "description": "We engineer high-performance software architectures with security embedded into their DNA. By eliminating vulnerabilities at the source code level, we deliver robust, scalable applications capable of withstanding sophisticated exploitation attempts without sacrificing user experience.",
+            "tagline": "Zero-trust architecture from the very first line of code."
+        },
+        "iso-soc2-compliance": {
+            "title": "ISO 27001 / SOC 2 Compliance Readiness",
+            "description": "Navigate complex regulatory environments and unlock enterprise markets with confidence. We systematically audit your infrastructure, align your processes, and build the rigorous documentation required to achieve ISO 27001 certification and SOC 2 Type I/II readiness with zero operational friction.",
+            "tagline": "Demonstrate trust. Accelerate enterprise sales."
+        },
+        "ssdlc": {
+            "title": "SSDLC (Secure Software Development Life Cycle)",
+            "description": "Shift security to the left. We reconstruct your traditional development pipeline into a mature Secure SDLC. By embedding automated SAST/DAST testing, continuous threat modeling, and rigorous code reviews directly into your CI/CD pipelines, security becomes a natural catalyst rather than a bottleneck.",
+            "tagline": "Continuous security for rapid deployment."
         }
     },
     "cyber-threats": {
@@ -31,12 +44,8 @@
     },
     "our-clients": "Our Clients",
     "about-us": {
-        "title": "About Us",
-        "first": "At Offensive Zone, we specialize in taking the security of your digital world to the next level. With a bold and proactive approach, we are here to defend your digital assets against the most sophisticated cyber threats.",
-        "second": "Our Vision At Offensive Zone, our vision is to lead change in the cybersecurity industry, offering innovative and effective solutions that exceed our clients' expectations and set new standards of excellence.",
-        "third": "Our Mission We are committed to actively protecting your systems and data by proactively identifying and mitigating cybersecurity risks. Our mission is to give you peace of mind and confidence so you can focus on what matters most: growing your business.",
-        "fourth": "Our Values ​​At Offensive Zone, we are guided by strong values ​​that reflect our dedication to excellence, integrity and innovation. We are committed to working with honesty, transparency and respect in everything we do.",
-        "fifth": "About us? We are a passionate team of cybersecurity experts, with extensive experience protecting organizations of all sizes and sectors. We are here to be your trusted partner in defending your digital assets against the most advanced threats sass."
+        "title": "Why Offensive Zone?",
+        "content": "We don't just defend pipelines; we understand the offensive methodologies used to break them. By combining an offensive mindset with tactical AI deployment and defensive engineering, Offensive Zone empowers your enterprise to innovate rapidly, stay compliant, and scale without fear."
     },
     "why-us": {
         "title": "Why Choose Offensive Zone?",
@@ -56,5 +65,21 @@
             "title": "Premium Service",
             "description": "We do not just offer security services; we deliver a premium experience. Our commitment to excellence is reflected in everything we do."
         }
+    },
+    "footer": {
+        "cta-title": "Ready to secure your zone?",
+        "cta-text": "Contact our engineering team today at offensive-zone.com to schedule an architecture review or security assessment."
+    },
+    "contact": {
+        "title": "Contact Us",
+        "subtitle": "Ready to secure your infrastructure? Send us a message and our team will respond within 24 hours.",
+        "name": "Your Name",
+        "email": "Your Email",
+        "message": "Your Message",
+        "send": "Send Message",
+        "sending": "Sending...",
+        "success": "Message sent successfully. We'll get back to you soon.",
+        "error": "Something went wrong. Please try again.",
+        "network-error": "Network error. Please try again."
     }
 }

@@ -1,14 +1,9 @@
-import TypeFormEmbed from "./TypeFormEmbed";
-
 import Expertise from "./expertise";
 import CyberThreats from "./cyberThreats";
 import WhyChooseUs from "./whyChooseUs";
 import Hero from "./hero";
 import AboutUs from "./aboutus";
-import Slider from "./slider";
-import Team from "./team";
-
-
+import ContactForm from "./ContactForm";
 
 const Home = () =>{
     return (
@@ -16,13 +11,10 @@ const Home = () =>{
         <Hero />
         <Expertise />
         <CyberThreats />
-        {/* <Team /> */}
-        {/* <Slider /> */}
         <AboutUs />
         <WhyChooseUs />
-        <TypeFormEmbed />
+        <ContactForm />
       </main>
-
     )
 }
 
