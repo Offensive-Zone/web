@@ -4,6 +4,7 @@ import { I18nextProvider } from 'react-i18next';
 import App from './App';
 import i18n from './i18.js';
 import './index.css';
+import './theme/tactical.css';
 
 function injectGAScript() {
   // Crea e inserta el script de Google Analytics
@@ -25,7 +26,12 @@ function injectGAScript() {
 
 function Index() {
   useEffect(() => {
-    injectGAScript();
+    // Deferred so GA doesn't compete with the initial render/LCP on slow connections.
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(injectGAScript, { timeout: 3000 });
+    } else {
+      window.addEventListener('load', () => setTimeout(injectGAScript, 1000));
+    }
   }, []); // Se ejecuta solo una vez al montar el componente
 
   return (

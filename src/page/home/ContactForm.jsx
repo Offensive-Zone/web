@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { Box, Container, Typography, TextField, Button, CircularProgress, Alert } from "@mui/material";
-import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import { useTranslation } from "react-i18next";
 
 const FORM_URL = "https://offensive-zone-form-handler.camaguapa.workers.dev";
@@ -43,130 +41,93 @@ const ContactForm = () => {
   };
 
   return (
-    <Box
-      id="contact"
-      sx={{
-        backgroundColor: "#0d1117",
-        py: { xs: 8, md: 12 },
-        borderTop: "1px solid rgba(88, 166, 255, 0.15)",
-      }}
-    >
-      <Container maxWidth="md">
-        <Typography
-          variant="h2"
-          sx={{
-            fontWeight: 900,
-            fontSize: { xs: "36px", md: "56px" },
-            textAlign: "center",
-            color: "#fff",
-            mb: 2,
-          }}
-        >
-          {t("contact.title")}
-        </Typography>
-        <Typography
-          sx={{
-            textAlign: "center",
-            color: "#8b949e",
-            fontSize: "18px",
-            mb: 6,
-            maxWidth: "600px",
-            mx: "auto",
-          }}
-        >
-          {t("contact.subtitle")}
-        </Typography>
+    <section className="section" id="contacto" style={{ borderBottom: "none" }}>
+      <div className="container">
+        <div className="section-head">
+          <p className="eyebrow"><span className="dim">{t("contact.eyebrow-sector")}</span> {t("contact.eyebrow-label")}</p>
+          <h2>{t("contact.heading")}</h2>
+          <p>{t("contact.heading-subtitle")}</p>
+        </div>
 
-        <Box
-          component="form"
-          onSubmit={handleSubmit}
-          sx={{
-            backgroundColor: "#161b22",
-            border: "1px solid #30363d",
-            borderRadius: "12px",
-            p: { xs: 3, md: 5 },
-            display: "flex",
-            flexDirection: "column",
-            gap: 3,
-          }}
-        >
-          <TextField
-            name="name"
-            label={t("contact.name")}
-            value={formData.name}
-            onChange={handleChange}
-            required
-            fullWidth
-            variant="outlined"
-            sx={inputStyles}
-          />
-          <TextField
-            name="email"
-            label={t("contact.email")}
-            type="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            fullWidth
-            variant="outlined"
-            sx={inputStyles}
-          />
-          <TextField
-            name="message"
-            label={t("contact.message")}
-            value={formData.message}
-            onChange={handleChange}
-            required
-            fullWidth
-            multiline
-            rows={5}
-            variant="outlined"
-            sx={inputStyles}
-          />
+        <div className="contact-grid">
+          <form onSubmit={handleSubmit} noValidate>
+            <div className="field">
+              <label htmlFor="name">{t("contact.name")}</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder={t("contact.name-placeholder")}
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="field">
+              <label htmlFor="email">{t("contact.email")}</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder={t("contact.email-placeholder")}
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="field">
+              <label htmlFor="message">{t("contact.message")}</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder={t("contact.message-placeholder")}
+                value={formData.message}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <button type="submit" className="btn btn-flare" disabled={loading}>
+              {loading ? t("contact.sending") : t("contact.send")}
+            </button>
 
-          <Button
-            type="submit"
-            disabled={loading}
-            variant="contained"
-            size="large"
-            endIcon={loading ? <CircularProgress size={20} color="inherit" /> : <SendOutlinedIcon />}
-            sx={{
-              backgroundColor: "#58a6ff",
-              color: "#fff",
-              fontWeight: 700,
-              fontSize: "16px",
-              py: 1.5,
-              mt: 1,
-              "&:hover": { backgroundColor: "#388bfd" },
-              "&.Mui-disabled": { backgroundColor: "#1f2937", color: "#6b7280" },
-            }}
-          >
-            {loading ? t("contact.sending") : t("contact.send")}
-          </Button>
+            {status.message && (
+              <div className={`form-msg show ${status.type === "success" ? "ok" : "err"}`}>
+                {status.message}
+              </div>
+            )}
+          </form>
 
-          {status.message && (
-            <Alert severity={status.type === "success" ? "success" : "error"} sx={{ borderRadius: "8px" }}>
-              {status.message}
-            </Alert>
-          )}
-        </Box>
-      </Container>
-    </Box>
+          <div className="contact-info">
+            <div className="row">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-6.1-7-11.2A7 7 0 0 1 19 9.8C19 14.9 12 21 12 21Z" stroke="currentColor" strokeWidth="1.4" /><circle cx="12" cy="9.5" r="2.4" stroke="currentColor" strokeWidth="1.4" /></svg>
+              <div><div className="lbl">{t("contact.location-label")}</div><div className="val">{t("contact.location-value")}</div></div>
+            </div>
+            <div className="row">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.4" /><path d="m4 7 8 6 8-6" stroke="currentColor" strokeWidth="1.4" /></svg>
+              <div>
+                <div className="lbl">{t("contact.email-label")}</div>
+                <div className="val">
+                  <a href="mailto:sales@offensive-zone.com">sales@offensive-zone.com</a>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 8v5l3 2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" /><circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.4" /></svg>
+              <div><div className="lbl">{t("contact.response-label")}</div><div className="val">{t("contact.response-value")}</div></div>
+            </div>
+            <div className="social-row">
+              <a href="https://www.linkedin.com/company/theoffensivezone" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M6.94 8.5H4v11h2.94v-11ZM5.47 7.15A1.7 1.7 0 1 0 5.47 3.75a1.7 1.7 0 0 0 0 3.4ZM20 13.4c0-3.05-1.63-4.47-3.81-4.47-1.76 0-2.54.97-2.98 1.65V8.5H10.3c.04.83 0 11 0 11h2.91v-6.14c0-.33.02-.66.12-.9.26-.66.86-1.34 1.86-1.34 1.31 0 1.84.99 1.84 2.45V19.5H20V13.4Z" fill="currentColor" /></svg>
+              </a>
+              <a href="https://www.instagram.com/offensivezone/" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" stroke="currentColor" strokeWidth="1.4" /><circle cx="12" cy="12" r="3.8" stroke="currentColor" strokeWidth="1.4" /><circle cx="16.7" cy="7.3" r="1" fill="currentColor" /></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
-};
-
-const inputStyles = {
-  "& .MuiOutlinedInput-root": {
-    color: "#c9d1d9",
-    backgroundColor: "#0d1117",
-    "& fieldset": { borderColor: "#30363d" },
-    "&:hover fieldset": { borderColor: "#58a6ff" },
-    "&.Mui-focused fieldset": { borderColor: "#58a6ff" },
-  },
-  "& .MuiInputLabel-root": {
-    color: "#8b949e",
-    "&.Mui-focused": { color: "#58a6ff" },
-  },
 };
 
 export default ContactForm;

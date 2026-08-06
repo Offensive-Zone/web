@@ -1,0 +1,54 @@
+CESAR ALBERTO ARREAZA RUIZ
+Penetration Tester  |  Security Researcher  |  Ethical Hacker
+✉ arreaza.cesara@gmail.com   📞 +54-3794-509398   🔗 linkedin.com/in/CesarArreaza   🏅 credly.com/users/cesar-alberto-arreaza-ruiz
+PROFESSIONAL SUMMARY
+Results-driven Penetration Tester and Security Researcher with hands-on experience in web application, mobile, network, and infrastructure assessments. Proven track record delivering actionable vulnerability reports to enterprise clients. Certified Ethical Hacker (CEH) with expertise in offensive security tooling, threat intelligence, and AI-assisted workflows (Claude, ChatGPT, Copilot). Thrives in fast-paced environments with full ownership of engagements from scoping through remediation.
+CORE COMPETENCIES
+  Web App Pentesting    Network Pentesting    Mobile App Security    Vulnerability Assessment    OWASP Top 10  
+  Burp Suite    Threat Intelligence    CTF Development    MISP    Report Writing    AI-Assisted Workflows  
+  Linux / Kali    AWS Cloud Security    MITRE ATT&CK    Incident Management    Client Communication  
+WORK EXPERIENCE
+Codefend  |  Penetration Tester / Security Researcher May 2025 – Present
+▸	Conduct end-to-end penetration tests on web applications, mobile apps, network infrastructure, and cloud environments for multiple clients simultaneously.
+▸	Research and analyze emerging threat actors, CVEs, and exploitation techniques to maintain cutting-edge testing methodologies.
+▸	Deliver comprehensive technical reports including executive summaries, CVSS-scored findings, proof-of-concept exploits, and remediation roadmaps.
+▸	Collaborate directly with client engineering teams to design tailored security assessments aligned with their risk appetite.
+▸	Leverage AI tools (Claude, ChatGPT, Copilot) to accelerate reconnaissance, payload generation, and report drafting.
+The OffensiveZone  |  Penetration Tester / Security Researcher January 2025 – Present
+▸	Performed black-box, grey-box, and white-box penetration tests against web applications and infrastructure targets.
+▸	Identified and exploited OWASP Top 10 vulnerabilities including SQLi, XSS, IDOR, SSRF, and authentication bypasses.
+▸	Produced detailed findings reports with reproducible PoC steps and remediation guidance, consistently rated highly by clients.
+▸	Researched novel attack vectors and contributed internal knowledge-base articles to the team.
+Appgate  |  Security Researcher September 2024 – February 2025
+▸	Coordinated with enterprise clients to scope and execute penetration tests across applications, infrastructure, and third-party services.
+▸	Communicated technical risk findings clearly to both technical and non-technical stakeholders.
+▸	Contributed to improving internal pentest frameworks and methodology documentation.
+Cybersecurity Center of Buenos Aires City  |  Information Security Analyst June 2022 – December 2023
+▸	Led analysis and response for phishing incidents affecting city government infrastructure.
+▸	Managed vulnerability lifecycle: identification, triage, remediation tracking, and verification.
+▸	Implemented and maintained MISP (Malware Information Sharing Platform) for threat intelligence sharing.
+▸	Developed and delivered cybersecurity training at BA Academy for government staff.
+▸	Built an educational Capture the Flag (CTF) platform in Next.js used for staff cyber-awareness training.
+▸	Mentored minors involved in cybercrime incidents toward ethical use of their technical skills.
+Primera Web  |  Web Developer March 2021 – Ongoing
+▸	Developed and maintained web applications with security-first development practices.
+▸	Applied Secure Software Development Lifecycle (SSDLC) principles in project delivery.
+CERTIFICATIONS & CREDENTIALS
+▸	Certified Ethical Hacker (CEH) – EC-Council · Issued June 2025
+▸	Claude Code: AI-Assisted Development – Anthropic · 2025 (Context management, MCP servers, GitHub integration, agentic workflows)
+▸	Cyber Threat Management – Issued September 2025
+▸	AWS Cloud Quest: Cloud Practitioner – Amazon Web Services · Issued November 2024
+▸	AWS Educate: Introduction to Generative AI – Amazon Web Services
+▸	Threat Intelligence, Automation & Incident Management – OEA (Organization of American States) · 2022
+▸	Agile Cybersecurity Diploma – Cyberdefense Institute · 2021
+EDUCATION
+▸	Higher Technician in Computer Science – IUTIRLA, Venezuela
+▸	Diploma in Secure Application Development – UNSTA, Argentina · 2023
+TECHNICAL SKILLS
+Offensive Tools: Burp Suite Pro, Nmap, Metasploit, Nikto, SQLmap, Gobuster, Hydra, Wireshark
+Platforms & OS: Kali Linux, Parrot OS, Windows, AWS
+Frameworks: OWASP, MITRE ATT&CK, PTES, NIST, MISP
+Development: Python, JavaScript (Next.js), Bash scripting, HTML/CSS
+AI Tools: Claude (Claude Code, MCP integrations), ChatGPT, GitHub Copilot
+LANGUAGES
+Spanish – Native  |  Technical English – Advanced  |  Portuguese – Intermediate

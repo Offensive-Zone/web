@@ -1,68 +1,82 @@
-import { Box, Container, Typography, IconButton, Fade, Slide } from "@mui/material";
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosOutlined';
-import theme from "../../theme/theme";
+import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { lazy, Suspense } from "react";
 
-const ParticleBg = lazy(() => import("../../components/particles"));
+const Hero = () => {
+  const { t } = useTranslation();
+  const sweepRef = useRef(null);
 
- const scrollToExperience = () => {
+  useEffect(() => {
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!sweepRef.current || prefersReduced) return;
+    let angle = 0;
+    let frame;
+    const spin = () => {
+      angle = (angle + 0.15) % 360;
+      if (sweepRef.current) sweepRef.current.style.transform = `rotate(${angle}deg)`;
+      frame = requestAnimationFrame(spin);
+    };
+    frame = requestAnimationFrame(spin);
+    return () => cancelAnimationFrame(frame);
+  }, []);
 
-     const experienceSection = document.getElementById('expertise');
-     if (experienceSection) {
-       experienceSection.scrollIntoView({behavior:'smooth'});
-     }
-   };
-const Hero = ()=>{
-  const {t} = useTranslation()
-    return (
-        <Box sx={{width:'100%',
-                  height:'100vh', 
-                  textAlign:{xs:'initial', 
-                             lg:'initial'}}}>
-            {/* <video style={{zIndex:'-1',position:'absolute',width:'100%', height:'100vh', objectFit:'cover'}} autoPlay loop muted  src='../../assets/videoHero2.mp4'/> */}
+  return (
+    <header className="hero" id="inicio">
+      <div className="grid-bg"></div>
+      <svg className="radar" viewBox="0 0 900 900" fill="none">
+        <circle cx="450" cy="450" r="120" stroke="#232B3A" strokeWidth="1" />
+        <circle cx="450" cy="450" r="230" stroke="#232B3A" strokeWidth="1" />
+        <circle cx="450" cy="450" r="340" stroke="#232B3A" strokeWidth="1" />
+        <circle cx="450" cy="450" r="440" stroke="#1A2029" strokeWidth="1" />
+        <g ref={sweepRef} style={{ transformOrigin: "450px 450px" }}>
+          <path d="M450 450 L450 20 A430 430 0 0 1 800 250 Z" fill="url(#sweepGrad)" />
+        </g>
+        <defs>
+          <radialGradient id="sweepGrad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(450 450) rotate(45) scale(430)">
+            <stop stopColor="#FF5A29" stopOpacity="0.22" />
+            <stop offset="1" stopColor="#FF5A29" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+      </svg>
 
-              <Suspense fallback={<Box sx={{ position: "absolute", width: "100%", height: "100vh", bgcolor: "#0d47a1", zIndex: -1 }} />}>
-                <ParticleBg />
-              </Suspense>
+      <div className="container hero-grid">
+        <div>
+          <p className="eyebrow"><span className="dim">{t("hero.eyebrow-sector")}</span> {t("hero.eyebrow-label")}</p>
+          <h1 className="reveal">
+            {t("hero.title-line1")}<br />
+            {t("hero.title-line2")} <em>{t("hero.title-em")}</em>
+            {t("hero.title-line3") ? <>{" "}<br />{t("hero.title-line3")}</> : null}
+          </h1>
+          <p className="hero-sub reveal">{t("hero.subtitle")}</p>
+          <div className="hero-actions reveal">
+            <a href="#contacto" className="btn btn-flare">{t("hero.cta-primary")}</a>
+            <a href="#servicios" className="btn btn-ghost">{t("hero.cta-secondary")}</a>
+          </div>
+          <div className="hero-stats reveal">
+            <div><span className="num">{t("hero.stat1-num")}</span><span className="lbl">{t("hero.stat1-label")}</span></div>
+            <div><span className="num">{t("hero.stat2-num")}</span><span className="lbl">{t("hero.stat2-label")}</span></div>
+            <div><span className="num">{t("hero.stat3-num")}</span><span className="lbl">{t("hero.stat3-label")}</span></div>
+          </div>
+        </div>
 
-            <Container maxWidth='lg' 
-                       sx={{
-                       zIndex:'20',
-                       display:'flex', 
-                       padding:'350px 50px',
-                       flexDirection:'column', 
-                       gap:3}}>
-                <Fade in={true} 
-                      timeout={1200}>     
-                  <Typography component="h1" 
-                              fontSize={{lg:'100px',
-                                         md:'100px',
-                                         sm:'100px',
-                                         xs:'50px'}} 
-                              sx={{fontWeight:900, 
-                                   color:'text.main', 
-                                   lineHeight:1}}>
-                      Offensive Zone
-                  </Typography>
-                </Fade>    
-                <Slide in={true} direction="right" timeout={800}>
-                  <Typography color={theme.palette.tertiary.main} 
-                              component='p' 
-                              fontSize={{xs:20, 
-                                         lg:'30px'}}>
-                    {t("hero.subtitle")}
-                  </Typography>
-                </Slide>                        
-                <IconButton onClick={scrollToExperience} sx={{color:'white', 
-                                                              transform: 'rotate(-0.25turn)', 
-                                                              width:'170px', 
-                                                              margin:'auto',
-                                                              marginTop:'100px'
-                                                              }}><ArrowBackIosNewIcon sx={{fontSize:'150px'}}/></IconButton>
-            </Container>
-        </Box>
-            )
-}
+        <div className="id-card reveal">
+          <div className="id-photo">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="8" r="3.4" stroke="currentColor" strokeWidth="1.4" />
+              <path d="M4.5 20c1.4-3.8 4.6-5.7 7.5-5.7s6.1 1.9 7.5 5.7" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+            </svg>
+            <span className="ph-label">{t("id-card.photo-label")}<br />{t("id-card.photo-sublabel")}</span>
+          </div>
+          <div className="id-caption">
+            <span>{t("id-card.role")}</span>
+            <span className="tag">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              {t("id-card.verified")}
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+};
 
-export default Hero
+export default Hero;

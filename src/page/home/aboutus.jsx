@@ -1,48 +1,28 @@
-import { Box, Container, Typography } from "@mui/material"
 import { useTranslation } from "react-i18next";
+import Team from "./team";
 
 const AboutUs = () => {
-    const { t } = useTranslation();
-    return (
-        <Box id='about' sx={{
-            margin: 0,
-            backgroundColor: '#0d1117',
-            padding: '150px 0',
-            color: '#fff'
-        }}>
-            <Container maxWidth='lg'>
-                <Box sx={{
-                    textAlign: 'center',
-                    maxWidth: '900px',
-                    margin: '0 auto'
-                }}>
-                    <Typography
-                        variant="h2"
-                        sx={{
-                            fontWeight: 900,
-                            fontSize: { lg: '80px', md: '80px', sm: '80px', xs: '40px' },
-                            borderBottom: '10px solid #58a6ff',
-                            display: 'inline-block',
-                            marginBottom: '40px',
-                            color: '#fff'
-                        }}
-                    >
-                        {t("about-us.title")}
-                    </Typography>
-                    <Typography
-                        sx={{
-                            textAlign: 'center',
-                            fontSize: { lg: '22px', xs: '18px' },
-                            lineHeight: 1.8,
-                            color: '#c9d1d9'
-                        }}
-                    >
-                        {t("about-us.content")}
-                    </Typography>
-                </Box>
-            </Container>
-        </Box>
-    )
-}
+  const { t } = useTranslation();
 
-export default AboutUs
+  return (
+    <section className="section" id="nosotros">
+      <div className="container about-grid">
+        <p className="eyebrow"><span className="dim">{t("about.eyebrow-sector")}</span> {t("about.eyebrow-label")}</p>
+        <h2 style={{ fontSize: "clamp(26px,3.6vw,38px)", marginBottom: "24px" }}>
+          {t("about.title-line1")}<br />{t("about.title-line2")}
+        </h2>
+        <div className="about-copy">
+          <p dangerouslySetInnerHTML={{ __html: t("about.paragraph1") }} />
+          <p>{t("about.paragraph2")}</p>
+        </div>
+        <div className="about-coords">
+          <span>[ <span>●</span> {t("about.coord1")} ]</span>
+          <span>[ <span>●</span> {t("about.coord2")} ]</span>
+        </div>
+        <Team />
+      </div>
+    </section>
+  );
+};
+
+export default AboutUs;

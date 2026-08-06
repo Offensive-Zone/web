@@ -1,0 +1,98 @@
+Edgardo Krause
+Offensive Security Researcher & Developer
+Calle 200  #12-528
+Living in Bucaramanga, Colombia
+(+57)3016245204
+edgardo.krause@gmail.com
+Nationality: Argentina
+EXPERIENCE
+
+
+QUBIKA, Montevideo, UY — Lead Security Engineer
+Aug 2025 - Present
+
+Promoted to Lead Security Engineer to oversee the strategic direction and 
+execution of security initiatives across the organization. 
+
+I lead a multidisciplinary team of security engineers, guiding them through complex penetration testing engagements for web, mobile, network, and cloud (AWS) environments. 
+
+I collaborate closely with engineering and product teams to integrate security best practices throughout the development lifecycle, ensuring secure-by-design principles. 
+
+
+QUBIKA, Montevideo, UY — Security Engineer
+Oct 2022 - Aug 2025
+As a web, mobile, and network penetration tester, my role is to ensure that our organization's and clients' IT infrastructure is as secure as possible against potential threats. I am responsible for identifying security vulnerabilities in our web applications, mobile applications, network infrastructure, and cloud (mostly AWS)
+I am constantly working to stay up-to-date with the latest security threats and trends and to continually improve my skills and knowledge.
+PWC, Buenos Aires, AR — Offensive Security - Senior Associate 2 
+Aug 2021 - Aug 2022
+In this role, I performed as a Cybersecurity advisor, threat management advisor, and pentester in the PwC Cyber Penetration Testing Team (CPT2). In this team, I collaborate with Argentina and the USA team members to deliver services in the USA to top-notch companies.
+EY GDS, Buenos Aires, AR— Supervising associate - Application & Network Security  - Security Compliance
+Nov 2019 - Aug 2021
+Aug 2022 - Oct 2022
+
+EY global internal security.
+
+
+I started leading the Endpoint security monitoring in the compliance area of EY Internal Security.
+Initially, working for the security of endpoint assets in the company.
+
+Later, as a Pentester, I researched new vulnerabilities and ways to detect them in all company assets.
+Internet Facing Critical Vulnerabilities, Cloud Security, Threat Hunting, and Purple Team.
+Web Application Penetration tests, etc.
+There are many more on my Linkedin 
+
+CEDSA, Secure programming and cloud computing Instructor
+Nov 2021 - Nov 2022
+As an instructor, the role involved delivering knowledge and technological solutions focused on secure programming from both the cybersecurity (Blue Team) and the offensive security perspective (Red Team). This included incorporating the latest advancements and emerging technologies in Cloud Computing models. The instruction emphasized secure coding practices, along with techniques used in offensive security (such as penetration testing), to equip learners with the skills needed to defend against and simulate attacks in evolving cloud environments.
+EDUCATION
+UNSTA, AR— Diploma,  Application Secure Development
+Aug 2022- Dec 2022
+Bureau Veritas Group, AR — ISO 27001 - Internal auditor
+Aug 2021
+SANS Technology Institute — SEC511 - GMON
+Jul 2020 - Dec 2020
+UNSTA, AR— Diploma, Cybersecurity and Cybercrime Intelligence Strategy
+Aug 2020 - Dec 2020
+
+CERTIFICATIONS
+
+Hacktricks - Certified AWS Red Team Expert (ARTA-ARTE)
+July 2025.
+
+
+eLearnSecurity — Certified Professional Penetration Tester (eCPPT) 
+March 2024
+
+eLearnSecurity — Web Penetration Tester (eWPT) 
+Aug 2022 - Dec 2022
+
+GIAC — Continuous Monitoring Certification (GMON)
+Nov 2020
+
+CERTIFICATIONS IN PROGRESS
+
+
+
+More certifications here: https://www.credly.com/users/edgardo-krause/badges
+SKILLS
+Secure code development
+Security Code Review
+Web, Mobile, IoT, Cloud Penetration Testing
+Network Penetration Testing
+Team Player
+Problem-solving
+Lifelong Learner
+AWARDS
+Bug Bounty  or VDP Programs:
+
+CERN - European Council for Nuclear Research
+ U.S. Department of State 
+ U.S. Department of Health and Human Services (HHS)  
+HackerOne (Many international companies and governments) 
+LANGUAGES
+Spanish, Native.
+English, C1.
+
+   C1 English Level by EF
+
+

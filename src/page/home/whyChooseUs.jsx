@@ -1,77 +1,43 @@
-import { Box} from "@mui/material";
-import Subtittle from "../../components/subtittle/index.jsx";
-import CardChoose from "../../components/cards/cardChoose.jsx";
 import { useTranslation } from "react-i18next";
 
-const WhyChooseUs = () => {
-  const {t} = useTranslation()
-  
-  const seccion2 = [
-    { title: t('why-us.expertise.title'), url: '../assets/img/expertise.jpg', description: t('why-us.expertise.description') },
-    { title: t('why-us.proactive.title'), url: '../assets/img/proactive.jpg', description: t('why-us.proactive.description') },
-    { title: t('why-us.confidentiality.title'), url: '../assets/img/confidentiality.jpg', description: t('why-us.confidentiality.description') },
-    { title: t('why-us.premium.title'), url: '../assets/img/premium.png', description: t('why-us.premium.description') }
-  ];
-    return (
-      <Box 
-        id='whyus'
-        sx={{ 
-            padding:'120px 0px',
-            backgroundColor:'black', 
-            width:'100%', 
-            height:'auto', 
-            display:'flex',
-            justifyContent:'center',
-            overflowY:'hidden',
-            backgroundPosition:'bottom',
-            }}>
-      <Box sx={{           
-                height:'100%', 
-                width:{xs:'100%',
-                       md:'100%',
-                       lg:'100%',
-                       xl:'80%'},
-                textAlign:'center', 
-                display:'flex',              
-                flexDirection:{xs:'column',
-                               md:'column',
-                               lg:'column',
-                               xl:'row'} ,
-                border:'2px solid grey',
-                alignItems:{md:'center',xl:'inherit',xs:'center'},
-              }} 
-                >
-        <Box sx={{
-                width:{xl:'50%', lg:'100%'}, 
-                backgroundImage:`url('../../assets/img/bkg-triangles.jpg')`, 
-                backgroundPosition: 'center', 
-                backgroundSize: 'cover', 
-                borderRight:'2px solid grey',
-                display:'flex',
-                alignItems:'center',
-                padding:{lg:'0', xl:'0px 1vw'}
-                }}>
-            <Subtittle>{t("why-us.title")}</Subtittle>
-        </Box>
-        <Box sx={{display:'flex',
-                  textAlign:'justify', 
-                  gap:3,
-                  flexDirection:{xs:'column',md:'row', xl:'row', lg:'row'},
-                  justifyContent:{xl:'space-evenly',lg:'center',md:'center'},
-                  flexWrap:'wrap',
-                  width:'80%',
-                  alignItems:{md:'center',xl:'inherit',xs:'center'},
-                  padding:'20px'
-                  }}>
-            {
-             seccion2.map((data, index) => {
-              return (   <CardChoose key={index} title={data.title} url={data.url} description={data.description}/> )
-             }) 
-            }
-        </Box>
-      </Box>
-  </Box>
-    )
-}
+const cards = [
+  { key: "proactive", icon: <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" strokeLinejoin="round" /> },
+  { key: "confidentiality", icon: <path d="M12 3 4 6.5v5c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10v-5L12 3Z" strokeLinejoin="round" /> },
+  { key: "premium", icon: <path d="m12 2 2.9 6.3 6.9.7-5.2 4.6 1.6 6.8L12 16.9 5.8 20.4l1.6-6.8L2.2 9l6.9-.7L12 2Z" strokeLinejoin="round" /> },
+];
 
-export default WhyChooseUs
+const WhyChooseUs = () => {
+  const { t } = useTranslation();
+  return (
+    <section className="section" id="por-que">
+      <div className="container">
+        <div className="section-head">
+          <p className="eyebrow"><span className="dim">{t("why-us.eyebrow-sector")}</span> {t("why-us.eyebrow-label")}</p>
+          <h2>{t("why-us.heading")}</h2>
+        </div>
+        <div className="why-grid">
+          {cards.map((card) => (
+            <div className="why-card reveal" key={card.key}>
+              <div className="icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">{card.icon}</svg>
+              </div>
+              <h3>{t(`why-us.${card.key}.title`)}</h3>
+              <p>{t(`why-us.${card.key}.description`)}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="compliance" style={{ marginTop: "48px" }}>
+          {["iso", "soc2", "owasp", "badge-placeholder"].map((key) => (
+            <span className="compliance-badge" key={key}>
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              {t(`compliance.${key}`)}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default WhyChooseUs;

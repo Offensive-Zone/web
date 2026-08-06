@@ -6,6 +6,9 @@ export default defineConfig(() => {
     build: {
       outDir: 'build',
     },
+    server: {
+      allowedHosts: ['unkingly-nipping-donnell.ngrok-free.dev'],
+    },
     plugins: [react()],
   };
 });

@@ -1,86 +1,71 @@
-import { Box, Typography } from "@mui/material";
-import Subtittle from "../../components/subtittle";
-import CardExpertise from "../../components/cards/cardExpertise";
-import SubtittleCard from "../../components/subtittle/subtitleCards";
-import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined';
-import SmartToyOutlinedIcon from '@mui/icons-material/SmartToyOutlined';
-import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
-import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
-import SyncOutlinedIcon from '@mui/icons-material/SyncOutlined';
 import { useTranslation } from "react-i18next";
 
 const services = [
   {
-    key: "security-awareness",
-    icon: <SecurityOutlinedIcon color="secondary" sx={{ fontSize: '120px' }} />,
+    key: "pentesting",
+    isNew: true,
+    icon: <path d="M12 2 3 6v6c0 5.2 3.6 9.9 9 11 5.4-1.1 9-5.8 9-11V6l-9-4Z" />,
+    iconExtra: <path d="m9 12 2 2 4-4" />,
+  },
+  {
+    key: "secure-dev",
+    icon: <path d="M4 6h16M4 12h16M4 18h10" />,
+    iconExtra: <circle cx="19" cy="18" r="2.4" />,
   },
   {
     key: "ai-implementation",
-    icon: <SmartToyOutlinedIcon color="secondary" sx={{ fontSize: '120px' }} />,
+    icon: <path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" />,
+    iconExtra: <circle cx="12" cy="12" r="3.6" />,
   },
   {
-    key: "secure-software-development",
-    icon: <CodeOutlinedIcon color="secondary" sx={{ fontSize: '120px' }} />,
+    key: "cloud-audit",
+    isNew: true,
+    icon: <path d="M6 18v-6a6 6 0 1 1 12 0v6" strokeLinecap="round" />,
+    iconExtra: <><rect x="4" y="18" width="4" height="3" rx="1" /><rect x="16" y="18" width="4" height="3" rx="1" /></>,
   },
   {
-    key: "iso-soc2-compliance",
-    icon: <VerifiedOutlinedIcon color="secondary" sx={{ fontSize: '120px' }} />,
+    key: "compliance-prep",
+    icon: <path d="M12 2 3 6v6c0 5.2 3.6 9.9 9 11 5.4-1.1 9-5.8 9-11V6l-9-4Z" />,
+    iconExtra: <path d="M12 8v5M12 16h.01" strokeLinecap="round" />,
   },
   {
-    key: "ssdlc",
-    icon: <SyncOutlinedIcon color="secondary" sx={{ fontSize: '120px' }} />,
+    key: "security-awareness",
+    icon: <path d="M12 3 4 6.5v5c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10v-5L12 3Z" />,
+    iconExtra: <path d="M9 12h6M12 9v6" strokeLinecap="round" />,
   },
 ];
 
 const Expertise = () => {
   const { t } = useTranslation();
   return (
-    <Box
-      id='expertise'
-      sx={{
-        backgroundColor: 'primary.light',
-        backgroundImage: 'url("../../../public/assets/img/elementRight.png")',
-        backgroundSize: 'contain',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'top right',
-        width: '100%',
-        minHeight: '900px',
-        height: 'auto',
-        p: '50px 0',
-        overflowY: 'hidden',
-        position: 'relative'
-      }}>
-      <Box sx={{ height: '100%', textAlign: 'center' }} >
-        <Subtittle>{t("our-expertice.title")}</Subtittle>
-        <Box sx={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          gap: 6,
-          marginTop: '60px',
-          px: { xs: 2, md: 4 },
-          mx: 'auto',
-          maxWidth: '1800px',
-        }}>
-          {services.map((service) => (
-            <CardExpertise key={service.key}>
-              {service.icon}
-              <SubtittleCard>{t(`our-expertice.${service.key}.title`)}</SubtittleCard>
-              <Typography textAlign={'justify'} color={'text.main'} component='p'>
-                {t(`our-expertice.${service.key}.description`)}
-              </Typography>
-              <Typography
-                sx={{ fontStyle: 'italic', fontWeight: 600, color: 'tertiary.main' }}
-                component='p'
-              >
-                {t(`our-expertice.${service.key}.tagline`)}
-              </Typography>
-            </CardExpertise>
-          ))}
-        </Box>
-      </Box>
-    </Box>
-  )
-}
+    <section className="section" id="servicios">
+      <div className="container">
+        <div className="section-head">
+          <p className="eyebrow"><span className="dim">{t("services.eyebrow-sector")}</span> {t("services.eyebrow-label")}</p>
+          <h2>{t("services.heading")}</h2>
+          <p>{t("services.subtitle")}</p>
+        </div>
 
-export default Expertise
+        <div className="services-grid">
+          {services.map((service, i) => (
+            <div
+              className={`service-card${service.isNew ? " new-service" : ""}`}
+              key={service.key}
+              data-badge={service.isNew ? t("services.new-badge") : undefined}
+            >
+              <span className="idx">{String(i + 1).padStart(2, "0")}</span>
+              <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round">
+                {service.icon}
+                {service.iconExtra}
+              </svg>
+              <h3>{t(`services.${service.key}.title`)}</h3>
+              <p>{t(`services.${service.key}.description`)}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Expertise;

@@ -28,7 +28,7 @@
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
 
-  <!-- Meta Pixel Code (Moved to Body) -->
+  <!-- Meta Pixel Code — stub queues calls immediately, real script loads deferred (idle/load) so it doesn't compete with LCP -->
   <script>
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
@@ -36,16 +36,27 @@
           n.callMethod.apply(n, arguments) : n.queue.push(arguments)
       };
       if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
+      n.queue = [];
+      var load = function () {
+        t = b.createElement(e); t.async = !0;
+        t.src = v; s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      };
+      if ('requestIdleCallback' in f) f.requestIdleCallback(load, { timeout: 3000 });
+      else f.addEventListener('load', function () { setTimeout(load, 1000); });
     }(window, document, 'script',
       'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '400663139734926');
     fbq('track', 'PageView');
   </script>
 
-  <title>Offensive Security Services</title>
+  <meta property="og:title" content="Offensive Zone — Seguridad Ofensiva & Cumplimiento" />
+  <meta property="og:description" content="Pruebas de penetración, desarrollo de software seguro, implementación de IA y preparación ISO 27001 / SOC 2. Bucaramanga, Colombia." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://offensive-zone.com" />
+  <meta property="og:image" content="https://offensive-zone.com/android-icon-192x192.png" />
+
+  <title>Offensive Zone — Seguridad Ofensiva &amp; Cumplimiento</title>
 </head>
 
 <body>
