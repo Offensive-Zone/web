@@ -31,9 +31,11 @@ const ContactForm = () => {
         setStatus({ type: "success", message: t("contact.success") });
         setFormData({ name: "", email: "", message: "" });
       } else {
-        setStatus({ type: "error", message: data.error || t("contact.error") });
+        console.error("Contact form error:", data.error);
+        setStatus({ type: "error", message: t("contact.error") });
       }
-    } catch {
+    } catch (err) {
+      console.error("Contact form network error:", err);
       setStatus({ type: "error", message: t("contact.network-error") });
     } finally {
       setLoading(false);

@@ -52,8 +52,8 @@ export default {
       if (!resp.ok) {
         const err = await resp.text();
         console.error("Send error:", resp.status, err);
-        return new Response(JSON.stringify({ error: `API error (${resp.status}): ${err.substring(0, 200)}` }), {
-          status: 500,
+        return new Response(JSON.stringify({ error: "Failed to send message" }), {
+          status: 502,
           headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
         });
       }
