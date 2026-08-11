@@ -1,4 +1,8 @@
 {
+    "whatsapp": {
+        "label": "Chat with us on WhatsApp",
+        "message": "Hi, this message comes from the Offensive Zone website. I'd like more information."
+    },
     "header": {
         "inicio": "HOME",
         "nosotros": "ABOUT",
@@ -22,17 +26,17 @@
         "stat2-num": "24h",
         "stat2-label": "Response time",
         "stat3-num": "100%",
-        "stat3-label": "Confidential"
+        "stat3-label": "Confidential",
+        "network-caption": "SURFACE // LIVE",
+        "network-status": "ACTIVE MONITORING"
     },
     "id-card": {
-        "photo-label": "[ Space for your photo ]",
-        "photo-sublabel": "Replace with a professional portrait",
         "role": "ID // FOUNDER",
         "verified": "VERIFIED"
     },
     "trust": {
         "label": "Sectors we operate in",
-        "sectors": ["Fintech", "SaaS", "E-commerce", "Healthcare", "Manufacturing", "+ your logo here"]
+        "sectors": ["Fintech", "SaaS", "E-commerce", "Healthcare", "Manufacturing"]
     },
     "about": {
         "eyebrow-sector": "SECTOR_01 //",
@@ -128,8 +132,7 @@
     "compliance": {
         "iso": "Aligned with ISO 27001",
         "soc2": "SOC 2 Type I/II readiness",
-        "owasp": "OWASP methodology",
-        "badge-placeholder": "[ Space for certification / badge ]"
+        "owasp": "OWASP methodology"
     },
     "testimonial": {
         "eyebrow-sector": "SECTOR_05 //",

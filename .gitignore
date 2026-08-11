@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 /wrangler
 
+# raw brand assets / downloads, not part of the app source
+/docs
+

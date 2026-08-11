@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
-import edgardoPhoto from "../../assets/img/team/edgardo.jpg";
-import cesarPhoto from "../../assets/img/team/cesar.jpg";
+import edgardoPhoto from "../../assets/img/team/edgardo.png";
+import cesarPhoto from "../../assets/img/team/cesar.png";
 
 const members = [
   {

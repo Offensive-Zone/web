@@ -59,18 +59,31 @@ const Hero = () => {
         </div>
 
         <div className="id-card reveal">
-          <div className="id-photo">
-            <svg viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="8" r="3.4" stroke="currentColor" strokeWidth="1.4" />
-              <path d="M4.5 20c1.4-3.8 4.6-5.7 7.5-5.7s6.1 1.9 7.5 5.7" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+          <div className="network-diagram">
+            <svg viewBox="0 0 240 300" fill="none">
+              <line x1="120" y1="50" x2="55" y2="110" stroke="var(--line)" strokeWidth="1.5" />
+              <line x1="120" y1="50" x2="190" y2="95" stroke="var(--line)" strokeWidth="1.5" />
+              <line x1="120" y1="50" x2="95" y2="170" stroke="var(--line)" strokeWidth="1.5" />
+              <line x1="55" y1="110" x2="95" y2="170" stroke="var(--line)" strokeWidth="1.5" />
+              <line x1="95" y1="170" x2="175" y2="185" stroke="var(--line)" strokeWidth="1.5" />
+              <line x1="95" y1="170" x2="45" y2="230" stroke="var(--line)" strokeWidth="1.5" />
+              <line x1="175" y1="185" x2="150" y2="250" stroke="var(--line)" strokeWidth="1.5" />
+              <line x1="45" y1="230" x2="150" y2="250" stroke="var(--line)" strokeWidth="1.5" />
+
+              <circle cx="120" cy="50" r="9" fill="var(--secure-dim)" stroke="var(--secure)" strokeWidth="1.5" />
+              <circle cx="55" cy="110" r="6" fill="var(--secure-dim)" stroke="var(--secure)" strokeWidth="1.5" />
+              <circle cx="190" cy="95" r="6" fill="var(--flare-dim)" stroke="var(--flare)" strokeWidth="1.5" />
+              <circle cx="95" cy="170" r="6" fill="var(--secure-dim)" stroke="var(--secure)" strokeWidth="1.5" />
+              <circle cx="175" cy="185" r="6" fill="var(--flare-dim)" stroke="var(--flare)" strokeWidth="1.5" />
+              <circle cx="45" cy="230" r="6" fill="var(--secure-dim)" stroke="var(--secure)" strokeWidth="1.5" />
+              <circle cx="150" cy="250" r="6" fill="var(--secure-dim)" stroke="var(--secure)" strokeWidth="1.5" />
             </svg>
-            <span className="ph-label">{t("id-card.photo-label")}<br />{t("id-card.photo-sublabel")}</span>
           </div>
           <div className="id-caption">
-            <span>{t("id-card.role")}</span>
+            <span>{t("hero.network-caption")}</span>
             <span className="tag">
               <svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              {t("id-card.verified")}
+              {t("hero.network-status")}
             </span>
           </div>
         </div>

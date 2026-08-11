@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import logoIcon from "../../assets/logo/logo-icon.png";
 
 const NavBar = () => {
   const { t, i18n } = useTranslation();
@@ -28,10 +29,7 @@ const NavBar = () => {
   return (
     <nav className={`nav${scrolled ? " is-scrolled" : ""}`} id="nav">
       <a href="#inicio" className="nav-brand">
-        <svg className="flag" viewBox="0 0 24 24" fill="none">
-          <path d="M4 2v20" stroke="#FF5A29" strokeWidth="1.6" strokeLinecap="round" />
-          <path d="M4 3.5 19 8.5 4 13.5V3.5Z" fill="#FF5A29" />
-        </svg>
+        <img className="flag" src={logoIcon} alt="Offensive Zone" />
         OFFENSIVE ZONE
       </a>
 
