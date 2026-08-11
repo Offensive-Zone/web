@@ -45,6 +45,45 @@ npm run preview   # preview production build
 
 Worker deploy is separate (Wrangler CLI, from `workers/form-handler/`) — not wired into root `package.json` scripts.
 
+## Deployment (Docker build + Cloudflare Pages)
+
+No instalar Node ni npm en el servidor. Usar Docker para build y deploy.
+
+### Build
+
+```bash
+docker run --rm -v /home/dev/Projects/web:/app -w /app node:20-alpine sh -c "npm install && npm run build"
+```
+
+El build queda en `/home/dev/Projects/web/build/`.
+
+### Deploy a Cloudflare Pages
+
+**Opción A — Subir manualmente desde Cloudflare Dashboard:**
+1. Ir a Cloudflare Dashboard → Pages → `offensive-zone`
+2. Click "Upload assets" o "Create new deployment"
+3. Subir el directorio `build/`
+
+**Opción B — Deploy automático con Wrangler (requiere API token):**
+```bash
+docker run --rm -v /home/dev/Projects/web:/app -w /app \
+  -e CLOUDFLARE_API_TOKEN=tu_token_aqui \
+  node:20-alpine sh -c "npm install -g wrangler && wrangler pages deploy build --project-name=offensive-zone"
+```
+
+### Archivos estáticos (PDFs, docs)
+
+Los archivos en `public/` se copian tal cual al `build/`. Para compartir documentos públicamente (pero no indexables por buscadores):
+1. Colocar el archivo en `public/assets/` (o subcarpeta)
+2. **No agregar** la ruta al `robots.txt` (ello la haría descubrible)
+3. El archivo queda accesible vía URL directa: `https://offensive-zone.com/assets/archivo.pdf`
+
+### Notas
+
+- El `node_modules` creado por Docker queda como root — limpiar con `sudo rm -rf node_modules` después del build
+- No instalar `wrangler` globalmente en el servidor — usar Docker cuando se necesite
+- La imagen Docker usada es `node:20-alpine` (ya disponible en el servidor)
+
 ## Conventions to follow
 
 - Functional components, hooks only, no class components.
