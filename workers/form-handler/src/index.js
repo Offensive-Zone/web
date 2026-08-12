@@ -18,7 +18,7 @@ export default {
     }
 
     try {
-      const { name, email, message } = await request.json();
+      const { name, email, message, source } = await request.json();
 
       if (!name || !email || !message) {
         return new Response(JSON.stringify({ error: "All fields are required" }), {
@@ -27,10 +27,12 @@ export default {
         });
       }
 
-      const text = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+      const fromConfig = source === "miprimeraweb"
+        ? { address: "noreply@miprimeraweb.offensive-zone.com", name: "Mi Primera Web" }
+        : { address: "sales@offensive-zone.com", name: "Offensive Zone" };
 
       const body = {
-        from: { address: "sales@offensive-zone.com", name: "Offensive Zone" },
+        from: fromConfig,
         to: ["arreaza.cesara@gmail.com", "edgardo.krause@gmail.com"],
         subject: `New contact form submission from ${name}`,
         text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
