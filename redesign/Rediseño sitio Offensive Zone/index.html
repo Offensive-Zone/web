@@ -328,19 +328,27 @@
         </div>
         <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Card" variant="glass"
           hint-size="100%,420px">
-          <form style="display:flex; flex-direction:column; gap:18px;" onSubmit="{{ handleSubmit }}">
-            <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Input" label="Nombre"
-              placeholder="Tu nombre" hint-size="100%,68px"></x-import>
-            <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Input" label="Email" type="email"
-              placeholder="tu@email.com" hint-size="100%,68px"></x-import>
+          <form id="contactForm" style="display:flex; flex-direction:column; gap:18px;" onSubmit="{{ handleSubmit }}">
             <div style="display:flex; flex-direction:column; gap:8px;">
-              <label
-                style="font-family:var(--font-sans); font-size:13px; font-weight:600; color:var(--text-secondary);">Mensaje</label>
-              <textarea placeholder="Contanos sobre tu proyecto" rows="4"
+              <label style="font-family:var(--font-sans); font-size:13px; font-weight:600; color:var(--text-secondary);">Nombre</label>
+              <input name="name" type="text" placeholder="Tu nombre" required
+                style="width:100%; background:var(--surface-1); border:1px solid var(--border-subtle); border-radius:var(--radius-control); padding:12px 14px; font-family:var(--font-sans); font-size:15px; color:var(--text-primary); box-sizing:border-box;">
+            </div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <label style="font-family:var(--font-sans); font-size:13px; font-weight:600; color:var(--text-secondary);">Email</label>
+              <input name="email" type="email" placeholder="tu@email.com" required
+                style="width:100%; background:var(--surface-1); border:1px solid var(--border-subtle); border-radius:var(--radius-control); padding:12px 14px; font-family:var(--font-sans); font-size:15px; color:var(--text-primary); box-sizing:border-box;">
+            </div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <label style="font-family:var(--font-sans); font-size:13px; font-weight:600; color:var(--text-secondary);">Mensaje</label>
+              <textarea name="message" placeholder="Contanos sobre tu proyecto" rows="4" required
                 style="width:100%; resize:vertical; background:var(--surface-1); border:1px solid var(--border-subtle); border-radius:var(--radius-control); padding:12px 14px; font-family:var(--font-sans); font-size:15px; color:var(--text-primary); box-sizing:border-box;"></textarea>
             </div>
-            <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Button" variant="primary"
-              full-width="{{ true }}" type="submit" hint-size="100%,52px">Enviar mensaje</x-import>
+            <div id="formStatus" style="display:none; padding:12px; border-radius:var(--radius-control); font-size:14px;"></div>
+            <button type="submit" id="submitBtn"
+              style="width:100%; padding:14px; background:var(--oz-grad-azure); border:none; border-radius:var(--radius-control); font-family:var(--font-sans); font-weight:700; font-size:15px; color:white; cursor:pointer; transition:opacity 0.2s;">
+              Enviar mensaje
+            </button>
           </form>
         </x-import>
       </section>
@@ -372,7 +380,54 @@ class Component extends DCLogic {
     return {
       scrollToContact: () => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' }),
       scrollToWork: () => document.getElementById('trabajos')?.scrollIntoView({ behavior: 'smooth' }),
-      handleSubmit: (e) => e.preventDefault(),
+      handleSubmit: async (e) => {
+        e.preventDefault();
+        const form = document.getElementById('contactForm');
+        const statusEl = document.getElementById('formStatus');
+        const submitBtn = document.getElementById('submitBtn');
+        const formData = new FormData(form);
+        
+        const data = {
+          name: formData.get('name'),
+          email: formData.get('email'),
+          message: formData.get('message'),
+          source: 'miprimeraweb'
+        };
+        
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Enviando...';
+        statusEl.style.display = 'none';
+        
+        try {
+          const res = await fetch('https://offensive-zone-form-handler.camaguapa.workers.dev', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+          
+          const result = await res.json();
+          
+          if (res.ok) {
+            statusEl.textContent = 'Mensaje enviado con éxito. Le responderemos pronto.';
+            statusEl.style.background = 'rgba(51, 210, 160, 0.15)';
+            statusEl.style.color = '#33D2A0';
+            statusEl.style.border = '1px solid rgba(51, 210, 160, 0.3)';
+            statusEl.style.display = 'block';
+            form.reset();
+          } else {
+            throw new Error(result.error || 'Failed to send');
+          }
+        } catch (err) {
+          statusEl.textContent = 'Error al enviar. Intente de nuevo.';
+          statusEl.style.background = 'rgba(255, 59, 71, 0.15)';
+          statusEl.style.color = '#ff3b47';
+          statusEl.style.border = '1px solid rgba(255, 59, 71, 0.3)';
+          statusEl.style.display = 'block';
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Enviar mensaje';
+        }
+      },
       svcCardStyle,
       planCardStyle,
       services: [

@@ -6,7 +6,12 @@ System prompt / persistent instructions for AI coding agents working on this rep
 
 ## Project overview
 
-Marketing site for **Offensive Zone** (offensive-zone.com), a cybersecurity services company. Bilingual (EN/ES) landing page with sections (hero, expertise, cyber threats, about us, team, contact form) plus a serverless contact-form backend.
+Multi-site repo for the **Offensive Zone** ecosystem:
+
+1. **Offensive Zone** (`offensive-zone.com`) — Cybersecurity services company. Bilingual (EN/ES) React landing page with sections (hero, expertise, cyber threats, about us, team, contact form).
+2. **Mi Primera Web** (`miprimeraweb.offensive-zone.com`) — Web development services brand. Static HTML site (no React) with its own design system under `redesign/Rediseño sitio Offensive Zone/`.
+
+Both sites share a **single Cloudflare Worker** for the contact form backend.
 
 ## Stack
 
@@ -33,6 +38,14 @@ src/
 workers/form-handler/
   src/index.js          # Cloudflare Worker: POST /  -> sends email via CF Email API
   wrangler.toml         # worker config, expects env.ACCOUNT_ID / env.CF_TOKEN (Cloudflare secrets)
+redesign/
+  Rediseño sitio Offensive Zone/  # Mi Primera Web static HTML site
+    index.html          # Main HTML (uses custom design system components)
+    style-2.css         # Brand-specific CSS overrides (flare palette)
+    support.js          # dc-runtime component engine
+    image-slot.js       # Image placeholder component
+    assets/             # Icons, images for miprimeraweb
+    _ds/                # Design system (tokens, components)
 ```
 
 ## Commands
@@ -44,6 +57,30 @@ npm run preview   # preview production build
 ```
 
 Worker deploy is separate (Wrangler CLI, from `workers/form-handler/`) — not wired into root `package.json` scripts.
+
+## Contact Form Worker (Multi-Site)
+
+The worker at `workers/form-handler/src/index.js` supports multiple sites via the `source` field in the POST payload:
+
+**Payload shape:**
+```json
+{
+  "name": "string (required)",
+  "email": "string (required)",
+  "message": "string (required)",
+  "source": "offensive-zone | miprimeraweb (optional, defaults to offensive-zone)"
+}
+```
+
+**Routing logic:**
+- `source === "miprimeraweb"` → sends from `noreply@miprimeraweb.offensive-zone.com` with name "Mi Primera Web"
+- Any other value or missing → sends from `sales@offensive-zone.com` with name "Offensive Zone"
+
+**Recipients:** Both sites send to `arreaza.cesara@gmail.com` and `edgardo.krause@gmail.com`.
+
+**Frontend integration:**
+- React app (`src/page/home/ContactForm.jsx`): sends `{ name, email, message }` (no `source` field — defaults to offensive-zone)
+- Mi Primera Web (`redesign/Rediseño sitio Offensive Zone/index.html`): must send `{ name, email, message, source: "miprimeraweb" }`
 
 ## Deployment (Docker build + Cloudflare Pages)
 
@@ -83,6 +120,36 @@ Los archivos en `public/` se copian tal cual al `build/`. Para compartir documen
 - El `node_modules` creado por Docker queda como root — limpiar con `sudo rm -rf node_modules` después del build
 - No instalar `wrangler` globalmente en el servidor — usar Docker cuando se necesite
 - La imagen Docker usada es `node:20-alpine` (ya disponible en el servidor)
+
+## Deployment — Mi Primera Web (Cloudflare Pages)
+
+Sitio estático HTML (no React/Vite). Deploy directo de archivos estáticos.
+
+### Build (no necesita build step)
+
+El sitio ya es HTML/CSS/JS puro. No necesita compilación.
+
+### Deploy a Cloudflare Pages
+
+**Opción A — Subir manualmente desde Cloudflare Dashboard:**
+1. Ir a Cloudflare Dashboard → Pages → Crear proyecto → `miprimeraweb`
+2. Click "Upload assets"
+3. Subir el directorio `redesign/Rediseño sitio Offensive Zone/` (incluye index.html, assets/, _ds/, etc.)
+
+**Opción B — Deploy automático con Wrangler:**
+```bash
+docker run --rm -v /home/dev/Projects/web:/app -w /app \
+  -e CLOUDFLARE_API_TOKEN=tu_token_aqui \
+  node:20-alpine sh -c "npm install -g wrangler && wrangler pages deploy 'redesign/Rediseño sitio Offensive Zone' --project-name=miprimeraweb"
+```
+
+### Notas miprimeraweb
+
+- El sitio usa un design system custom (`_ds/`) que se carga vía `<link>` y `<script>` tags
+- El formulario debe enviar `{ name, email, message, source: "miprimeraweb" }` al worker
+- Worker URL: `https://offensive-zone-form-handler.camaguapa.workers.dev`
+- No hay build step — es HTML estático con componentes renderizados en client-side via `support.js`
+- Script de deploy: `./deploy-miprimeraweb.sh <CLOUDFLARE_API_TOKEN>`
 
 ## Conventions to follow
 

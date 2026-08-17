@@ -60,9 +60,36 @@
 
 ## [Unreleased]
 
+### Added (2026-08-17)
+- **Mi Primera Web** (`miprimeraweb.offensive-zone.com`): sitio estático HTML en `redesign/Rediseño sitio Offensive Zone/`
+  - Design system custom (`_ds/`) con paleta "Flare" (naranja)
+  - Secciones: Hero, Nosotros, Servicios (10), Trabajos (portfolio), Testimonios, Planes (3), Contacto, Footer
+  - Formulario de contacto conectado al worker con `source: "miprimeraweb"`
+  - Script de deploy: `./deploy-miprimeraweb.sh <CLOUDFLARE_API_TOKEN>`
+
+### Changed
+- **Worker multi-sitio**: `workers/form-handler/src/index.js` ahora soporta múltiples sitios via campo `source` en el payload
+  - `source === "miprimeraweb"` → envía desde `noreply@miprimeraweb.offensive-zone.com`
+  - Default (sin source o cualquier otro valor) → envía desde `sales@offensive-zone.com` (offensive-zone.com)
+  - Ambos sitios envían a los mismos destinatarios: `arreaza.cesara@gmail.com` + `edgardo.krause@gmail.com`
+
+### Documentation
+- AGENTS.md actualizado con sección "Contact Form Worker (Multi-Site)"
+- AGENTS.md actualizado con sección "Deployment — Mi Primera Web"
+- PLAN.md actualizado con estado del rediseño
+- ESTADO-ACTUAL.md creado como resumen rápido para retomar trabajo
+
+### Infrastructure
+- miprimeraweb desplegado en Cloudflare Pages (https://miprimeraweb.pages.dev)
+- Custom domain miprimeraweb.offensive-zone.com configurado
+- Cloudflare Email Obfuscation deshabilitado para mostrar datos de contacto
+- Script deploy-miprimeraweb.sh creado para deploy automatizado
+
 ### Planned
-- Enable Team section
-- Enable Slider/client carousel
+- Deploy miprimeraweb a Cloudflare Pages (proyecto separado)
+- Configurar custom domain `miprimeraweb.offensive-zone.com`
+- Enable Team section (offensive-zone.com)
+- Enable Slider/client carousel (offensive-zone.com)
 - Populate `src/common/data.js`
 
 ---

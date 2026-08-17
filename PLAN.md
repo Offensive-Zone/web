@@ -61,6 +61,25 @@ Todo coincide con el resumen de la sesión externa — nada roto ni faltante a s
 2. Confirmar correo real de contacto (placeholder actual: `contacto@offensive-zone.com`).
 3. Reemplazar logos de "sectores" por clientes reales o quitar la franja si no hay clientes para mostrar.
 
-## Decisión pendiente (para el usuario)
+## Estado actual (2026-08-17)
 
-¿Integrar este rediseño como componentes React dentro del proyecto actual (`src/page/home/*`, reusando el Worker de contacto ya existente), o reemplazar el proyecto entero por el sitio estático standalone? Afecta cómo se portan `index.html`/`style.css`/`script.js`.
+### Sitios en el repo
+
+1. **Offensive Zone** (`offensive-zone.com`) — React + Vite, en producción
+2. **Mi Primera Web** (`miprimeraweb.offensive-zone.com`) — HTML estático en `redesign/Rediseño sitio Offensive Zone/`
+
+### Worker multi-sitio
+
+El worker en `workers/form-handler/src/index.js` ya soporta ambos sitios:
+- `source: "miprimeraweb"` → envía desde `noreply@miprimeraweb.offensive-zone.com`
+- Default → envía desde `sales@offensive-zone.com`
+
+### Pendiente deploy miprimeraweb
+
+1. Crear proyecto `miprimeraweb` en Cloudflare Dashboard → Pages
+2. Ejecutar: `./deploy-miprimeraweb.sh <CLOUDFLARE_API_TOKEN>`
+3. Configurar custom domain `miprimeraweb.offensive-zone.com` (opcional)
+
+### Decisión tomada
+
+El rediseño de miprimeraweb se deployó como sitio estático HTML separado (no se integró al proyecto React de offensive-zone.com). Cada sitio tiene su propio proyecto en Cloudflare Pages.
