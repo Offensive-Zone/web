@@ -1,248 +1,370 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="./support.js"></script>
 </head>
+
 <body>
-<x-dc>
-<helmet>
-  <link rel="stylesheet" href="_ds/offensive-zone-design-system-04bc17bf-158e-4b9f-8961-ec00b1aaf6c9/tokens/fonts.css">
-  <link rel="stylesheet" href="_ds/offensive-zone-design-system-04bc17bf-158e-4b9f-8961-ec00b1aaf6c9/tokens/colors.css">
-  <link rel="stylesheet" href="_ds/offensive-zone-design-system-04bc17bf-158e-4b9f-8961-ec00b1aaf6c9/tokens/typography.css">
-  <link rel="stylesheet" href="_ds/offensive-zone-design-system-04bc17bf-158e-4b9f-8961-ec00b1aaf6c9/tokens/spacing.css">
-  <link rel="stylesheet" href="_ds/offensive-zone-design-system-04bc17bf-158e-4b9f-8961-ec00b1aaf6c9/tokens/effects.css">
-  <link rel="stylesheet" href="_ds/offensive-zone-design-system-04bc17bf-158e-4b9f-8961-ec00b1aaf6c9/tokens/base.css">
-  <link rel="stylesheet" href="_ds/offensive-zone-design-system-04bc17bf-158e-4b9f-8961-ec00b1aaf6c9/styles.css">
-  <link rel="stylesheet" href="./style-2.css">
-  <script src="_ds/offensive-zone-design-system-04bc17bf-158e-4b9f-8961-ec00b1aaf6c9/_ds_bundle.js"></script>
-  <script src="./image-slot.js"></script>
-  <style>
-    body { margin: 0; background: var(--oz-black); }
-    a { color: var(--accent); }
-    a:hover { color: var(--accent-hover); }
-    ::selection { background: rgba(0,150,255,0.35); }
-    html { scroll-behavior: smooth; }
-  </style>
-</helmet>
+  <x-dc>
+    <helmet>
+      <link rel="stylesheet"
+        href="_ds/offensive-zone-design-system-04bc17bf-158e-4b9f-8961-ec00b1aaf6c9/tokens/fonts.css">
+      <link rel="stylesheet"
+        href="_ds/offensive-zone-design-system-04bc17bf-158e-4b9f-8961-ec00b1aaf6c9/tokens/colors.css">
+      <link rel="stylesheet"
+        href="_ds/offensive-zone-design-system-04bc17bf-158e-4b9f-8961-ec00b1aaf6c9/tokens/typography.css">
+      <link rel="stylesheet"
+        href="_ds/offensive-zone-design-system-04bc17bf-158e-4b9f-8961-ec00b1aaf6c9/tokens/spacing.css">
+      <link rel="stylesheet"
+        href="_ds/offensive-zone-design-system-04bc17bf-158e-4b9f-8961-ec00b1aaf6c9/tokens/effects.css">
+      <link rel="stylesheet"
+        href="_ds/offensive-zone-design-system-04bc17bf-158e-4b9f-8961-ec00b1aaf6c9/tokens/base.css">
+      <link rel="stylesheet" href="_ds/offensive-zone-design-system-04bc17bf-158e-4b9f-8961-ec00b1aaf6c9/styles.css">
+      <link rel="stylesheet" href="./style-2.css">
+      <script src="_ds/offensive-zone-design-system-04bc17bf-158e-4b9f-8961-ec00b1aaf6c9/_ds_bundle.js"></script>
+      <script src="./image-slot.js"></script>
+      <style>
+        body {
+          margin: 0;
+          background: var(--oz-black);
+        }
 
-<div style="background:var(--oz-black); color:var(--text-body); font-family:var(--font-sans); overflow-x:hidden;">
+        a {
+          color: var(--accent);
+        }
 
-  <!-- NAV -->
-  <header style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:18px 48px; background:rgba(5,7,13,0.82); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid var(--border-subtle);">
-    <a href="#inicio" style="display:flex; align-items:center; gap:12px; text-decoration:none;">
-      <img src="assets/star-mark.png" alt="" class="oz-tint-flare" style="height:34px; width:auto;">
-      <span style="font-family:var(--font-display); font-weight:800; font-size:20px; letter-spacing:0.01em; color:var(--text-primary); white-space:nowrap;">MI PRIMERA WEB</span>
-    </a>
-    <nav style="display:flex; align-items:center; gap:36px;">
-      <a href="#nosotros" style="font-size:14px; font-weight:600; text-decoration:none; color:var(--text-body);">Nosotros</a>
-      <a href="#servicios" style="font-size:14px; font-weight:600; text-decoration:none; color:var(--text-body);">Servicios</a>
-      <a href="#trabajos" style="font-size:14px; font-weight:600; text-decoration:none; color:var(--text-body);">Trabajos</a>
-      <a href="#testimonios" style="font-size:14px; font-weight:600; text-decoration:none; color:var(--text-body);">Testimonios</a>
-      <a href="#planes" style="font-size:14px; font-weight:600; text-decoration:none; color:var(--text-body);">Planes</a>
-      <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Button" size="sm" hint-size="auto,36px" onClick="{{ scrollToContact }}">Contactanos</x-import>
-    </nav>
-  </header>
+        a:hover {
+          color: var(--accent-hover);
+        }
 
-  <!-- HERO -->
-  <section id="inicio" style="position:relative; display:grid; grid-template-columns:1.05fr 0.95fr; align-items:center; gap:56px; padding:120px 48px 100px; max-width:1400px; margin:0 auto; min-height:640px;">
-    <img src="assets/chevron-wave-bg.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.16; z-index:0; pointer-events:none;">
-    <div style="position:relative; z-index:1; display:flex; flex-direction:column; gap:24px; align-items:flex-start;">
-      <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Eyebrow" with-chevron="{{ true }}" hint-size="auto,20px">Desarrollo web a medida</x-import>
-      <h1 style="font-family:var(--font-display); font-weight:800; font-size:clamp(40px,5vw,64px); line-height:1.04; letter-spacing:-0.01em; color:var(--text-primary); margin:0; text-transform:uppercase; text-wrap:pretty;">LA WEB QUE HACE CRECER TU NEGOCIO</h1>
-      <p style="font-size:18px; line-height:1.6; color:var(--text-body); max-width:520px; margin:0;">Diseñamos y desarrollamos sitios modernos, rápidos y adaptados a todos los dispositivos — pensados para convertir visitas en clientes.</p>
-      <div style="display:flex; gap:16px; margin-top:8px;">
-        <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Button" variant="primary" size="lg" hint-size="auto,52px" onClick="{{ scrollToWork }}">Ver trabajos</x-import>
-        <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Button" variant="secondary" size="lg" hint-size="auto,52px" onClick="{{ scrollToContact }}">Pedir cotización</x-import>
-      </div>
-    </div>
-    <div style="position:relative; z-index:1; display:flex; justify-content:center;">
-      <img src="assets/neon-laptop-lock.png" alt="Sitio web moderno" style="width:100%; max-width:480px; filter:drop-shadow(0 30px 60px rgba(0,150,255,0.25));">
-    </div>
-  </section>
+        ::selection {
+          background: rgba(0, 150, 255, 0.35);
+        }
 
-  <!-- SOBRE NOSOTROS -->
-  <section id="nosotros" style="padding:100px 48px; max-width:1400px; margin:0 auto; display:grid; grid-template-columns:0.85fr 1.15fr; gap:64px; align-items:center;">
-    <div style="width:100%; height:420px; border-radius:24px; background:linear-gradient(155deg, var(--surface-1), var(--oz-black)); border:1px solid var(--border-subtle); display:flex; align-items:center; justify-content:center; padding:32px; box-sizing:border-box;">
-      <svg viewBox="0 0 400 300" style="width:100%; height:100%;" role="img" aria-label="Ilustración de diseño web">
-        <rect x="20" y="20" width="360" height="260" rx="14" fill="var(--surface-1)" stroke="var(--border-subtle)"/>
-        <rect x="20" y="20" width="360" height="34" rx="14" fill="var(--oz-black)"/>
-        <circle cx="42" cy="37" r="5" fill="var(--accent)"/>
-        <circle cx="60" cy="37" r="5" fill="var(--text-disabled)"/>
-        <circle cx="78" cy="37" r="5" fill="var(--text-disabled)"/>
-        <rect x="44" y="72" width="150" height="18" rx="4" fill="var(--accent)"/>
-        <rect x="44" y="102" width="220" height="10" rx="3" fill="var(--text-muted)"/>
-        <rect x="44" y="120" width="180" height="10" rx="3" fill="var(--text-muted)"/>
-        <rect x="44" y="150" width="90" height="30" rx="6" fill="var(--accent)"/>
-        <rect x="44" y="200" width="150" height="60" rx="8" fill="var(--oz-black)" stroke="var(--border-subtle)"/>
-        <rect x="210" y="72" width="146" height="188" rx="10" fill="var(--oz-black)" stroke="var(--border-subtle)"/>
-        <rect x="228" y="92" width="110" height="10" rx="3" fill="var(--text-muted)"/>
-        <rect x="228" y="112" width="80" height="10" rx="3" fill="var(--text-muted)"/>
-        <rect x="228" y="150" width="110" height="70" rx="8" fill="var(--surface-1)"/>
-        <path d="M244 200 L268 168 L288 188 L322 150" stroke="var(--accent)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:20px; align-items:flex-start;">
-      <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Eyebrow" hint-size="auto,20px">Quiénes somos</x-import>
-      <h2 style="font-family:var(--font-display); font-weight:800; font-size:36px; color:var(--text-primary); margin:0; text-transform:uppercase;">Sobre nosotros</h2>
-      <p style="font-size:16px; line-height:1.7; color:var(--text-body); margin:0;">Creamos y desarrollamos la web a la medida de tu negocio. Te ofrecemos una gran variedad de servicios para mejorar tus ventas, con sitios que se adaptan a celulares, tablets y cualquier pantalla.</p>
-      <p style="font-size:16px; line-height:1.7; color:var(--text-body); margin:0;">Además vectorizamos tus logos e imágenes, y te asesoramos en cómo enfocar tus publicaciones. Contamos con un equipo técnico y de desarrollo que te acompaña en la imagen de tu empresa, el diseño de tu web y el mantenimiento de tus redes sociales.</p>
-    </div>
-  </section>
+        html {
+          scroll-behavior: smooth;
+        }
+      </style>
+    </helmet>
 
-  <!-- SERVICIOS -->
-  <section id="servicios" style="padding:100px 48px; max-width:1400px; margin:0 auto;">
-    <div style="display:flex; flex-direction:column; gap:14px; align-items:center; text-align:center; margin-bottom:56px;">
-      <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Eyebrow" with-chevron="{{ true }}" hint-size="auto,20px">Lo que hacemos</x-import>
-      <h2 style="font-family:var(--font-display); font-weight:800; font-size:36px; color:var(--text-primary); margin:0; text-transform:uppercase;">Nuestros servicios</h2>
-    </div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px;">
-      <sc-for list="{{ services }}" as="svc" hint-placeholder-count="10">
-        <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Card" variant="default" interactive="{{ true }}" hint-size="100%,180px" style="{{ svcCardStyle }}">
-          <div style="display:flex; flex-direction:column; gap:14px; align-items:flex-start;">
-            <img src="{{ svc.icon }}" alt="" class="oz-tint-flare" style="width:44px; height:44px;">
-            <span style="font-family:var(--font-sans); font-weight:700; font-size:17px; color:var(--text-primary);">{{ svc.title }}</span>
-            <span style="font-size:14px; line-height:1.55; color:var(--text-muted);">{{ svc.desc }}</span>
-          </div>
-        </x-import>
-      </sc-for>
-    </div>
-  </section>
+    <div style="background:var(--oz-black); color:var(--text-body); font-family:var(--font-sans); overflow-x:hidden;">
 
-  <!-- TRABAJOS -->
-  <section id="trabajos" style="padding:100px 48px; max-width:1400px; margin:0 auto;">
-    <div style="display:flex; flex-direction:column; gap:14px; align-items:center; text-align:center; margin-bottom:56px;">
-      <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Eyebrow" with-chevron="{{ true }}" hint-size="auto,20px">Portfolio</x-import>
-      <h2 style="font-family:var(--font-display); font-weight:800; font-size:36px; color:var(--text-primary); margin:0; text-transform:uppercase;">Nuestros trabajos</h2>
-      <p style="font-size:16px; color:var(--text-body); max-width:560px; margin:0;">Algunos de los sitios que diseñamos y desarrollamos. Hacé clic para ver cada proyecto en vivo.</p>
-    </div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:28px;">
-      <sc-for list="{{ works }}" as="work" hint-placeholder-count="8">
-        <a href="{{ work.href }}" target="{{ work.linkTarget }}" rel="noopener" style="text-decoration:none; display:block; cursor:{{ work.cursor }};">
-          <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Card" variant="glass" interactive="{{ true }}" padding="0" hint-size="100%,320px">
-            <div style="display:flex; flex-direction:column;">
-              <sc-if value="{{ work.hasImage }}" hint-placeholder-val="{{ false }}">
-                <img src="{{ work.image }}" alt="{{ work.name }}" style="width:100%; height:200px; object-fit:cover; border-radius:var(--radius-card) var(--radius-card) 0 0; display:block;">
-              </sc-if>
-              <sc-if value="{{ !work.hasImage }}" hint-placeholder-val="{{ true }}">
-                <image-slot id="{{ work.slotId }}" shape="rect" placeholder="{{ work.name }}" style="width:100%; height:200px; border-radius:var(--radius-card) var(--radius-card) 0 0;"></image-slot>
-              </sc-if>
-              <div style="padding:20px; display:flex; flex-direction:column; gap:8px;">
-                <span style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-primary);">{{ work.name }}</span>
-                <span style="display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:600; color:{{ work.linkColor }};">{{ work.linkLabel }}</span>
-              </div>
-            </div>
-          </x-import>
+      <!-- NAV -->
+      <header
+        style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:18px 48px; background:rgba(5,7,13,0.82); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid var(--border-subtle);">
+        <a href="#inicio" style="display:flex; align-items:center; gap:12px; text-decoration:none;">
+          <img src="assets/star-mark.png" alt="" class="oz-tint-flare" style="height:34px; width:auto;">
+          <span
+            style="font-family:var(--font-display); font-weight:800; font-size:20px; letter-spacing:0.01em; color:var(--text-primary); white-space:nowrap;">MI
+            PRIMERA WEB</span>
         </a>
-      </sc-for>
-    </div>
-  </section>
+        <nav style="display:flex; align-items:center; gap:36px;">
+          <a href="#nosotros"
+            style="font-size:14px; font-weight:600; text-decoration:none; color:var(--text-body);">Nosotros</a>
+          <a href="#servicios"
+            style="font-size:14px; font-weight:600; text-decoration:none; color:var(--text-body);">Servicios</a>
+          <a href="#trabajos"
+            style="font-size:14px; font-weight:600; text-decoration:none; color:var(--text-body);">Trabajos</a>
+          <a href="#testimonios"
+            style="font-size:14px; font-weight:600; text-decoration:none; color:var(--text-body);">Testimonios</a>
+          <a href="#planes"
+            style="font-size:14px; font-weight:600; text-decoration:none; color:var(--text-body);">Planes</a>
+          <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Button" size="sm"
+            hint-size="auto,36px" onClick="{{ scrollToContact }}">Contactanos</x-import>
+        </nav>
+      </header>
 
-  <!-- TESTIMONIOS -->
-  <section id="testimonios" style="padding:100px 48px; max-width:1400px; margin:0 auto;">
-    <div style="display:flex; flex-direction:column; gap:14px; align-items:center; text-align:center; margin-bottom:56px;">
-      <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Eyebrow" with-chevron="{{ true }}" hint-size="auto,20px">Testimonios</x-import>
-      <h2 style="font-family:var(--font-display); font-weight:800; font-size:36px; color:var(--text-primary); margin:0; text-transform:uppercase;">Lo que dicen nuestros clientes</h2>
-    </div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px;">
-      <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
-        <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Card" variant="default" hint-size="100%,220px">
-          <div style="display:flex; flex-direction:column; gap:16px;">
-            <span style="font-size:15px; line-height:1.6; color:var(--text-body); font-style:italic;">"{{ t.quote }}"</span>
-            <div style="display:flex; flex-direction:column; margin-top:auto;">
-              <span style="font-size:14px; font-weight:700; color:var(--text-primary);">{{ t.name }}</span>
-              <span style="font-size:12px; color:var(--text-muted);">{{ t.role }}</span>
-            </div>
+      <!-- HERO -->
+      <section id="inicio"
+        style="position:relative; display:grid; grid-template-columns:1.05fr 0.95fr; align-items:center; gap:56px; padding:120px 48px 100px; max-width:1400px; margin:0 auto; min-height:640px;">
+        <img src="assets/chevron-wave-bg.png" alt=""
+          style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.16; z-index:0; pointer-events:none;">
+        <div
+          style="position:relative; z-index:1; display:flex; flex-direction:column; gap:24px; align-items:flex-start;">
+          <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Eyebrow" with-chevron="{{ true }}"
+            hint-size="auto,20px">Desarrollo web a medida</x-import>
+          <h1
+            style="font-family:var(--font-display); font-weight:800; font-size:clamp(40px,5vw,64px); line-height:1.04; letter-spacing:-0.01em; color:var(--text-primary); margin:0; text-transform:uppercase; text-wrap:pretty;">
+            LA WEB QUE HACE CRECER TU NEGOCIO</h1>
+          <p style="font-size:18px; line-height:1.6; color:var(--text-body); max-width:520px; margin:0;">Diseñamos y
+            desarrollamos sitios modernos, rápidos y adaptados a todos los dispositivos — pensados para convertir
+            visitas en clientes.</p>
+          <div style="display:flex; gap:16px; margin-top:8px;">
+            <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Button" variant="primary" size="lg"
+              hint-size="auto,52px" onClick="{{ scrollToWork }}">Ver trabajos</x-import>
+            <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Button" variant="secondary"
+              size="lg" hint-size="auto,52px" onClick="{{ scrollToContact }}">Pedir cotización</x-import>
           </div>
-        </x-import>
-      </sc-for>
-    </div>
-  </section>
+        </div>
+        <div style="position:relative; z-index:1; display:flex; justify-content:center;">
+          <img src="assets/neon-laptop-lock.png" alt="Sitio web moderno"
+            style="width:100%; max-width:480px; filter:drop-shadow(0 30px 60px rgba(0,150,255,0.25));">
+        </div>
+      </section>
 
-  <!-- PLANES -->
-  <section id="planes" style="padding:100px 48px; max-width:1400px; margin:0 auto;">
-    <div style="display:flex; flex-direction:column; gap:14px; align-items:center; text-align:center; margin-bottom:56px;">
-      <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Eyebrow" with-chevron="{{ true }}" hint-size="auto,20px">Planes</x-import>
-      <h2 style="font-family:var(--font-display); font-weight:800; font-size:36px; color:var(--text-primary); margin:0; text-transform:uppercase;">Elegí tu plan</h2>
-    </div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; align-items:stretch;">
-      <sc-for list="{{ plans }}" as="plan" hint-placeholder-count="3">
-        <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Card" variant="{{ plan.variant }}" hint-size="100%,420px" style="{{ planCardStyle }}">
-          <div style="display:flex; flex-direction:column; gap:20px; height:100%;">
-            <sc-if value="{{ plan.featured }}" hint-placeholder-val="{{ false }}">
-              <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Tag" active="{{ true }}" hint-size="auto,30px">Más elegido</x-import>
-            </sc-if>
-            <span style="font-family:var(--font-display); font-weight:800; font-size:22px; color:var(--text-primary); text-transform:uppercase;">{{ plan.name }}</span>
-            <span style="font-size:14px; line-height:1.6; color:var(--text-muted);">{{ plan.desc }}</span>
-            <sc-if value="{{ plan.price }}" hint-placeholder-val="{{ null }}">
-              <span style="font-family:var(--font-display); font-weight:800; font-size:26px; color:var(--text-primary);">{{ plan.price }}</span>
-            </sc-if>
-            <div style="display:flex; flex-direction:column; gap:12px; flex:1;">
-              <sc-for list="{{ plan.features }}" as="feat" hint-placeholder-count="4">
-                <div style="display:flex; align-items:flex-start; gap:10px; font-size:14px; color:var(--text-body);">
-                  <span style="color:var(--accent); font-weight:700;">✓</span>{{ feat }}
+      <!-- SOBRE NOSOTROS -->
+      <section id="nosotros"
+        style="padding:100px 48px; max-width:1400px; margin:0 auto; display:grid; grid-template-columns:0.85fr 1.15fr; gap:64px; align-items:center;">
+        <div
+          style="width:100%; height:420px; border-radius:24px; background:linear-gradient(155deg, var(--surface-1), var(--oz-black)); border:1px solid var(--border-subtle); display:flex; align-items:center; justify-content:center; padding:32px; box-sizing:border-box;">
+          <svg viewBox="0 0 400 300" style="width:100%; height:100%;" role="img" aria-label="Ilustración de diseño web">
+            <rect x="20" y="20" width="360" height="260" rx="14" fill="var(--surface-1)"
+              stroke="var(--border-subtle)" />
+            <rect x="20" y="20" width="360" height="34" rx="14" fill="var(--oz-black)" />
+            <circle cx="42" cy="37" r="5" fill="var(--accent)" />
+            <circle cx="60" cy="37" r="5" fill="var(--text-disabled)" />
+            <circle cx="78" cy="37" r="5" fill="var(--text-disabled)" />
+            <rect x="44" y="72" width="150" height="18" rx="4" fill="var(--accent)" />
+            <rect x="44" y="102" width="220" height="10" rx="3" fill="var(--text-muted)" />
+            <rect x="44" y="120" width="180" height="10" rx="3" fill="var(--text-muted)" />
+            <rect x="44" y="150" width="90" height="30" rx="6" fill="var(--accent)" />
+            <rect x="44" y="200" width="150" height="60" rx="8" fill="var(--oz-black)" stroke="var(--border-subtle)" />
+            <rect x="210" y="72" width="146" height="188" rx="10" fill="var(--oz-black)"
+              stroke="var(--border-subtle)" />
+            <rect x="228" y="92" width="110" height="10" rx="3" fill="var(--text-muted)" />
+            <rect x="228" y="112" width="80" height="10" rx="3" fill="var(--text-muted)" />
+            <rect x="228" y="150" width="110" height="70" rx="8" fill="var(--surface-1)" />
+            <path d="M244 200 L268 168 L288 188 L322 150" stroke="var(--accent)" stroke-width="3" fill="none"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:20px; align-items:flex-start;">
+          <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Eyebrow" hint-size="auto,20px">Quiénes
+            somos</x-import>
+          <h2
+            style="font-family:var(--font-display); font-weight:800; font-size:36px; color:var(--text-primary); margin:0; text-transform:uppercase;">
+            Sobre nosotros</h2>
+          <p style="font-size:16px; line-height:1.7; color:var(--text-body); margin:0;">Creamos y desarrollamos la web a
+            la medida de tu negocio. Te ofrecemos una gran variedad de servicios para mejorar tus ventas, con sitios que
+            se adaptan a celulares, tablets y cualquier pantalla.</p>
+          <p style="font-size:16px; line-height:1.7; color:var(--text-body); margin:0;">Además vectorizamos tus logos e
+            imágenes, y te asesoramos en cómo enfocar tus publicaciones. Contamos con un equipo técnico y de desarrollo
+            que te acompaña en la imagen de tu empresa, el diseño de tu web y el mantenimiento de tus redes sociales.
+          </p>
+        </div>
+      </section>
+
+      <!-- SERVICIOS -->
+      <section id="servicios" style="padding:100px 48px; max-width:1400px; margin:0 auto;">
+        <div
+          style="display:flex; flex-direction:column; gap:14px; align-items:center; text-align:center; margin-bottom:56px;">
+          <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Eyebrow" with-chevron="{{ true }}"
+            hint-size="auto,20px">Lo que hacemos</x-import>
+          <h2
+            style="font-family:var(--font-display); font-weight:800; font-size:36px; color:var(--text-primary); margin:0; text-transform:uppercase;">
+            Nuestros servicios</h2>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px;">
+          <sc-for list="{{ services }}" as="svc" hint-placeholder-count="10">
+            <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Card" variant="default"
+              interactive="{{ true }}" hint-size="100%,180px" style="{{ svcCardStyle }}">
+              <div style="display:flex; flex-direction:column; gap:14px; align-items:flex-start;">
+                <img src="{{ svc.icon }}" alt="" class="oz-tint-flare" style="width:44px; height:44px;">
+                <span
+                  style="font-family:var(--font-sans); font-weight:700; font-size:17px; color:var(--text-primary);">{{
+                  svc.title }}</span>
+                <span style="font-size:14px; line-height:1.55; color:var(--text-muted);">{{ svc.desc }}</span>
+              </div>
+            </x-import>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- TRABAJOS -->
+      <section id="trabajos" style="padding:100px 48px; max-width:1400px; margin:0 auto;">
+        <div
+          style="display:flex; flex-direction:column; gap:14px; align-items:center; text-align:center; margin-bottom:56px;">
+          <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Eyebrow" with-chevron="{{ true }}"
+            hint-size="auto,20px">Portfolio</x-import>
+          <h2
+            style="font-family:var(--font-display); font-weight:800; font-size:36px; color:var(--text-primary); margin:0; text-transform:uppercase;">
+            Nuestros trabajos</h2>
+          <p style="font-size:16px; color:var(--text-body); max-width:560px; margin:0;">Algunos de los sitios que
+            diseñamos y desarrollamos. Hacé clic para ver cada proyecto en vivo.</p>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:28px;">
+          <sc-for list="{{ works }}" as="work" hint-placeholder-count="8">
+            <a href="{{ work.href }}" target="{{ work.linkTarget }}" rel="noopener"
+              style="text-decoration:none; display:block; cursor:{{ work.cursor }};">
+              <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Card" variant="glass"
+                interactive="{{ true }}" padding="0" hint-size="100%,320px">
+                <div style="display:flex; flex-direction:column;">
+                  <sc-if value="{{ work.hasImage }}" hint-placeholder-val="{{ false }}">
+                    <img src="{{ work.image }}" alt="{{ work.name }}"
+                      style="width:100%; height:200px; object-fit:cover; border-radius:var(--radius-card) var(--radius-card) 0 0; display:block;">
+                  </sc-if>
+                  <sc-if value="{{ !work.hasImage }}" hint-placeholder-val="{{ true }}">
+                    <image-slot id="{{ work.slotId }}" shape="rect" placeholder="{{ work.name }}"
+                      style="width:100%; height:200px; border-radius:var(--radius-card) var(--radius-card) 0 0;"></image-slot>
+                  </sc-if>
+                  <div style="padding:20px; display:flex; flex-direction:column; gap:8px;">
+                    <span
+                      style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-primary);">{{
+                      work.name }}</span>
+                    <span
+                      style="display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:600; color:{{ work.linkColor }};">{{
+                      work.linkLabel }}</span>
+                  </div>
                 </div>
-              </sc-for>
+              </x-import>
+            </a>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- TESTIMONIOS -->
+      <section id="testimonios" style="padding:100px 48px; max-width:1400px; margin:0 auto;">
+        <div
+          style="display:flex; flex-direction:column; gap:14px; align-items:center; text-align:center; margin-bottom:56px;">
+          <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Eyebrow" with-chevron="{{ true }}"
+            hint-size="auto,20px">Testimonios</x-import>
+          <h2
+            style="font-family:var(--font-display); font-weight:800; font-size:36px; color:var(--text-primary); margin:0; text-transform:uppercase;">
+            Lo que dicen nuestros clientes</h2>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px;">
+          <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
+            <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Card" variant="default"
+              hint-size="100%,220px">
+              <div style="display:flex; flex-direction:column; gap:16px;">
+                <span style="font-size:15px; line-height:1.6; color:var(--text-body); font-style:italic;">"{{ t.quote
+                  }}"</span>
+                <div style="display:flex; flex-direction:column; margin-top:auto;">
+                  <span style="font-size:14px; font-weight:700; color:var(--text-primary);">{{ t.name }}</span>
+                  <span style="font-size:12px; color:var(--text-muted);">{{ t.role }}</span>
+                </div>
+              </div>
+            </x-import>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- PLANES -->
+      <section id="planes" style="padding:100px 48px; max-width:1400px; margin:0 auto;">
+        <div
+          style="display:flex; flex-direction:column; gap:14px; align-items:center; text-align:center; margin-bottom:56px;">
+          <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Eyebrow" with-chevron="{{ true }}"
+            hint-size="auto,20px">Planes</x-import>
+          <h2
+            style="font-family:var(--font-display); font-weight:800; font-size:36px; color:var(--text-primary); margin:0; text-transform:uppercase;">
+            Elegí tu plan</h2>
+        </div>
+        <div
+          style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; align-items:stretch;">
+          <sc-for list="{{ plans }}" as="plan" hint-placeholder-count="3">
+            <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Card" variant="{{ plan.variant }}"
+              hint-size="100%,420px" style="{{ planCardStyle }}">
+              <div style="display:flex; flex-direction:column; gap:20px; height:100%;">
+                <sc-if value="{{ plan.featured }}" hint-placeholder-val="{{ false }}">
+                  <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Tag" active="{{ true }}"
+                    hint-size="auto,30px">Más elegido</x-import>
+                </sc-if>
+                <span
+                  style="font-family:var(--font-display); font-weight:800; font-size:22px; color:var(--text-primary); text-transform:uppercase;">{{
+                  plan.name }}</span>
+                <span style="font-size:14px; line-height:1.6; color:var(--text-muted);">{{ plan.desc }}</span>
+                <sc-if value="{{ plan.price }}" hint-placeholder-val="{{ null }}">
+                  <span
+                    style="font-family:var(--font-display); font-weight:800; font-size:26px; color:var(--text-primary);">{{
+                    plan.price }}</span>
+                </sc-if>
+                <div style="display:flex; flex-direction:column; gap:12px; flex:1;">
+                  <sc-for list="{{ plan.features }}" as="feat" hint-placeholder-count="4">
+                    <div
+                      style="display:flex; align-items:flex-start; gap:10px; font-size:14px; color:var(--text-body);">
+                      <span style="color:var(--accent); font-weight:700;">✓</span>{{ feat }}
+                    </div>
+                  </sc-for>
+                </div>
+                <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Button"
+                  variant="{{ plan.btnVariant }}" full-width="{{ true }}" hint-size="100%,48px"
+                  onClick="{{ scrollToContact }}">Solicitar cotización</x-import>
+              </div>
+            </x-import>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- CONTACTO -->
+      <section id="contacto"
+        style="padding:100px 48px; max-width:1400px; margin:0 auto; display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px;">
+        <div style="display:flex; flex-direction:column; gap:24px; align-items:flex-start;">
+          <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Eyebrow" with-chevron="{{ true }}"
+            hint-size="auto,20px">Contacto</x-import>
+          <h2
+            style="font-family:var(--font-display); font-weight:800; font-size:36px; color:var(--text-primary); margin:0; text-transform:uppercase;">
+            Hablemos de tu proyecto</h2>
+          <p style="font-size:16px; line-height:1.6; color:var(--text-body); margin:0;">Contanos qué necesitás y te
+            respondemos con una propuesta a medida.</p>
+          <div style="display:flex; flex-direction:column; gap:16px; margin-top:8px;">
+            <a href="tel:+573016245204"
+              style="display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text-primary); font-size:15px; font-weight:600;"><img
+                src="assets/icon-lock.png" alt="" class="oz-tint-flare"
+                style="width:22px; height:22px; opacity:0.9;">+57 301 6245204</a>
+            <a href="tel:+543794509398"
+              style="display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text-primary); font-size:15px; font-weight:600;"><img
+                src="assets/icon-lock.png" alt="" class="oz-tint-flare"
+                style="width:22px; height:22px; opacity:0.9;">+54 3794 509398</a>
+            <a href="mailto:sales@offensive-zone.com"
+              style="display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text-primary); font-size:15px; font-weight:600;"><img
+                src="assets/icon-verified.png" alt="" class="oz-tint-flare"
+                style="width:22px; height:22px; opacity:0.9;">sales@miprimeraweb.offensive-zone.com</a>
+            <div style="display:flex; gap:12px; margin-top:8px;">
+              <a href="https://www.facebook.com/miprimeraweb.ar/" target="_blank" rel="noopener"
+                style="text-decoration:none;">
+                <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Tag"
+                  hint-size="auto,30px">Facebook</x-import>
+              </a>
+              <a href="https://www.instagram.com/miprimera.web/" target="_blank" rel="noopener"
+                style="text-decoration:none;">
+                <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Tag"
+                  hint-size="auto,30px">Instagram</x-import>
+              </a>
             </div>
-            <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Button" variant="{{ plan.btnVariant }}" full-width="{{ true }}" hint-size="100%,48px" onClick="{{ scrollToContact }}">Solicitar cotización</x-import>
           </div>
+        </div>
+        <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Card" variant="glass"
+          hint-size="100%,420px">
+          <form style="display:flex; flex-direction:column; gap:18px;" onSubmit="{{ handleSubmit }}">
+            <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Input" label="Nombre"
+              placeholder="Tu nombre" hint-size="100%,68px"></x-import>
+            <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Input" label="Email" type="email"
+              placeholder="tu@email.com" hint-size="100%,68px"></x-import>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <label
+                style="font-family:var(--font-sans); font-size:13px; font-weight:600; color:var(--text-secondary);">Mensaje</label>
+              <textarea placeholder="Contanos sobre tu proyecto" rows="4"
+                style="width:100%; resize:vertical; background:var(--surface-1); border:1px solid var(--border-subtle); border-radius:var(--radius-control); padding:12px 14px; font-family:var(--font-sans); font-size:15px; color:var(--text-primary); box-sizing:border-box;"></textarea>
+            </div>
+            <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Button" variant="primary"
+              full-width="{{ true }}" type="submit" hint-size="100%,52px">Enviar mensaje</x-import>
+          </form>
         </x-import>
-      </sc-for>
-    </div>
-  </section>
+      </section>
 
-  <!-- CONTACTO -->
-  <section id="contacto" style="padding:100px 48px; max-width:1400px; margin:0 auto; display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px;">
-    <div style="display:flex; flex-direction:column; gap:24px; align-items:flex-start;">
-      <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Eyebrow" with-chevron="{{ true }}" hint-size="auto,20px">Contacto</x-import>
-      <h2 style="font-family:var(--font-display); font-weight:800; font-size:36px; color:var(--text-primary); margin:0; text-transform:uppercase;">Hablemos de tu proyecto</h2>
-      <p style="font-size:16px; line-height:1.6; color:var(--text-body); margin:0;">Contanos qué necesitás y te respondemos con una propuesta a medida.</p>
-      <div style="display:flex; flex-direction:column; gap:16px; margin-top:8px;">
-        <a href="tel:+573016245204" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text-primary); font-size:15px; font-weight:600;"><img src="assets/icon-lock.png" alt="" class="oz-tint-flare" style="width:22px; height:22px; opacity:0.9;">+57 301 6245204</a>
-        <a href="tel:+543794509398" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text-primary); font-size:15px; font-weight:600;"><img src="assets/icon-lock.png" alt="" class="oz-tint-flare" style="width:22px; height:22px; opacity:0.9;">+54 3794 509398</a>
-        <a href="mailto:sales@miprimeraweb.offensive-zone.com" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text-primary); font-size:15px; font-weight:600;"><img src="assets/icon-verified.png" alt="" class="oz-tint-flare" style="width:22px; height:22px; opacity:0.9;">sales@miprimeraweb.offensive-zone.com</a>
-        <div style="display:flex; gap:12px; margin-top:8px;">
-          <a href="https://www.facebook.com/miprimeraweb.ar/" target="_blank" rel="noopener" style="text-decoration:none;">
-            <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Tag" hint-size="auto,30px">Facebook</x-import>
-          </a>
-          <a href="https://www.instagram.com/miprimera.web/" target="_blank" rel="noopener" style="text-decoration:none;">
-            <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Tag" hint-size="auto,30px">Instagram</x-import>
-          </a>
+      <!-- FOOTER -->
+      <footer
+        style="border-top:1px solid var(--border-subtle); padding:40px 48px; display:flex; align-items:center; justify-content:space-between; max-width:1400px; margin:0 auto; flex-wrap:wrap; gap:16px;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <img src="assets/star-mark.png" alt="" class="oz-tint-flare" style="height:26px;">
+          <span style="font-size:13px; color:var(--text-muted);">© 2026 Mi Primera Web — un servicio del ecosistema
+            Offensive Zone</span>
         </div>
-      </div>
-    </div>
-    <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Card" variant="glass" hint-size="100%,420px">
-      <form style="display:flex; flex-direction:column; gap:18px;" onSubmit="{{ handleSubmit }}">
-        <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Input" label="Nombre" placeholder="Tu nombre" hint-size="100%,68px"></x-import>
-        <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Input" label="Email" type="email" placeholder="tu@email.com" hint-size="100%,68px"></x-import>
-        <div style="display:flex; flex-direction:column; gap:8px;">
-          <label style="font-family:var(--font-sans); font-size:13px; font-weight:600; color:var(--text-secondary);">Mensaje</label>
-          <textarea placeholder="Contanos sobre tu proyecto" rows="4" style="width:100%; resize:vertical; background:var(--surface-1); border:1px solid var(--border-subtle); border-radius:var(--radius-control); padding:12px 14px; font-family:var(--font-sans); font-size:15px; color:var(--text-primary); box-sizing:border-box;"></textarea>
+        <div style="display:flex; gap:28px;">
+          <a href="#nosotros" style="font-size:13px; color:var(--text-muted); text-decoration:none;">Nosotros</a>
+          <a href="#trabajos" style="font-size:13px; color:var(--text-muted); text-decoration:none;">Trabajos</a>
+          <a href="#planes" style="font-size:13px; color:var(--text-muted); text-decoration:none;">Planes</a>
+          <a href="#contacto" style="font-size:13px; color:var(--text-muted); text-decoration:none;">Contacto</a>
         </div>
-        <x-import component-from-global-scope="OffensiveZoneDesignSystem_04bc17.Button" variant="primary" full-width="{{ true }}" type="submit" hint-size="100%,52px">Enviar mensaje</x-import>
-      </form>
-    </x-import>
-  </section>
+      </footer>
 
-  <!-- FOOTER -->
-  <footer style="border-top:1px solid var(--border-subtle); padding:40px 48px; display:flex; align-items:center; justify-content:space-between; max-width:1400px; margin:0 auto; flex-wrap:wrap; gap:16px;">
-    <div style="display:flex; align-items:center; gap:12px;">
-      <img src="assets/star-mark.png" alt="" class="oz-tint-flare" style="height:26px;">
-      <span style="font-size:13px; color:var(--text-muted);">© 2026 Mi Primera Web — un servicio del ecosistema Offensive Zone</span>
     </div>
-    <div style="display:flex; gap:28px;">
-      <a href="#nosotros" style="font-size:13px; color:var(--text-muted); text-decoration:none;">Nosotros</a>
-      <a href="#trabajos" style="font-size:13px; color:var(--text-muted); text-decoration:none;">Trabajos</a>
-      <a href="#planes" style="font-size:13px; color:var(--text-muted); text-decoration:none;">Planes</a>
-      <a href="#contacto" style="font-size:13px; color:var(--text-muted); text-decoration:none;">Contacto</a>
-    </div>
-  </footer>
 
-</div>
-
-</x-dc>
-<script type="text/x-dc" data-dc-script>
+  </x-dc>
+  <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   renderVals() {
     const svcCardStyle = { height: '100%' };
@@ -295,4 +417,5 @@ class Component extends DCLogic {
 }
 </script>
 </body>
+
 </html>
