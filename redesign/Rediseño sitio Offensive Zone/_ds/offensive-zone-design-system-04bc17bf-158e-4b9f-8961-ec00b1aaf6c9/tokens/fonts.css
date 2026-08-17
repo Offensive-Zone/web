@@ -1,0 +1,12 @@
+/* ==========================================================================
+   Offensive Zone — Webfonts
+   --------------------------------------------------------------------------
+   SUBSTITUTION NOTE: the original "OFFENSIVE ZONE" wordmark uses a bespoke
+   bold geometric grotesque that was not supplied as a font file. The closest
+   freely-available match is SAIRA (a confident, slightly engineered grotesque
+   with excellent heavy weights) for display, paired with IBM PLEX SANS for UI
+   text and IBM PLEX MONO for code / terminal / data motifs. Swap these for the
+   licensed brand fonts when available — only this file needs to change.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@500;600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');

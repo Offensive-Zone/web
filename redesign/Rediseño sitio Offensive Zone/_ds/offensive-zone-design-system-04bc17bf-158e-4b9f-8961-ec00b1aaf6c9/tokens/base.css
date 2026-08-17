@@ -1,0 +1,69 @@
+/* ==========================================================================
+   Offensive Zone — Base layer & brand utilities
+   Lightweight: resets + a handful of brand helpers used across cards/kits.
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  color: var(--text-body);
+  background: var(--bg-base);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---- Typographic primitives ------------------------------------------- */
+.oz-display {
+  font-family: var(--font-display);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-primary);
+  text-wrap: balance;
+}
+.oz-heading {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  color: var(--text-primary);
+}
+.oz-overline {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-overline);
+  letter-spacing: var(--tracking-overline);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.oz-mono { font-family: var(--font-mono); }
+
+/* ---- Accent text ------------------------------------------------------- */
+.oz-accent { color: var(--accent); }
+.oz-gradient-text {
+  background: linear-gradient(90deg, var(--oz-sky), var(--oz-azure));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---- Chevron motif (the >>> brand element) ----------------------------- */
+/* Pure-CSS quad chevron; or use assets/brand/chevron-solid.png */
+.oz-chevrons {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+.oz-chevrons::before {
+  content: "";
+  width: 64px; height: 22px;
+  background: var(--accent);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='22' viewBox='0 0 64 22'%3E%3Cg fill='black'%3E%3Cpath d='M0 0h7l9 11-9 11H0l9-11z'/%3E%3Cpath d='M15 0h7l9 11-9 11h-7l9-11z'/%3E%3Cpath d='M30 0h7l9 11-9 11h-7l9-11z'/%3E%3Cpath d='M45 0h7l9 11-9 11h-7l9-11z'/%3E%3C/g%3E%3C/svg%3E") no-repeat center / contain;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='22' viewBox='0 0 64 22'%3E%3Cg fill='black'%3E%3Cpath d='M0 0h7l9 11-9 11H0l9-11z'/%3E%3Cpath d='M15 0h7l9 11-9 11h-7l9-11z'/%3E%3Cpath d='M30 0h7l9 11-9 11h-7l9-11z'/%3E%3Cpath d='M45 0h7l9 11-9 11h-7l9-11z'/%3E%3C/g%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+/* ---- Hex / mesh decorative surface ------------------------------------- */
+.oz-canvas { background: var(--bg-canvas); }

@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Offensive Zone — Effects: radii, borders, shadows, glow, blur, motion
+   Signature: rounded "stadium" shapes, azure glow on key elements, subtle
+   hairline borders on dark glass surfaces, calm fade/slide motion.
+   ========================================================================== */
+
+:root {
+  /* ---- Corner radii ----------------------------------------------------- */
+  --r-xs:    4px;
+  --r-sm:    8px;
+  --r-md:    12px;
+  --r-lg:    18px;
+  --r-xl:    24px;
+  --r-2xl:   32px;
+  --r-pill:  999px;    /* chips, the stadium capsule shape          */
+
+  /* ---- Border widths ---------------------------------------------------- */
+  --bw-hair: 1px;
+  --bw-1:    1.5px;
+  --bw-2:    2px;
+
+  /* ---- Shadows (depth on near-black) ------------------------------------ */
+  --shadow-sm:   0 1px 2px rgba(0,0,0,0.4);
+  --shadow-md:   0 8px 24px rgba(0,0,0,0.45);
+  --shadow-lg:   0 18px 48px rgba(0,0,0,0.55);
+  --shadow-card: 0 12px 36px rgba(2,8,26,0.6);
+
+  /* ---- Glow (the brand's light signature) ------------------------------- */
+  --glow-azure:        0 0 24px rgba(0,150,255,0.40);
+  --glow-azure-strong: 0 0 44px rgba(0,150,255,0.60);
+  --glow-sky:          0 0 28px rgba(86,182,206,0.45);
+  --glow-inset:        inset 0 0 24px rgba(0,150,255,0.18);
+
+  /* ---- Rings / focus ---------------------------------------------------- */
+  --ring-accent:  0 0 0 1px rgba(0,150,255,0.55);
+  --ring-focus:   0 0 0 3px rgba(0,150,255,0.35);
+
+  /* ---- Blur (glass panels, seen in deck capsules) ----------------------- */
+  --blur-sm:  blur(6px);  /* @kind other */
+  --blur-md:  blur(14px); /* @kind other */
+  --blur-lg:  blur(28px); /* @kind other */
+
+  /* ---- Motion ----------------------------------------------------------- */
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);   /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --dur-fast:   140ms; /* @kind other */
+  --dur-base:   240ms; /* @kind other */
+  --dur-slow:   420ms; /* @kind other */
+
+  /* ---- Semantic surfaces ------------------------------------------------ */
+  --radius-card:   var(--r-xl);
+  --radius-control: var(--r-md);
+  --radius-chip:   var(--r-pill);
+  --shadow-elevated: var(--shadow-card);
+}

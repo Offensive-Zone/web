@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Offensive Zone — Color Tokens
+   Cybersecurity / offensive-security brand. Dark-first.
+   Base navy → black canvas, electric azure accent, sky-blue secondary (the
+   star mark), plus a pentest severity scale that is core to the product.
+   ========================================================================== */
+
+:root {
+  /* ---- Brand blues (base) ------------------------------------------------ */
+  --oz-azure:          #0096ff;  /* PRIMARY accent — chevrons, CTAs, icons    */
+  --oz-azure-bright:   #2ea8ff;  /* hover / lighten                            */
+  --oz-azure-300:      #6cc0ff;  /* tints on dark                             */
+  --oz-azure-700:      #0a73c4;  /* pressed / deeper                          */
+  --oz-blue-royal:     #0a4da0;  /* deep royal — gradient partner            */
+  --oz-blue-600:       #0f5ca1;
+  --oz-blue-800:       #012e8a;  /* deepest saturated brand blue             */
+  --oz-sky:            #56b6ce;  /* SECONDARY — the four-point star mark      */
+  --oz-sky-200:        #8fd3e3;
+
+  /* ---- Ink / canvas (cool navy → black) ---------------------------------- */
+  --oz-black:          #05070d;  /* deepest background                        */
+  --oz-navy-950:       #060c1c;
+  --oz-navy-900:       #091538;  /* primary dark canvas (sampled)             */
+  --oz-navy-850:       #0b1a40;
+  --oz-navy-800:       #0c204c;  /* raised surface                            */
+  --oz-navy-700:       #12305f;  /* hover surface / borders                   */
+
+  /* ---- Neutrals (cool, for text on dark) --------------------------------- */
+  --oz-white:          #ffffff;
+  --oz-fog:            #e8eef7;  /* near-white body text on dark              */
+  --oz-slate-200:      #c2cee2;
+  --oz-slate-300:      #9db0ce;  /* secondary text                           */
+  --oz-slate-400:      #6b7fa0;  /* muted text / captions                    */
+  --oz-slate-500:      #44567a;  /* disabled / faint                         */
+
+  /* ---- Pentest severity (product-critical) ------------------------------- */
+  --oz-critical:       #ff3b47;
+  --oz-high:           #ff7a29;
+  --oz-medium:         #ffc53d;
+  --oz-low:            #2ea8ff;
+  --oz-info:           #8fa3c4;
+  --oz-secure:         #22c9a0;  /* "protected / passed"                      */
+
+  /* ---- Gradients (brand signatures) -------------------------------------- */
+  --oz-grad-azure:   linear-gradient(135deg, #0096ff 0%, #0a4da0 100%); /* @kind color */
+  --oz-grad-pill:    linear-gradient(90deg, #1f63e3 0%, #0a3d91 60%, #0a2a66 100%); /* @kind color */ /* the stadium blob */
+  --oz-grad-edge:    linear-gradient(90deg, #0f4bd6 0%, #061233 42%, #05070d 100%); /* @kind color */ /* left-blue to black canvas */
+  --oz-grad-canvas:  radial-gradient(120% 90% at 80% 0%, #0c2150 0%, #07112c 45%, #05070d 100%); /* @kind color */
+  --oz-grad-bar:     linear-gradient(90deg, rgba(10,40,90,0) 0%, #0a4da0 70%, #0096ff 100%); /* @kind color */ /* the glass capsules */
+
+  /* ======================================================================
+     SEMANTIC ALIASES — reference these in components, not the raw scale.
+     ====================================================================== */
+  --bg-base:          var(--oz-navy-900);
+  --bg-deep:          var(--oz-black);
+  --bg-canvas:        var(--oz-grad-canvas);
+  --surface-1:        #0a1838;          /* card surface                       */
+  --surface-2:        #0e2452;          /* raised / hover                     */
+  --surface-glass:    rgba(14, 38, 84, 0.55);
+
+  --text-primary:     var(--oz-white);
+  --text-body:        var(--oz-fog);
+  --text-secondary:   var(--oz-slate-300);
+  --text-muted:       var(--oz-slate-400);
+  --text-disabled:    var(--oz-slate-500);
+  --text-on-accent:   #ffffff;
+
+  --accent:           var(--oz-azure);
+  --accent-hover:     var(--oz-azure-bright);
+  --accent-press:     var(--oz-azure-700);
+  --accent-secondary: var(--oz-sky);
+
+  --border-subtle:    rgba(143, 178, 224, 0.16);
+  --border-strong:    rgba(143, 178, 224, 0.30);
+  --border-accent:    rgba(0, 150, 255, 0.55);
+
+  --focus-ring:       rgba(0, 150, 255, 0.55);
+}

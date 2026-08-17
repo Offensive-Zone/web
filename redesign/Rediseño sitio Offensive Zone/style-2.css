@@ -1,0 +1,79 @@
+/* ============================================================
+   Mi Primera Web — paleta secundaria "Flare" (naranja)
+   Sobrescribe los tokens de color/efectos del design system
+   (mismos nombres de variable) para recolorear sin tocar
+   tipografía, espaciado ni componentes.
+   Cargar DESPUÉS de tokens/colors.css y tokens/effects.css.
+   ============================================================ */
+:root {
+  /* ---- Brand (antes azure/sky) ------------------------------------------ */
+  --oz-azure:          #FF5A29;  /* flare */
+  --oz-azure-bright:   #FF7A4D;  /* flare-2 */
+  --oz-azure-300:      #FF9A73;
+  --oz-azure-700:      #C8431C;
+  --oz-blue-royal:     #C8431C;
+  --oz-blue-600:       #A5390F;
+  --oz-blue-800:       #7A2A0B;
+  --oz-sky:            #33D2A0;  /* secure */
+  --oz-sky-200:        #7FE3C4;
+
+  /* ---- Ink / canvas ------------------------------------------------------ */
+  --oz-black:          #0A0D12;  /* ink */
+  --oz-navy-950:       #0A0D12;
+  --oz-navy-900:       #12161F;  /* panel */
+  --oz-navy-850:       #141923;
+  --oz-navy-800:       #171C27;  /* panel-2 */
+  --oz-navy-700:       #232B3A;  /* line */
+
+  /* ---- Neutrals ----------------------------------------------------------*/
+  --oz-white:          #ffffff;
+  --oz-fog:             #ECEEF3; /* paper */
+  --oz-slate-200:      #C6CBD6;
+  --oz-slate-300:      #8891A3;  /* muted */
+  --oz-slate-400:      #6B7486;
+  --oz-slate-500:      #545E70;  /* muted-dim */
+
+  /* ---- Severity (sin cambios de significado, solo tono) ------------------*/
+  --oz-critical:       #ff3b47;
+  --oz-high:           #FF7A4D;
+  --oz-medium:         #ffc53d;
+  --oz-low:             #FF9A73;
+  --oz-info:           #8891A3;
+  --oz-secure:         #33D2A0;
+
+  /* ---- Gradientes de marca ------------------------------------------------*/
+  --oz-grad-azure:   linear-gradient(135deg, #FF5A29 0%, #C8431C 100%);
+  --oz-grad-pill:    linear-gradient(90deg, #FF7A4D 0%, #C8431C 60%, #7A2A0B 100%);
+  --oz-grad-edge:    linear-gradient(90deg, #FF5A29 0%, #171C27 42%, #0A0D12 100%);
+  --oz-grad-canvas:  radial-gradient(120% 90% at 80% 0%, #171C27 0%, #12161F 45%, #0A0D12 100%);
+  --oz-grad-bar:     linear-gradient(90deg, rgba(255,90,41,0) 0%, #C8431C 70%, #FF5A29 100%);
+
+  /* ---- Semánticas (mismos nombres que colors.css) ------------------------*/
+  --surface-1:        #12161F;
+  --surface-2:        #171C27;
+  --surface-glass:    rgba(23, 28, 39, 0.6);
+
+  --accent:           var(--oz-azure);
+  --accent-hover:     var(--oz-azure-bright);
+  --accent-press:     var(--oz-azure-700);
+  --accent-secondary: var(--oz-sky);
+
+  --border-subtle:    rgba(136, 145, 163, 0.18);
+  --border-strong:    rgba(136, 145, 163, 0.32);
+  --border-accent:    rgba(255, 90, 41, 0.55);
+
+  --focus-ring:       rgba(255, 90, 41, 0.55);
+
+  /* ---- Glow / rings (effects.css usa rgba fijo — se sobrescribe entero) --*/
+  --glow-azure:        0 0 24px rgba(255,90,41,0.40);
+  --glow-azure-strong: 0 0 44px rgba(255,90,41,0.60);
+  --glow-sky:          0 0 28px rgba(51,210,160,0.45);
+  --glow-inset:        inset 0 0 24px rgba(255,90,41,0.18);
+  --ring-accent:  0 0 0 1px rgba(255,90,41,0.55);
+  --ring-focus:   0 0 0 3px rgba(255,90,41,0.35);
+}
+
+/* Los íconos de marca vienen en PNG azul — se aproximan al naranja con filtro. */
+.oz-tint-flare {
+  filter: hue-rotate(180deg) saturate(1.6) brightness(1.05);
+}
