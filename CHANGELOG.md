@@ -91,6 +91,7 @@
 - Enable Team section (offensive-zone.com)
 - Enable Slider/client carousel (offensive-zone.com)
 - Populate `src/common/data.js`
+- Actualizar dependencias para resolver 7 vulnerabilidades de Dependabot (3 high, 3 moderate, 1 low)
 
 ---
 
