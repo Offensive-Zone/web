@@ -167,3 +167,84 @@ docker run --rm -v /home/dev/Projects/web:/app -w /app \
 - Don't add tests/config for a runner that isn't set up without asking first (deps exist but no jest/vitest config present as of this writing — verify before relying on it).
 - When touching the contact form or worker, verify both sides stay in sync (payload shape, error format).
 - Prefer minimal diffs; this is a small, mostly-static site — avoid premature abstraction.
+
+---
+
+## 📋 REGLA OBLIGATORIA: Commit + Push + DB Dump tras cada feature
+
+> **Esta regla es INQUEBRANTABLE. Cada vez que termines una feature, bugfix o mejora, DEBES ejecutar esto antes de considerar la tarea completa.**
+
+### Pasos obligatorios al terminar CUALQUIER cambio:
+
+```bash
+# 1. Verificar estado
+git status
+
+# 2. Si hay DB en este proyecto → Dump completo ANTES de commitear
+#    (Usa el script correspondiente al motor de DB)
+
+# 3. Commit con mensaje descriptivo
+git add -A
+git commit -m "tipo: descripción corta
+
+- Detalle 1
+- Detalle 2
+
+Proyecto: $(basename $(pwd))
+Fecha: $(date '+%Y-%m-%d %H:%M:%S')"
+
+# 4. Push OBLIGATORIO a origin
+git push origin $(git branch --show-current)
+```
+
+### DB Dump por motor (ejecutar ANTES del commit):
+
+#### MySQL (proyectos en mysql-compartido):
+```bash
+# Desde /home/dev/Projects/<proyecto>/
+mkdir -p sql
+docker exec -i $(docker ps -qf name=mysql-compartido) \
+  mysqldump -u root -p"SharedRoot_aB3xK9mZqW7v" \
+  --single-transaction --routines --triggers --events \
+  --databases <NOMBRE_DB> > sql/full_dump_$(date +%Y%m%d_%H%M%S).sql
+```
+
+#### PostgreSQL (proyecto bid/RAD.AR):
+```bash
+# Desde /home/dev/Projects/bid/
+mkdir -p sql
+docker exec -i radar_postgres pg_dump -U postgres -d bid_bd \
+  --no-password --clean --if-exists --create > sql/full_dump_$(date +%Y%m%d_%H%M%S).sql
+```
+
+### Mapeo Proyecto → Base de Datos:
+
+| Proyecto | Motor | Base de Datos | Contenedor |
+|---|---|---|---|
+| `centurion_maderera` | MySQL | `centurion_maderera_app` | `mysql-compartido` |
+| `appTecnicosElectronicos` | MySQL | `directorio_tecnicos_electronica` | `mysql-compartido` |
+| `servidor_local` | MySQL | `error_notifications` | `mysql-compartido` |
+| `bid` | PostgreSQL | `bid_bd` | `radar_postgres` |
+| `CTF-OFFENSIVEZONE` | MySQL | `ctf_prod` | `mysql-compartido` |
+| `taragui-sistema-pagos` | MySQL | *(verificar)* | `mysql-compartido` |
+| `web` | — | *(sin DB)* | — |
+| `juan-manuel-refrigeracion` | — | *(sitio estático)* | — |
+| `scannerVulns` | — | *(verificar)* | — |
+
+### Script automático disponible:
+```bash
+# Desde cualquier proyecto o desde /home/dev/Projects/
+/home/dev/Projects/auto-commit-push.sh "feat: descripción de la feature"
+# Hace: detecta DB → dump → add → commit → push
+```
+
+### Verificación post-push:
+```bash
+# Confirmar que está en GitHub
+git log --oneline -1
+git ls-remote origin $(git branch --show-current)
+```
+
+---
+
+**⚠️ NO EXCEPCIONES:** Si no haces commit+push+dump, el trabajo no existe para el equipo ni para la historia. El repo local NO es backup.
