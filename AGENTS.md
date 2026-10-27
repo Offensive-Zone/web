@@ -4,6 +4,9 @@ System prompt / persistent instructions for AI coding agents working on this rep
 
 > Note: project is **Vite + React**, not Next.js. There is no server-side rendering, no `app/`/`pages/` router, no API routes — routing/pages are plain React components under `src/page/`. Backend logic lives only in a Cloudflare Worker. Treat this file as authoritative over any generic Next.js assumptions.
 
+> **🏗️ INFRAESTRUCTURA DEL SERVIDOR (HOSTING MULTI-CLIENTE):** Si este proyecto se despliega en el servidor local (Docker hosting), la arquitectura completa, redes, puertos, túneles Cloudflare, MySQL/Redis compartidos, failover, monitoreo y operaciones están documentados en:  
+> **`/home/dev/Projects/servidor_local/AGENTS.md`** — **Leer antes de cualquier deploy o cambio de infraestructura.**
+
 ## Project overview
 
 Multi-site repo for the **Offensive Zone** ecosystem:
